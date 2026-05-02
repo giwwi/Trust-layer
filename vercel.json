@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/trust-layer-preview.html"
+    }
+  ]
+}

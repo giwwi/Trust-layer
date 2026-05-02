@@ -89,6 +89,7 @@ Optional public-demo settings:
 ```bash
 export PUBLIC_DEMO_MODEL=gpt-4o-mini
 export MAX_INPUT_CHARS=8000
+export BYOK_MAX_INPUT_CHARS=30000
 export MAX_OUTPUT_TOKENS=1200
 export MAX_REQUESTS_PER_IP_PER_DAY=3
 export PUBLIC_DAILY_REQUEST_LIMIT=200

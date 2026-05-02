@@ -782,6 +782,9 @@
   }
 
   function maxInputChars() {
+    if (demoState.runMode === "own_key") {
+      return Number(window.PUBLIC_DEMO_CONFIG?.BYOK_MAX_INPUT_CHARS || window.BYOK_MAX_INPUT_CHARS || 30000);
+    }
     return Number(window.PUBLIC_DEMO_CONFIG?.MAX_INPUT_CHARS || window.MAX_INPUT_CHARS || 8000);
   }
 

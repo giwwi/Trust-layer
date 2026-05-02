@@ -31,6 +31,7 @@ class Settings:
     responses_url: str = os.getenv("OPENAI_RESPONSES_URL") or "https://api.openai.com/v1/responses"
     min_input_chars: int = _get_int("TRUST_LAYER_MIN_INPUT_CHARS", 150)
     max_input_chars: int = _get_int("MAX_INPUT_CHARS", 8000)
+    byok_max_input_chars: int = _get_int("BYOK_MAX_INPUT_CHARS", 30000)
     chunk_size_chars: int = _get_int("TRUST_LAYER_CHUNK_SIZE_CHARS", 8000)
     timeout_seconds: float = _get_float("OPENAI_TIMEOUT_SECONDS", 60.0)
     max_chunks: int = _get_int("TRUST_LAYER_MAX_CHUNKS", 1)

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trust Layer Static Overview</title>
+    <meta
+      name="description"
+      content="A static overview of Trust Layer: a bounded first-reading prototype for analytical texts before deeper human checking."
+    />
+    <style>
+      :root {
+        --page: #f6f2ea;
+        --surface: rgba(255, 255, 255, 0.86);
+        --surface-strong: rgba(255, 255, 255, 0.94);
+        --border: rgba(22, 32, 43, 0.12);
+        --ink: #16202b;
+        --muted: #5f6c79;
+        --accent: #233544;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(94, 125, 147, 0.16), transparent 30rem),
+          linear-gradient(180deg, #f8f5ef 0%, var(--page) 100%);
+      }
+
+      a {
+        color: var(--accent);
+        text-underline-offset: 0.2em;
+      }
+
+      .shell {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 32px 22px 64px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(22, 32, 43, 0.08);
+        background: rgba(246, 242, 234, 0.9);
+        backdrop-filter: blur(18px);
+      }
+
+      .topbar-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 16px 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand-mark {
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--surface-strong);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        color: #425464;
+      }
+
+      .brand-title {
+        font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+        font-size: 1.55rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .pill,
+      .cta {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        padding: 10px 14px;
+        color: #2e3d49;
+        text-decoration: none;
+      }
+
+      .cta.primary {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .hero {
+        margin-top: 34px;
+        border: 1px solid var(--border);
+        border-radius: 36px;
+        background: var(--surface-strong);
+        padding: clamp(28px, 5vw, 54px);
+        box-shadow: 0 24px 70px rgba(22, 32, 43, 0.08);
+      }
+
+      .eyebrow {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+        letter-spacing: -0.04em;
+      }
+
+      h1 {
+        max-width: 900px;
+        margin: 14px 0 0;
+        font-size: clamp(2.6rem, 6vw, 5.2rem);
+        line-height: 0.98;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.05;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 1.45rem;
+      }
+
+      p,
+      li {
+        color: #425464;
+        font-size: 1.02rem;
+        line-height: 1.72;
+      }
+
+      .lead {
+        max-width: 820px;
+        color: #394a58;
+        font-size: clamp(1.1rem, 2vw, 1.32rem);
+      }
+
+      .actions {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .section {
+        margin-top: 28px;
+        border: 1px solid var(--border);
+        border-radius: 30px;
+        background: var(--surface);
+        padding: clamp(22px, 4vw, 34px);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 20px;
+      }
+
+      .grid.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        border: 1px solid rgba(22, 32, 43, 0.1);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.72);
+        padding: 20px;
+      }
+
+      .compact-list {
+        margin: 16px 0 0;
+        padding-left: 1.1rem;
+      }
+
+      .two-language {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .label-row {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 12px;
+        border-top: 1px solid rgba(22, 32, 43, 0.08);
+        padding-top: 12px;
+        margin-top: 12px;
+      }
+
+      .label {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .note {
+        margin-top: 18px;
+        border-left: 3px solid rgba(35, 53, 68, 0.28);
+        padding: 12px 0 12px 16px;
+        color: var(--muted);
+      }
+
+      footer {
+        margin-top: 30px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 860px) {
+        .topbar-inner,
+        .two-language,
+        .grid,
+        .grid.three {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar-inner {
+          display: grid;
+        }
+
+        .label-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="brand-mark">TL</div>
+          <div>
+            <div class="brand-title">Trust Layer</div>
+            <div class="eyebrow">Static Overview</div>
+          </div>
+        </div>
+        <nav class="nav" aria-label="Static overview navigation">
+          <a class="pill" href="#try">Try it</a>
+          <a class="pill" href="#example">Example</a>
+          <a class="pill" href="#review">Review</a>
+          <a class="pill" href="#limits">Limits</a>
+          <a class="cta primary" href="/">Open live demo</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="hero">
+        <div class="eyebrow">Public readable snapshot</div>
+        <h1>Trust Layer is a first-reading prototype for analytical texts.</h1>
+        <p class="lead">
+          This page is a static map of the interface for ChatGPT-web, link previews, screen readers,
+          and reviewers who cannot execute the live JavaScript app.
+        </p>
+        <div class="actions">
+          <a class="cta primary" href="/">Open the live app</a>
+          <a class="cta" href="#overview-ru">Русская версия ниже</a>
+        </div>
+        <p class="note">
+          Trust Layer is not a truth engine, not an AI detector, and not expert review. It helps route
+          scarce human checking by creating a provisional first reading that a human can check and edit.
+        </p>
+      </section>
+
+      <section id="try" class="section">
+        <div class="eyebrow">Try it screen</div>
+        <h2>Add text, then get a first reading.</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Input</h3>
+            <ul class="compact-list">
+              <li>Paste analytical text or upload .txt, .md, or .docx.</li>
+              <li>Public live demo accepts short excerpts up to 8,000 characters.</li>
+              <li>Own API key mode can be used for longer local-style tests.</li>
+              <li>Do not paste confidential material.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>First reading</h3>
+            <ul class="compact-list">
+              <li>What this text is about.</li>
+              <li>Main claims.</li>
+              <li>What needs attention.</li>
+              <li>What to check next.</li>
+              <li>Suggested next step.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="example" class="section">
+        <div class="eyebrow">Example screen</div>
+        <h2>Built-in cases show different review states.</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Strong analytical text</h3>
+            <div class="label-row">
+              <div class="label">State</div>
+              <div>Conceptually solid, reasonably supported.</div>
+            </div>
+            <div class="label-row">
+              <div class="label">Next move</div>
+              <div>Worth short human review or specialist follow-up.</div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Strong but speculative</h3>
+            <div class="label-row">
+              <div class="label">State</div>
+              <div>Interesting framing, low empirical support.</div>
+            </div>
+            <div class="label-row">
+              <div class="label">Next move</div>
+              <div>Engage conceptually; do not use operationally without more checking.</div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Polished but shallow</h3>
+            <div class="label-row">
+              <div class="label">State</div>
+              <div>Clear packaging, weak novelty and evidence.</div>
+            </div>
+            <div class="label-row">
+              <div class="label">Next move</div>
+              <div>Low priority for deeper review.</div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Ambiguous / contested</h3>
+            <div class="label-row">
+              <div class="label">State</div>
+              <div>Reviewers disagree; no stable trust profile yet.</div>
+            </div>
+            <div class="label-row">
+              <div class="label">Next move</div>
+              <div>Requires domain-specific follow-up and bounded disagreement notes.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="review" class="section">
+        <div class="eyebrow">Review screen</div>
+        <h2>AI draft to human review note.</h2>
+        <div class="grid three">
+          <div class="card">
+            <h3>1. First reading</h3>
+            <p>The imported AI draft shows document type, main point, next step, and source traces.</p>
+          </div>
+          <div class="card">
+            <h3>2. Check source</h3>
+            <p>Source traces and original text help the reviewer check whether the AI reading is plausible.</p>
+          </div>
+          <div class="card">
+            <h3>3. Human corrections</h3>
+            <p>The reviewer edits the AI draft into their own note and chooses Stop, Short review, or Escalate.</p>
+          </div>
+        </div>
+        <p class="note">
+          Source traces are not citations or proof. They are short source fragments that may explain the AI reading.
+          Check before accepting.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="eyebrow">Run modes</div>
+        <h2>Three ways to explore the prototype.</h2>
+        <div class="grid three">
+          <div class="card">
+            <h3>Example</h3>
+            <p>Works immediately. No API key needed. Best default path for a public demo.</p>
+          </div>
+          <div class="card">
+            <h3>Public live demo</h3>
+            <p>Uses a small shared server budget. Short excerpts only. Text is sent to the AI provider.</p>
+          </div>
+          <div class="card">
+            <h3>Own API key</h3>
+            <p>Optional advanced mode. The key is used only for the request and should be temporary and low-limit.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="limits" class="section">
+        <div class="eyebrow">Limits</div>
+        <h2>What Trust Layer cannot do.</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Not a final judgment</h3>
+            <ul class="compact-list">
+              <li>Cannot determine truth.</li>
+              <li>Cannot replace domain expertise.</li>
+              <li>Cannot remove disagreement.</li>
+              <li>Cannot detect AI authorship.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Not a universal parser</h3>
+            <ul class="compact-list">
+              <li>Genre mismatch can mislead the first reading.</li>
+              <li>Unusual ideas can produce false negatives.</li>
+              <li>Labels can anchor reviewers if treated as authoritative.</li>
+              <li>Most texts should not need a durable review note.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="overview-ru" class="section" lang="ru">
+        <div class="eyebrow">Русская версия</div>
+        <h2>Trust Layer — статическая карта интерфейса.</h2>
+        <div class="two-language">
+          <div class="card">
+            <h3>Что делает</h3>
+            <p>
+              Trust Layer помогает сделать первый разбор аналитического текста: увидеть главные
+              тезисы, что требует внимания, что проверить дальше и какой следующий шаг выбрать.
+            </p>
+            <ul class="compact-list">
+              <li>Добавить текст или файл.</li>
+              <li>Получить первый разбор ИИ.</li>
+              <li>Проверить фрагменты источника и оригинальный текст.</li>
+              <li>Исправить результат как человек-рецензент.</li>
+              <li>Остановить, продолжить краткую проверку или эскалировать.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Чем не является</h3>
+            <p>
+              Это не машина истины, не AI detector, не экспертная проверка и не универсальная
+              система доверия. Это ограниченный инструмент для первого разбора и распределения
+              дефицитного человеческого внимания.
+            </p>
+            <p>
+              Фрагменты источника ничего не доказывают. Они помогают проверить, откуда мог взяться
+              вывод ИИ, перед тем как человек примет или исправит его.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        Live app: <a href="https://trust-layer-sand.vercel.app/">trust-layer-sand.vercel.app</a>.
+        Research context:
+        <a href="https://osf.io/preprints/socarxiv/2xkdh_v1">book manuscript on OSF</a>
+        and <a href="https://verificationbottleneck.substack.com">The Verification Bottleneck</a>.
+      </footer>
+    </main>
+  </body>
+</html>

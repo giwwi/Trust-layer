@@ -1019,6 +1019,44 @@
         color: var(--muted);
       }
 
+      .case-book-connection {
+        margin-top: 16px;
+        border-radius: 20px;
+        border: 1px solid rgba(22, 32, 43, 0.09);
+        background: rgba(246, 241, 231, 0.58);
+        padding: 16px;
+      }
+
+      .case-book-connection.compact {
+        padding: 14px;
+      }
+
+      .case-book-connection p {
+        margin: 8px 0 0;
+        color: #4c5d6b;
+        line-height: 1.55;
+      }
+
+      .book-case-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .book-case-link {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        border: 1px solid rgba(22, 32, 43, 0.12);
+        background: rgba(255, 255, 255, 0.72);
+        padding: 8px 11px;
+        color: var(--ink);
+        font-size: 0.86rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
       .case-index {
         margin-top: 18px;
         border-radius: 26px;
@@ -2826,6 +2864,18 @@
             "Real case: a book-length argument about information as a metafactor and verification as the new bottleneck.",
             "Реальный кейс: книжный аргумент об информации как метафакторе и верификации как новом узком месте."
           ),
+          bookConnection: {
+            title: B("How this connects to the book", "Как это связано с книгой"),
+            copy: B(
+              "This case is the book's own argument in miniature: information as a metafactor, with verification deciding which signals become effective knowledge.",
+              "Это сам аргумент книги в сжатом виде: информация как метафактор, а верификация решает, какие сигналы становятся действенным знанием."
+            ),
+            links: [
+              { label: B("Chapter 4 - Metafactor", "Глава 4 - Метафактор"), url: "https://osf.io/2xkdh/download#page=38" },
+              { label: B("Chapter 9 - Verification bottleneck", "Глава 9 - Верификационное узкое место"), url: "https://osf.io/2xkdh/download#page=99" },
+              { label: B("Empirical Appendix", "Эмпирическое приложение"), url: "https://osf.io/2xkdh/download#page=169" }
+            ]
+          },
           deck: B(
             "The manuscript argues that information now reorganizes labor, capital, institutions, and growth, while verification becomes the binding constraint on turning signals into effective knowledge.",
             "Рукопись утверждает, что информация теперь перестраивает труд, капитал, институты и рост, а верификация становится главным ограничением превращения сигналов в действенное знание."
@@ -3221,6 +3271,17 @@
             "Real case: a policy working paper linking workplace AI use cases to job quality and worker participation.",
             "Реальный кейс: policy working paper связывает use cases AI на рабочем месте с качеством рабочих мест и участием работников."
           ),
+          bookConnection: {
+            title: B("How this connects to the book", "Как это связано с книгой"),
+            copy: B(
+              "This case illustrates labor as the first zone of absorption: AI changes job design, but judging useful adoption still requires human and institutional verification.",
+              "Этот кейс показывает труд как первую зону поглощения: ИИ меняет дизайн работы, но оценка полезного внедрения всё еще требует человеческой и институциональной проверки."
+            ),
+            links: [
+              { label: B("Chapter 5 - Labor", "Глава 5 - Труд"), url: "https://osf.io/2xkdh/download#page=52" },
+              { label: B("Chapter 9 - Verification bottleneck", "Глава 9 - Верификационное узкое место"), url: "https://osf.io/2xkdh/download#page=99" }
+            ]
+          },
           deck: B(
             "The paper argues that AI changes job quality through job design: automation rebundles tasks, while algorithmic management changes autonomy, skill use, workload, and employment conditions.",
             "Статья утверждает, что AI влияет на качество рабочих мест через дизайн работы: automation пересобирает задачи, а algorithmic management меняет автономию, использование навыков, нагрузку и условия занятости."
@@ -3512,6 +3573,17 @@
             "Использовать как market snapshot, затем проверить claims о value capture."
           ),
           previewNote: B("Real case: a polished, data-heavy AI market report that is useful but needs careful separation between survey evidence and consulting narrative.", "Реальный кейс: гладкий, насыщенный данными AI market report, полезный, но требующий развести survey evidence и consulting narrative."),
+          bookConnection: {
+            title: B("How this connects to the book", "Как это связано с книгой"),
+            copy: B(
+              "This case shows firms and platforms as information-processing regimes: broad AI adoption becomes growth only when workflows and verification convert signals into usable knowledge.",
+              "Этот кейс показывает фирмы и платформы как режимы обработки информации: широкое внедрение ИИ становится ростом только там, где процессы и проверка превращают сигналы в применимое знание."
+            ),
+            links: [
+              { label: B("Chapter 8 - Institutions and platforms", "Глава 8 - Институты и платформы"), url: "https://osf.io/2xkdh/download#page=85" },
+              { label: B("Chapter 10 - Growth in transition", "Глава 10 - Рост в переходный период"), url: "https://osf.io/2xkdh/download#page=112" }
+            ]
+          },
           deck: B(
             "The report argues that AI use is now widespread, agent use is emerging, and enterprise value remains limited unless organizations redesign workflows and treat AI as a transformation and innovation agenda.",
             "Отчет утверждает, что AI use уже широко распространен, agents только входят в практику, а enterprise value остается ограниченной без redesign workflows и AI как agenda transformation/innovation."
@@ -3771,6 +3843,18 @@
             "Real case: a conceptual essay that argues AI-generated output lacks the human choices that make art, while leaving room for disagreement about tools, authorship, and intention.",
             "Реальный кейс: conceptual essay, где AI-output отделяется от человеческого выбора, делающего artefact искусством. При этом остается спор о tools, authorship и intention."
           ),
+          bookConnection: {
+            title: B("How this connects to the book", "Как это связано с книгой"),
+            copy: B(
+              "This case moves the book's verification problem into symbolic production: generation gets cheaper, while meaning, authorship, and recognition remain human and institutional bottlenecks.",
+              "Этот кейс переносит проблему верификации в символическое производство: генерация дешевеет, а смысл, авторство и признание остаются человеческим и институциональным узким местом."
+            ),
+            links: [
+              { label: B("Author's Preface - AI and verification", "Предисловие - ИИ и верификация"), url: "https://osf.io/2xkdh/download#page=1" },
+              { label: B("Chapter 13 - After Human", "Глава 13 - After Human"), url: "https://osf.io/2xkdh/download#page=135" },
+              { label: B("Chapter 14 - Unknowns", "Глава 14 - Неизвестное"), url: "https://osf.io/2xkdh/download#page=145" }
+            ]
+          },
           deck: B(
             "Ted Chiang's essay argues that generative AI may produce artifacts, but art depends on intentional choices across many scales. The useful disagreement is whether this clarifies art or defines it too narrowly.",
             "Эссе Ted Chiang утверждает, что generative AI может производить артефакты, но искусство зависит от намеренных choices на многих уровнях. Полезное разногласие: это проясняет искусство или слишком узко его определяет."
@@ -4827,6 +4911,7 @@
                   <div class="case-line-label">${copy.landing.casesStance}</div>
                   <div>${tx(item.landingStance)}</div>
                 </div>
+                ${renderBookConnection(item, true)}
               </div>
             `
           )
@@ -4929,6 +5014,25 @@
         return `<div class="sidebar-item"><strong>${tx(entry.label)}</strong><p style="margin:6px 0 0;">${tx(entry.summary)}</p>${renderSourceRef(entry)}</div>`;
       }
 
+      function renderBookConnection(item, compact = false) {
+        if (!item.bookConnection) return "";
+        const connection = item.bookConnection;
+        const links = (connection.links || [])
+          .map(
+            (link) =>
+              `<a class="book-case-link" href="${esc(link.url)}" target="_blank" rel="noopener noreferrer">${tx(link.label)}</a>`
+          )
+          .join("");
+
+        return `
+          <div class="case-book-connection ${compact ? "compact" : ""}">
+            <div class="eyebrow">${tx(connection.title)}</div>
+            <p>${tx(connection.copy)}</p>
+            ${links ? `<div class="book-case-links">${links}</div>` : ""}
+          </div>
+        `;
+      }
+
       function renderOriginalPanel(item) {
         if (!item.original) return "";
         const original = item.original;
@@ -4980,6 +5084,7 @@
                   <div class="info-block"><div class="eyebrow">${copy.text.context}</div><p style="margin-top:10px;">${tx(item.submissionContext)}</p></div>
                 </div>
                 <div class="notice">${copy.text.summaryNote}</div>
+                ${renderBookConnection(item)}
                 ${renderOriginalPanel(item)}
               </div>
 

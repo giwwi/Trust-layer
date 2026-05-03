@@ -653,242 +653,250 @@ export const documentCases: DocumentCase[] = [
     }
   },
   {
-    slug: "ai-ready-regions",
-    profileLabel: "Polished but shallow text",
-    title: "AI-Ready Regions: A Practical Framework for Civic Transformation",
-    shortTitle: "AI-ready regions",
-    author: "Northbridge Strategy Lab",
-    type: "White paper",
+    slug: "simple-macroeconomics-ai",
+    profileLabel: "Real economic analysis",
+    title: "The Simple Macroeconomics of AI",
+    shortTitle: "Simple macroeconomics of AI",
+    author: "Daron Acemoglu",
+    type: "Economic policy paper / macroeconomic model",
     submissionContext:
-      "Prepared as sponsor-facing thought leadership for regional development agencies and economic strategy teams.",
+      "Author-provided PDF of an April 2024 paper prepared for Economic Policy, used here as a real Trust Layer example.",
     landingSummary:
-      "Clear structure but low conceptual novelty, weak evidence integrity, and low priority for deeper review.",
-    previewNote: "Failure case: persuasive packaging with limited analytical depth.",
+      "Strong macro frame; check assumptions before stronger use.",
+    previewNote: "Real case: a disciplined macroeconomic estimate of AI's medium-run productivity, wage, inequality and welfare effects.",
     deck:
-      "The paper packages a regional AI transformation framework in confident managerial language, but most claims rest on recycled categories, thin citations, and exemplar inflation.",
+      "The paper uses a task-based macro framework to argue that AI's medium-run aggregate productivity effects are likely nontrivial but modest unless AI creates valuable new tasks.",
     textSections: [
       {
-        heading: "The structure is competent, but the framework is generic",
-        zone: "Claim zone",
+        heading: "A task-based model disciplines AI forecasts",
+        zone: "Main claim",
         summary:
-          "The paper proposes a four-part readiness model, yet each category mirrors familiar consulting tropes.",
+          "The paper argues that if AI works mainly through task-level cost savings, macro gains must be estimated from affected task shares and average cost savings.",
         paragraphs: [
-          "The document is professionally assembled. It opens with a problem statement, introduces a maturity framework, and closes with action steps for civic leaders. The difficulty is not readability. The difficulty is that almost every category in the framework could be transplanted from a generic digital-transformation deck with only minor wording changes.",
-          "Terms like talent, governance, infrastructure, and innovation ecosystem are presented as if the paper were carving a new analytical path. In practice, the framework mainly repackages existing management vocabulary without clarifying what specifically changes when the subject becomes regional AI adoption."
+          "The source paper builds a task-based model in which AI affects productivity through automation and task complementarities, while new tasks are treated separately.",
+          "Hulten's theorem is used to connect micro-level task productivity improvements to aggregate TFP and GDP changes."
         ]
       },
       {
-        heading: "Citations and examples create an impression of support stronger than the document earns",
+        heading: "The main estimate is modest, not dismissive",
         zone: "Evidence-bearing area",
         summary:
-          "The white paper relies on selective benchmarks and thinly described case examples that do not clearly support the larger claims.",
+          "The first estimate gives about 0.71% TFP growth over 10 years; after hard-to-learn tasks are considered, the estimate falls toward 0.55%.",
         paragraphs: [
-          "Several headline claims rely on broad industry forecasts, but the connection between those forecasts and the paper's regional prescriptions is underspecified. Meanwhile, the case examples are too compressed to show whether the cited regions actually succeeded for the reasons the paper implies.",
-          "This is not fabricated nonsense. It is a more familiar problem: evidence is handled in a way that produces confidence cues without building a sturdy inferential chain. The reader gets polished reassurance rather than a clearly inspectable argument."
+          "The paper combines a GDP share of impacted tasks with average cost savings and obtains a 0.71% TFP gain over 10 years.",
+          "After classifying exposed tasks into easy and hard categories, the paper reports a tighter 0.55% upper bound for 10-year TFP gains."
         ]
       },
       {
-        heading: "The document is more useful as a sponsor signal than as an analytical contribution",
-        zone: "Interpretive uncertainty",
+        heading: "GDP gains are not the same as welfare gains",
+        zone: "What needs attention",
         summary:
-          "The strongest explanation of the paper may be reputational or commercial rather than analytical.",
+          "The paper warns that AI-created tasks can raise measured GDP while reducing welfare if they are manipulative or socially harmful.",
         paragraphs: [
-          "One plausible reading is that the white paper exists to position the lab as fluent in AI strategy language for public-sector clients. On that reading, the document succeeds in tone and packaging while remaining comparatively weak as analysis.",
-          "That does not mean it has zero value. It may still help non-specialist stakeholders orient to a conversation. But the current text gives little reason to prioritize it for deeper review when specialist time is scarce."
+          "The paper uses social media, digital ads and IT attack-defense spending to illustrate how bad new tasks can be counted as GDP gains.",
+          "The conclusion stresses that larger benefits may require a reorientation toward reliable information and new tasks that increase worker productivity."
         ]
       }
     ],
     overlay: {
       centralArgument:
-        "Regions need a structured AI-readiness framework, but the current paper mostly offers polished packaging rather than a robust analytical model.",
+        "If AI's effects mainly come from task-level cost savings, aggregate gains are disciplined by the share of tasks affected and average savings; current estimates imply modest 10-year TFP gains.",
       mainClaimZones: [
         {
-          label: "Framework claim",
-          summary: "A four-part maturity model is presented as practical guidance for civic AI strategy."
+          label: "Task-share discipline",
+          summary: "Aggregate gains from AI depend on the GDP share of impacted tasks and average task-level cost savings."
         },
         {
-          label: "Evidence posture",
-          summary: "Benchmarks and case examples are used to signal support, though the support remains thin."
+          label: "Modest 10-year estimate",
+          summary: "The paper estimates AI-driven TFP gains at roughly 0.71% over 10 years, falling toward 0.55% after hard tasks are considered."
         },
         {
-          label: "Likely function",
-          summary: "The paper may operate more as sponsor-facing positioning than as strong analysis."
+          label: "Good versus bad new tasks",
+          summary: "AI-created tasks may produce larger gains, but some can raise measured GDP while reducing welfare."
         }
       ],
       evidenceAreas: [
         {
-          label: "Industry forecasts",
-          summary: "Forecasts are cited but weakly connected to specific regional recommendations."
+          label: "Exposure estimates",
+          summary: "The paper uses Eloundou et al. and Svanberg et al. to estimate exposed tasks and feasible automation shares."
         },
         {
-          label: "Compressed case examples",
-          summary: "Examples gesture toward success stories without giving enough causal detail."
+          label: "Cost-savings estimates",
+          summary: "Average labour cost savings are taken from experimental studies such as Noy and Zhang and Brynjolfsson et al."
+        },
+        {
+          label: "Wage and inequality exercise",
+          summary: "The paper adapts Acemoglu and Restrepo estimates and finds no strong evidence that AI will reduce inequality."
         }
       ],
       uncertaintyZones: [
         {
-          label: "Analytical contribution",
-          summary: "It is unclear whether the paper contributes much beyond familiar management language."
+          label: "External validity of early studies",
+          summary: "Early productivity evidence comes from easier tasks and may not transfer to hard-to-learn tasks."
         },
         {
-          label: "Audience value",
-          summary: "The paper may still orient newcomers, even if it does not merit specialist attention."
+          label: "New task channel",
+          summary: "Potentially larger gains from good new tasks are discussed but not included in the main estimates."
+        },
+        {
+          label: "GDP versus welfare",
+          summary: "Some AI uses may raise measured GDP while reducing welfare, so route this through welfare-aware review."
         }
       ],
       reviewFocus: [
-        "Check whether any of the framework elements actually add analytical distinction.",
-        "Trace citations to see whether evidence is being stretched beyond what it supports.",
-        "Treat sponsor polish as separate from analytical depth."
+        "Check the mapping from exposed tasks to GDP shares and the assumed cost-savings numbers.",
+        "Stress-test the easy-versus-hard task split and its impact on the 0.55% estimate.",
+        "Review whether the treatment of bad new tasks is illustrative, speculative, or policy-relevant enough."
       ],
       reviewMap: [
         {
-          step: "Surface read",
-          emphasis: "Distinguish design quality and communication discipline from substantive contribution."
+          step: "Model read",
+          emphasis: "Check the task framework and Hulten-based aggregation."
         },
         {
-          step: "Citation check",
-          emphasis: "Inspect whether benchmarks and case studies justify the claims attached to them."
+          step: "Estimate check",
+          emphasis: "Inspect the 0.71%, 0.55%, and GDP conversion assumptions."
         },
         {
-          step: "Priority decision",
-          emphasis: "Likely deprioritize for deeper review unless a specific stakeholder-use case justifies it."
+          step: "Welfare challenge",
+          emphasis: "Ask when GDP gains should not be treated as social gains."
         }
       ],
-      reviewStatus: "Illustrative structured reading only. This mock output should not be read as reliable automated interpretation.",
+      reviewStatus: "Prepared first reading only. Source traces help checking; they do not prove the interpretation.",
       quickSignals: [
-        { label: "Presentation discipline", value: "High", tone: "promising" },
-        { label: "Conceptual novelty", value: "Low", tone: "fragile" },
-        { label: "Evidence integrity", value: "Weak", tone: "fragile" },
-        { label: "Deeper review priority", value: "Low", tone: "fragile" }
+        { label: "Model discipline", value: "High", tone: "promising" },
+        { label: "Evidence support", value: "Moderate", tone: "promising" },
+        { label: "What needs checking", value: "Assumptions", tone: "fragile" },
+        { label: "Review priority", value: "Specialist review", tone: "promising" }
       ]
     },
     passport: {
       currentSynthesis:
-        "The paper is readable and professionally composed, but its analytical value appears limited. It offers a tidy frame with weak evidentiary integrity and little conceptual distinction, making it a low-priority candidate for deeper review.",
+        "This is a strong economic analysis with a clear model, inspectable estimates, and explicit uncertainty. It should be escalated to specialist review, especially around exposure measurement, easy/hard task classification, and welfare interpretation.",
       strengths: [
-        "Clear structure and legible executive-summary style packaging.",
-        "Could help orient non-specialist readers to a broad topic area.",
-        "Maintains a consistent tone and presentation standard."
+        "Uses a simple task-based macro model to discipline otherwise large and vague AI-growth forecasts.",
+        "Makes assumptions visible: exposure, feasible automation, cost savings, hard tasks, capital response, and welfare caveats.",
+        "Separates productivity, GDP, wages, inequality, and welfare rather than collapsing them into one optimism/pessimism claim."
       ],
       weaknesses: [
-        "Framework categories are generic and weakly differentiated.",
-        "Evidence is used more as reassurance than as a robust argumentative base.",
-        "The text gives little reason to believe it advances the conversation for expert readers."
+        "Several key estimates remain sensitive to task exposure data and assumptions about what can be feasibly automated.",
+        "The easy-versus-hard task split is plausible and useful, but still partly judgment-based and should be checked.",
+        "The treatment of bad new tasks is intentionally speculative and should not be read as a settled welfare estimate."
       ],
       readingStance:
-        "Read quickly, if at all, as polished orientation material rather than as a serious analytical contribution.",
+        "Read as a high-priority economic paper for targeted review. It is useful for routing debate, but the numerical conclusions should be checked before strong public claims.",
       disagreement:
-        "There may be mild disagreement about whether the paper is serviceable orientation material, but not much disagreement about its low specialist priority.",
+        "Likely disagreement will center on whether the framework underestimates new-task creation, scientific acceleration, or organisational reconfiguration from AI.",
       verificationNeeds: [
-        "Trace key citations and determine whether they actually support the claims attached to them.",
-        "Ask whether the framework differs materially from standard digital-transformation templates.",
-        "Clarify whether the document's purpose is analytical contribution or sponsor positioning."
+        "Reproduce or inspect the task exposure mapping from Eloundou et al. and the feasible automation adjustment from Svanberg et al.",
+        "Check the sensitivity of the TFP result to cost savings, hard-task productivity assumptions, and capital response.",
+        "Review the welfare treatment of bad new tasks and whether the social-media analogy transfers to generative AI."
       ],
       dimensions: [
         {
           name: "Originality",
-          state: "Low",
-          note: "The framework looks familiar and weakly differentiated.",
-          width: 24,
-          tone: "fragile"
+          state: "High",
+          note: "The paper applies a compact macro framework to a noisy AI-growth debate.",
+          width: 82,
+          tone: "promising"
         },
         {
           name: "Coherence",
-          state: "Superficially strong",
-          note: "The document is tidy, but its internal order exceeds its analytical depth.",
-          width: 57,
-          tone: "fragile"
+          state: "Currently coherent",
+          note: "The paper moves clearly from model to estimates to wage, inequality, and welfare implications.",
+          width: 88,
+          tone: "promising"
         },
         {
           name: "Evidence grounding",
-          state: "Weak",
-          note: "Support is thin and often more gestural than probative.",
-          width: 28,
-          tone: "fragile"
+          state: "Moderate",
+          note: "The estimates are inspectable but depend on external exposure and productivity studies.",
+          width: 67,
+          tone: "promising"
         },
         {
           name: "Overclaim restraint",
-          state: "Mixed to weak",
-          note: "Managerial confidence exceeds the argument's actual robustness.",
-          width: 39,
-          tone: "fragile"
+          state: "High",
+          note: "The argument repeatedly marks limits and speculative components.",
+          width: 84,
+          tone: "promising"
         },
         {
           name: "Review stability",
-          state: "Relatively stable",
-          note: "Different readers are unlikely to produce sharply divergent trust profiles.",
-          width: 69,
-          tone: "steady"
+          state: "Escalate to specialist",
+          note: "Enough confidence to escalate, not enough to settle the macro debate.",
+          width: 79,
+          tone: "promising"
         }
       ],
       reviewHistory: [
         {
-          stage: "Submission",
-          actor: "Editorial triage",
-          date: "April 9, 2026",
-          note: "Initially looked stronger than average because of packaging quality."
+          stage: "Source intake",
+          actor: "Trust Layer demo",
+          date: "May 3, 2026",
+          note: "Real Acemoglu PDF added as the third example case."
         },
         {
           stage: "Structured reading",
-          actor: "Internal reviewer",
-          date: "April 15, 2026",
-          note: "Marked as polished but analytically shallow after citation and novelty checks."
+          actor: "Prototype facilitator",
+          date: "May 3, 2026",
+          note: "Separated model, estimates, uncertainty zones, welfare caveat and specialist review needs."
         },
         {
-          stage: "Passport update",
+          stage: "Review note gate",
           actor: "Prototype facilitator",
-          date: "April 19, 2026",
-          note: "Set to low-priority status without claiming the text is useless in all contexts."
+          date: "May 3, 2026",
+          note: "Recommended specialist economic review rather than final reliance on the numerical estimates."
         }
       ]
     },
     workflow: {
       strongest:
-        "The strongest aspect is communication discipline: the paper is organized, legible, and easy for a sponsor or non-specialist reader to absorb.",
+        "The paper is strongest where it turns loose claims about AI growth into an inspectable task-share and cost-savings calculation.",
       weakest:
-        "It is weakest on conceptual distinction and evidentiary integrity. The paper signals authority more than it earns it.",
+        "What needs checking is the sensitivity of the estimates, especially exposure mapping, hard-task assumptions, and the treatment of new tasks.",
       tryingToDo:
-        "The document appears to be trying to position a region-facing AI strategy framework as both practical and inevitable.",
+        "The paper is trying to bound medium-run macro claims about AI and separate productivity, GDP, wages, inequality, and welfare.",
       uncertainty:
-        "My assessment remains mildly uncertain only around its limited orientation value for novice readers.",
+        "Uncertainty remains around new-task creation, AI-driven scientific acceleration, and whether current industry direction will change.",
       changeAssessment:
-        "I would revise upward if the authors could show that their framework produces decisions meaningfully different from standard digital-transformation models. I would revise downward if key citations fail basic scrutiny.",
+        "I would revise upward if stronger evidence showed broad task impact, high cost savings in hard tasks, or valuable new tasks for workers.",
       deeperReview:
-        "Probably not. Deeper review would make sense only if a stakeholder specifically needed to assess its sponsor or market role.",
+        "Yes. Escalate to an economist who can review the model, assumptions, and numerical estimates.",
       contestStructuredReading:
-        "No major contest. If anything, I would make the current reading slightly more direct about the gap between polish and depth.",
+        "Do not contest the core structure yet. Keep the new-task and welfare channels open for specialist challenge.",
       revisePassport:
-        "Only if citation review uncovers either stronger support than expected or more serious evidence inflation than is currently visible.",
+        "Yes. Revise the review note after checking the exposure data, sensitivity assumptions, and welfare argument.",
       secondary: [
         {
           label: "Originality",
-          value: "Low",
-          note: "The framework adds little beyond familiar consulting categories."
+          value: "High",
+          note: "The paper applies a compact macro framework to a noisy AI-growth debate."
         },
         {
           label: "Coherence",
-          value: "Moderate on the surface",
-          note: "The paper is ordered, though not especially deep."
+          value: "High",
+          note: "The paper moves clearly from model to estimates to wage, inequality, and welfare implications."
         },
         {
           label: "Evidence support",
-          value: "Low",
-          note: "Support is selective and weakly connected to the claims."
+          value: "Moderate",
+          note: "The estimates are inspectable but depend on external exposure and productivity studies."
         },
         {
           label: "Overclaim risk",
-          value: "Moderate to high",
-          note: "Presentation confidence outpaces analytical warrant."
+          value: "Low",
+          note: "The argument repeatedly marks limits and speculative components."
         },
         {
           label: "Review confidence",
-          value: "Fairly high",
-          note: "The trust profile looks comparatively stable."
+          value: "Moderate-high",
+          note: "Enough confidence to escalate, not enough to settle the macro debate."
         },
         {
           label: "Domain fit",
-          value: "Low for specialist review",
-          note: "Better suited to quick orientation than to expert attention."
+          value: "High",
+          note: "Strong fit for macroeconomics, labour economics and AI policy review."
         }
       ]
     }

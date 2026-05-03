@@ -166,260 +166,247 @@ export const reviewModes: ReviewMode[] = [
 
 export const documentCases: DocumentCase[] = [
   {
-    slug: "municipal-heat-resilience",
-    profileLabel: "Strong analytical text",
-    title: "Targeting Municipal Heat Resilience Grants Without Penalizing Low-Capacity Cities",
-    shortTitle: "Heat resilience grants",
-    author: "Rina Patel",
-    type: "Policy memo",
+    slug: "after-labor-and-capital",
+    profileLabel: "Real book manuscript",
+    title: "After Labor and Capital: The Political Economy of the Transitional Period",
+    shortTitle: "After Labor and Capital",
+    author: "Aleksei Voloshchuk",
+    type: "Book manuscript / theoretical political economy",
     submissionContext:
-      "Submitted to a philanthropic climate adaptation fund during an open call for pre-screened municipal policy memos.",
-    landingSummary: "Conceptually solid, reasonably supported, and worth specialist review.",
-    previewNote: "Useful case: bounded policy argument with visible caveats.",
+      "Author-provided full book manuscript used here as a real Trust Layer first-reading example.",
+    landingSummary: "Strong theoretical manuscript; needs specialist checking.",
+    previewNote:
+      "Real case: a book-length argument about information as a metafactor and verification as the new bottleneck.",
     deck:
-      "The memo argues that heat adaptation grants should weight both heat burden and municipal administrative capacity so low-capacity cities are not screened out by application friction.",
+      "The manuscript argues that information now reorganizes labor, capital, institutions, and growth, while verification becomes the binding constraint on turning signals into effective knowledge.",
     textSections: [
       {
-        heading: "The selection problem is administrative, not just climatic",
-        zone: "Claim zone",
+        heading: "Information becomes a metafactor",
+        zone: "Main claim",
         summary:
-          "The memo claims many heat resilience grant programs reward application capacity rather than underlying vulnerability.",
+          "The manuscript reframes information as the condition that organizes labor, capital, institutions, and growth rather than as a separable fourth factor.",
         paragraphs: [
-          "Most municipal heat adaptation funds say they target risk, yet their intake processes quietly reward staffing depth, grant-writing fluency, and access to consultant support. The result is a familiar distortion: mid-capacity cities with polished applications absorb disproportionate attention while smaller and poorer jurisdictions remain underrepresented in finalist pools.",
-          "The memo does not argue that current funders are indifferent to need. It argues something narrower and more plausible: the intake mechanism itself imports an administrative bias that must be corrected before the stated distributional aims of these programs can be taken seriously."
+          "Source trace - Abstract, paragraph 29: This manuscript argues that information should no longer be treated merely as one factor among others, but as a metafactor that increasingly reorganizes labor, capital, institutions, and growth.",
+          "Source trace - Introduction, paragraphs 125-131: Information should not be understood as a mere technical variable. It becomes the form through which labor, capital, institutions, and knowledge are organized. The transition period begins when the old categories still work, but no longer explain the main source of change."
         ]
       },
       {
-        heading: "A dual-weight targeting model can correct for hidden exclusion",
-        zone: "Evidence-bearing area",
+        heading: "Verification becomes the bottleneck",
+        zone: "Conceptual mechanism",
         summary:
-          "The author proposes combining heat burden indicators with a municipal capacity index and a manual override for missing-data cases.",
+          "The book's central mechanism is that signal generation becomes cheap faster than verification, selection, and institutional recognition.",
         paragraphs: [
-          "The proposed model weights three elements: observed heat burden, exposure-sensitive population share, and municipal implementation capacity. Rather than treating low administrative capacity as a reason to downgrade feasibility, the memo treats it as a reason to reserve technical assistance and adjust scoring. The design is meant to identify cities that are both heat-exposed and structurally less able to compete in conventional calls.",
-          "Support is modest but real. The memo pulls from published urban heat mapping work, census-linked vulnerability measures, and a small comparative review of recent climate adaptation competitions. That evidence does not prove the model will outperform every alternative, but it does make the basic mechanism legible rather than purely aspirational."
+          "Source trace - Preface, paragraphs 100-104: text generation may become dramatically cheaper, while verification, selection, refinement, and intellectual integration remain far slower and more costly. The manuscript names this limit the verification bottleneck, κ: the barrier separating a raw signal from reliable, verified, applicable knowledge.",
+          "Source trace - Chapter 2, paragraphs 309-342: modern economies are increasingly constrained not by a deficit of signals but by the capacity to filter noise, verify results, and turn information into a reliable basis for action."
         ]
       },
       {
-        heading: "The argument remains bounded by data portability and implementation design",
-        zone: "Interpretive uncertainty",
+        heading: "The empirical support is real but indirect",
+        zone: "Needs checking",
         summary:
-          "The memo explicitly notes where the model may fail when local data are sparse or when legal procurement rules constrain assistance.",
+          "The manuscript includes formal and empirical appendices, but the empirical tests are proxy-based and should not be read as final confirmation.",
         paragraphs: [
-          "Several limits are handled with welcome restraint. The author notes that city-level heat data vary in quality, that some vulnerability indicators lag reality, and that philanthropic programs cannot simply absorb every implementation burden without crowding out local ownership. These are not fatal objections, but they matter for whether the model travels cleanly across jurisdictions.",
-          "What remains open is less the moral logic of the targeting proposal than its operational tuning. Reviewers would still need to test which variables are robust across municipalities and whether the recommended technical-assistance layer is financially viable at scale."
-        ]
-      },
-      {
-        heading: "The memo earns specialist review by linking diagnosis to a plausible decision rule",
-        zone: "Evidence-bearing area",
-        summary:
-          "The closing section argues for pilot review rather than full rollout and points toward a concrete verification path.",
-        paragraphs: [
-          "Crucially, the memo does not present the scoring model as a completed procurement instrument. It proposes a pilot review frame: apply the model retrospectively to recent grant cycles, compare finalist composition, and ask whether the adjusted ranking surfaces cities that program officers informally recognize as overlooked.",
-          "That move matters because it keeps the text inside the bounds of analytical usefulness. The memo is not asking to bypass expertise. It is asking for domain specialists to inspect a credible alternative decision rule that may improve fairness without pretending to automate judgment away."
+          "Source trace - Empirical appendix, paragraphs 2377-2380: the empirical section does not test the whole theory directly. It looks for indirect signs: a shift from generation to verification, faster labor-share decline in information-intensive settings, and country clusters by informational infrastructure.",
+          "Source trace - Empirical appendix, paragraphs 2459-2461 and 2622-2626: the evidence is presented as a stable divergence between signal production and signal admission, but the manuscript also notes limitations in pricing series, PubMed proxies, Retraction Watch coverage, and causal identification."
         ]
       }
     ],
     overlay: {
       centralArgument:
-        "Grant triage for municipal heat resilience should correct for administrative-capacity bias, not merely rank cities by need or by proposal polish.",
+        "Information is no longer just one input in production. It acts as a metafactor that reshapes the production function itself, while the verification bottleneck limits which signals become economically effective knowledge.",
       mainClaimZones: [
         {
-          label: "Diagnosis",
-          summary: "Current calls over-reward cities that can package competence rather than cities facing the sharpest heat burden."
+          label: "Metafactor thesis",
+          summary: "Information is treated as the form that reorganizes factors rather than as an additional input beside labor and capital."
         },
         {
-          label: "Mechanism",
-          summary: "A dual-weight model can treat low capacity as a support condition instead of an exclusion signal."
+          label: "Verification bottleneck",
+          summary: "The main scarcity shifts from producing signals to selecting, validating, and institutionally recognizing them."
         },
         {
-          label: "Scope",
-          summary: "The proposal is for retrospective testing and specialist review, not immediate automated allocation."
+          label: "Transition-period claim",
+          summary: "The book describes a historical interval where old economic categories still matter but no longer explain the main source of change."
         }
       ],
       evidenceAreas: [
         {
-          label: "Comparative grant review",
-          summary: "Uses recent adaptation competitions to show how application burden shapes finalist pools."
+          label: "Formal appendix",
+          summary: "The manuscript gives a formal structure for I*, κ, informational regimes, and regime-dependent production effects."
         },
         {
-          label: "Urban heat and vulnerability sources",
-          summary: "Pulls from public heat mapping and census-linked exposure measures to ground the burden side of the model."
+          label: "Empirical appendix",
+          summary: "The evidence combines verification-lag indicators, platform-era labor-share patterns, and country clusters by informational infrastructure."
         },
         {
-          label: "Pilotability",
-          summary: "Suggests retrospective back-testing rather than speculative deployment claims."
+          label: "Self-verification posture",
+          summary: "The manuscript explicitly treats AI-assisted writing as requiring stronger verification rather than less."
         }
       ],
       uncertaintyZones: [
         {
-          label: "Index transportability",
-          summary: "Capacity measures may behave differently across municipalities with uneven administrative data."
+          label: "Conceptual stretch",
+          summary: "The definition of information is intentionally broad. A specialist should check whether the metafactor concept adds explanatory power or absorbs too much."
         },
         {
-          label: "Program design spillovers",
-          summary: "Technical assistance may improve fairness while also changing incentives in ways the memo does not fully model."
+          label: "Proxy and identification risk",
+          summary: "The empirical appendix is useful but indirect. Verification capacity, I*, and κ remain difficult to measure cleanly."
         }
       ],
       reviewFocus: [
-        "Check whether the proposed capacity indicators are sufficiently robust across city types.",
-        "Verify that the retrospective pilot design can be run using data the funder can actually access.",
-        "Ask whether alternative fairness mechanisms would achieve similar results with less complexity."
+        "Check whether the metafactor distinction is genuinely different from technology, ideas, institutions, or knowledge capital.",
+        "Check whether the formal model makes the verification bottleneck precise enough to test.",
+        "Check whether the empirical appendix supports a regime-dependent claim rather than a simple AI-displacement story."
       ],
       reviewMap: [
         {
-          step: "Triage read",
-          emphasis: "Separate the fairness diagnosis from the specific scoring model and test whether both hold independently."
+          step: "Conceptual check",
+          emphasis: "Ask whether the book's main category clarifies economic change or becomes too elastic."
         },
         {
-          step: "Data check",
-          emphasis: "Inspect the portability of the heat burden and municipal capacity measures."
+          step: "Model check",
+          emphasis: "Inspect how I*, κ, labor share, and institutional verification are linked."
         },
         {
-          step: "Policy relevance",
-          emphasis: "Confirm that philanthropic grantmaking constraints do not undermine the recommended assistance layer."
-        },
-        {
-          step: "Escalation decision",
-          emphasis: "Route to specialist review if the retrospective pilot design looks feasible."
+          step: "Empirical check",
+          emphasis: "Review proxy validity, identification limits, and whether the evidence fits the theoretical burden."
         }
       ],
-      reviewStatus: "Illustrative structured reading prepared for triage only. It is not proof of reliable automatic interpretation.",
+      reviewStatus:
+        "Real manuscript case. This is a provisional first reading, not expert review and not validation of the book's claims.",
       quickSignals: [
-        { label: "Conceptual coherence", value: "Steady", tone: "steady" },
-        { label: "Evidence support", value: "Reasonably supported", tone: "promising" },
-        { label: "Overclaim risk", value: "Constrained", tone: "steady" },
-        { label: "Review priority", value: "Worth specialist review", tone: "promising" }
+        { label: "Conceptual architecture", value: "Currently coherent", tone: "steady" },
+        { label: "Evidence support", value: "Partial but inspectable", tone: "steady" },
+        { label: "Overclaim risk", value: "Needs attention", tone: "fragile" },
+        { label: "Review priority", value: "Specialist review warranted", tone: "promising" }
       ]
     },
     passport: {
       currentSynthesis:
-        "This reads as a credible, bounded policy memo. The core diagnosis is intelligible, the proposed mechanism is specific enough to inspect, and the text is disciplined about where expert follow-up is still needed.",
+        "This reads as a serious theoretical manuscript with a clear central architecture: information as metafactor, verification as bottleneck, and political economy as the struggle over legitimate knowledge. The case warrants specialist review, not a final trust judgment.",
       strengths: [
-        "Names a real allocation problem and ties it to a plausible mechanism rather than a vague fairness appeal.",
-        "Uses enough public evidence to make the model inspectable without pretending the evidence is decisive.",
-        "Keeps operational claims modest by recommending retrospective testing before live use."
+        "The manuscript has a strong organizing concept that links production theory, institutions, AI, and verification without reducing the argument to a simple automation story.",
+        "The text makes its claims checkable by including formal and empirical appendices rather than leaving the thesis at the level of manifesto.",
+        "It is self-aware about verification: the manuscript explicitly treats AI-assisted writing as requiring stronger checking rather than less."
       ],
       weaknesses: [
-        "The administrative-capacity index may prove noisy or unstable across municipalities.",
-        "The memo does not fully compare its approach against simpler alternatives such as assisted application support without scoring changes.",
-        "Cost and governance implications of the technical-assistance layer remain only lightly modeled."
+        "The concept of information is very broad, so a reviewer should check whether the metafactor thesis remains discriminating enough.",
+        "The empirical appendix is proxy-based and may not fully carry the theoretical burden placed on κ, I*, and verification capacity.",
+        "Some political-economic conclusions may outrun what the formal and empirical material can establish at this stage."
       ],
       readingStance:
-        "Read as a serious policy design memo that deserves domain-specific scrutiny before operational adoption.",
+        "Read as a serious book manuscript that deserves conceptual review by political economists and methodological review of the empirical appendix.",
       disagreement:
-        "Reviewer disagreement is limited at this stage. The main debate is about implementation tuning, not the memo's overall seriousness.",
+        "Likely disagreement will not be about whether the manuscript is serious. It will be about whether 'information as metafactor' is a necessary new category or a broad relabeling of technology, institutions, and knowledge.",
       verificationNeeds: [
-        "Test the proposed ranking model on a recent grant cycle with known applicant outcomes.",
-        "Validate whether the capacity measures remain meaningful across small, rural, and fiscally distressed municipalities.",
-        "Check legal and programmatic constraints on bundling technical assistance with grant selection.",
-        "Compare against lower-complexity fairness interventions."
+        "Check the formal appendix for whether κ and I* are defined tightly enough to do real explanatory work.",
+        "Review empirical proxies for verification capacity, labor-share dynamics, platform-era effects, and country clustering.",
+        "Compare the argument against adjacent literatures on Hayek, Romer, North, endogenous growth, intangible capital, and platform power."
       ],
       dimensions: [
         {
           name: "Originality",
-          state: "Meaningful but not flashy",
-          note: "The contribution is less a novel theory than a disciplined decision-rule redesign.",
-          width: 68,
+          state: "High but contested",
+          note: "The metafactor frame is ambitious and distinctive, though it needs comparison with adjacent concepts.",
+          width: 82,
           tone: "steady"
         },
         {
           name: "Coherence",
-          state: "High",
-          note: "Diagnosis, mechanism, and scope fit together cleanly.",
-          width: 84,
+          state: "Currently coherent",
+          note: "The main architecture holds across the abstract, introduction, conceptual chapters, and appendices.",
+          width: 78,
           tone: "steady"
         },
         {
           name: "Evidence grounding",
-          state: "Moderately strong",
-          note: "Support is enough for triage and follow-up, though not final operational confidence.",
-          width: 72,
-          tone: "promising"
-        },
-        {
-          name: "Overclaim restraint",
-          state: "Strong",
-          note: "The memo is explicit that pilot testing must precede deployment.",
-          width: 86,
+          state: "Partial and inspectable",
+          note: "The empirical material supports a plausible pattern but not a final causal demonstration.",
+          width: 62,
           tone: "steady"
         },
         {
+          name: "Overclaim restraint",
+          state: "Needs checking",
+          note: "The transition-period claim is broad enough to require careful bounding.",
+          width: 54,
+          tone: "fragile"
+        },
+        {
           name: "Review stability",
-          state: "Fairly stable",
-          note: "Different readers may debate details, but the broad profile is not highly unstable.",
-          width: 78,
+          state: "Specialist review needed",
+          note: "Confidence is enough to recommend review, not enough to settle the argument.",
+          width: 70,
           tone: "promising"
         }
       ],
       reviewHistory: [
         {
           stage: "Submission",
-          actor: "Program editor",
-          date: "April 16, 2026",
-          note: "Flagged as analytically stronger than most memo submissions but requiring policy-method review."
+          actor: "Author",
+          date: "March 24, 2026",
+          note: "Full draft manuscript provided for a real Trust Layer first-reading case."
         },
         {
           stage: "Structured reading",
-          actor: "Internal reviewer",
-          date: "April 18, 2026",
-          note: "Mapped the core argument and marked implementation variables as the main uncertainty zone."
+          actor: "Trust Layer prototype",
+          date: "May 3, 2026",
+          note: "Mapped central architecture, source traces, uncertainty zones, and specialist review needs."
         },
         {
-          stage: "Passport update",
+          stage: "Review note",
           actor: "Prototype facilitator",
-          date: "April 21, 2026",
-          note: "Maintained a provisional positive stance without converting it into a final recommendation."
+          date: "May 3, 2026",
+          note: "Kept the case provisional and avoided converting first reading into validation."
         }
       ]
     },
     workflow: {
       strongest:
-        "The memo is strongest where it links a fairness diagnosis to a decision rule that a specialist could actually inspect, critique, and back-test.",
+        "The manuscript is strongest where it links the metafactor thesis to a concrete bottleneck: verification, selection, and institutional recognition become the scarce layer after signal generation becomes cheap.",
       weakest:
-        "It is weakest on the stability of the administrative-capacity index and on whether the technical-assistance layer is affordable at program scale.",
+        "It is weakest where the empirical proxies are asked to carry a broad theoretical claim about the transformation of political economy.",
       tryingToDo:
-        "The text is trying to reframe grant triage so low-capacity municipalities are not treated as low-merit simply because they are harder to support.",
+        "The text is trying to rebuild economic explanation around information as the organizing condition of production, institutions, and distribution.",
       uncertainty:
-        "My assessment remains uncertain around data portability, comparative alternatives, and real-world program administration constraints.",
+        "My assessment remains uncertain around category boundaries, empirical identification, and whether the political conclusions follow from the mechanism rather than from adjacent normative commitments.",
       changeAssessment:
-        "I would revise upward if retrospective testing showed the model reliably surfaced overlooked high-need cities. I would revise downward if the capacity index proved inconsistent or easily gamed.",
+        "I would revise upward if a specialist review finds that κ and I* are operationalized in a way that survives comparison with simpler concepts.",
       deeperReview:
-        "Yes. Recommend deeper review in a climate adaptation funding context with policy-method and implementation expertise present.",
+        "Yes. Recommend deeper checking by a political economist, a growth-theory reader, and a methods reviewer for the empirical appendix.",
       contestStructuredReading:
-        "Not substantially. I might refine the memo's strongest value as procedural fairness rather than predictive precision, but the current structured reading is directionally sound.",
+        "Yes. I would contest any reading that treats this as empirically settled. The safer reading is: serious theoretical architecture with partial, inspectable empirical support.",
       revisePassport:
-        "Yes, after a specialist reviews the index design and the feasibility of retrospective testing.",
+        "Yes. Revise the review note after checking the formal appendix, empirical appendix, and adjacent literatures.",
       secondary: [
         {
           label: "Originality",
-          value: "Moderate",
-          note: "Useful synthesis rather than a radically new policy concept."
+          value: "High",
+          note: "The metafactor frame is ambitious and distinctive, though it needs comparison with adjacent concepts."
         },
         {
           label: "Coherence",
-          value: "High",
-          note: "The argument holds together across sections with limited slippage."
+          value: "Currently coherent",
+          note: "The main architecture holds across the abstract, introduction, conceptual chapters, and appendices."
         },
         {
           label: "Evidence support",
-          value: "Moderately strong",
-          note: "Enough support for triage, not enough for confident implementation."
+          value: "Partial",
+          note: "The empirical material supports a plausible pattern but not a final causal demonstration."
         },
         {
           label: "Overclaim risk",
-          value: "Low to moderate",
-          note: "The memo stays relatively disciplined about scope."
+          value: "Needs attention",
+          note: "The transition-period claim is broad enough to require careful bounding."
         },
         {
           label: "Review confidence",
           value: "Moderate",
-          note: "Confidence is decent but still depends on technical validation."
+          note: "Confidence is enough to recommend review, not enough to settle the argument."
         },
         {
           label: "Domain fit",
           value: "High",
-          note: "Well matched to specialist philanthropic or municipal policy review."
+          note: "Best suited for theory, political economy, and methods review."
         }
       ]
     }

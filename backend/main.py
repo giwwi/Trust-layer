@@ -117,7 +117,13 @@ def analyze(request: Request, payload: AnalyzeRequest) -> TriageResult:
         effective_settings = settings
 
         if supplied_api_key:
-            effective_settings = replace(settings, api_key=supplied_api_key, max_input_chars=settings.byok_max_input_chars)
+            input_size = max(len(cleaned), settings.max_input_chars, settings.chunk_size_chars)
+            effective_settings = replace(
+                settings,
+                api_key=supplied_api_key,
+                max_input_chars=input_size,
+                chunk_size_chars=input_size,
+            )
             client = OpenAILLMClient(effective_settings)
         else:
             limiter.check_and_increment(_client_ip(request))
@@ -139,13 +145,15 @@ def analyze(request: Request, payload: AnalyzeRequest) -> TriageResult:
 
 
 def _validate_public_demo_text(text: str, has_own_key: bool = False) -> None:
-    max_chars = settings.byok_max_input_chars if has_own_key else settings.max_input_chars
     if not text:
         raise AnalyzeError("Please paste text or upload a supported file before running analysis.")
     if len(text) < settings.min_input_chars:
         raise AnalyzeError(
             f"Text is too short for this demo. Please provide at least {settings.min_input_chars} characters of analytical text."
         )
+    if has_own_key:
+        return
+    max_chars = settings.max_input_chars
     if len(text) > max_chars:
         raise AnalyzeError(
             f"This demo accepts at most {max_chars} characters. Please shorten the text or use the example."

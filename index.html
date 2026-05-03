@@ -1351,8 +1351,7 @@
         PUBLIC_DEMO_MODE: true,
         LIVE_AI_ENABLED: true,
         BYOK_ENABLED: true,
-        MAX_INPUT_CHARS: 8000,
-        BYOK_MAX_INPUT_CHARS: 30000
+        MAX_INPUT_CHARS: 8000
       };
 
       window.PUBLIC_DEMO_CONFIG = PUBLIC_DEMO_CONFIG;
@@ -1360,7 +1359,6 @@
       window.LIVE_AI_ENABLED = PUBLIC_DEMO_CONFIG.LIVE_AI_ENABLED;
       window.BYOK_ENABLED = PUBLIC_DEMO_CONFIG.BYOK_ENABLED;
       window.MAX_INPUT_CHARS = PUBLIC_DEMO_CONFIG.MAX_INPUT_CHARS;
-      window.BYOK_MAX_INPUT_CHARS = PUBLIC_DEMO_CONFIG.BYOK_MAX_INPUT_CHARS;
 
       const ui = {
         en: {
@@ -1540,6 +1538,7 @@
             ownApiKeyLabel: "OpenAI API key",
             ownApiKeyPlaceholder: "Paste a temporary low-limit key",
             ownApiKeyWarning: "For public demos, use a temporary key with a low spending limit.",
+            ownApiKeyNoLimit: "Own API key mode: no demo character limit.",
             ownApiKeyRequired: "Paste an API key or choose another run mode.",
             byokFailed:
               "The request failed. You can still explore the workflow with an example.",
@@ -2183,6 +2182,7 @@
             ownApiKeyPlaceholder: "Вставьте временный ключ с низким лимитом",
             ownApiKeyWarning:
               "Для публичных демо используйте временный ключ с низким лимитом расходов.",
+            ownApiKeyNoLimit: "Режим своего API-ключа: лимита символов в демо нет.",
             ownApiKeyRequired: "Вставьте API-ключ или выберите другой режим.",
             byokFailed:
               "Запрос не удался. Вы всё равно можете пройти сценарий на примере.",

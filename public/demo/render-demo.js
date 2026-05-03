@@ -41,6 +41,7 @@
       ownApiKeyLabel: "OpenAI API key",
       ownApiKeyPlaceholder: "Paste a temporary low-limit key",
       ownApiKeyWarning: "For public demos, use a temporary key with a low spending limit.",
+      ownApiKeyNoLimit: "Own API key mode: no demo character limit.",
       ownApiKeyRequired: "Paste an API key or choose another run mode.",
       byokFailed: "The request failed. You can still explore the workflow with an example.",
       liveInputNote: "Live AI demo is limited. Paste a short analytical text, not confidential material.",
@@ -246,7 +247,7 @@
             <textarea class="text-field short" data-demo-paste placeholder="${escapeHtml(copy.inputPlaceholder || "")}" ${busy ? "disabled" : ""}>${escapeHtml(demoState.pastedText)}</textarea>
             <div class="tiny">${escapeHtml(copy.liveInputNote || "")}</div>
             <div class="tiny">${escapeHtml(copy.privacyNote || "")}</div>
-            <div class="tiny">${escapeHtml(copy.characterLimit || "")} ${formatCharacterCount(sourceText)}</div>
+            <div class="tiny">${escapeHtml(formatCharacterLimit(copy, sourceText))}</div>
             ${tooLong ? `<div class="notice warn" style="margin-top:12px;">${escapeHtml(copy.tooLong || "")}<div class="section-actions" style="margin-top:14px;"><button class="cta" data-demo-open-example>${escapeHtml(copy.openExample || "Open example")}</button></div></div>` : ""}
           </div>
           <div class="section-actions">
@@ -783,7 +784,7 @@
 
   function maxInputChars() {
     if (demoState.runMode === "own_key") {
-      return Number(window.PUBLIC_DEMO_CONFIG?.BYOK_MAX_INPUT_CHARS || window.BYOK_MAX_INPUT_CHARS || 30000);
+      return 0;
     }
     return Number(window.PUBLIC_DEMO_CONFIG?.MAX_INPUT_CHARS || window.MAX_INPUT_CHARS || 8000);
   }
@@ -809,6 +810,15 @@
   function formatCharacterCount(text) {
     const count = String(text || "").length;
     return `${count.toLocaleString()} / ${maxInputChars().toLocaleString()}`;
+  }
+
+  function formatCharacterLimit(copy, text) {
+    const count = String(text || "").length;
+    const max = maxInputChars();
+    if (max <= 0) {
+      return `${copy.ownApiKeyNoLimit || "Own API key mode: no demo character limit."} ${count.toLocaleString()} characters.`;
+    }
+    return `${copy.characterLimit || ""} ${count.toLocaleString()} / ${max.toLocaleString()}`;
   }
 
   function isLiveUnavailableError(errorText, copy) {

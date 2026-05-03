@@ -52,6 +52,8 @@ Optional, if enabled.
 
 Advanced users can run one request with their own OpenAI API key. The key is sent to the backend only for that request. It is not stored by the demo and is not written to logs. For public demos, use a temporary key with a low spending limit.
 
+Own API key mode does not apply the public demo character limit. Very large inputs may still fail if the AI provider or selected model cannot accept the context.
+
 Never put `OPENAI_API_KEY` in frontend code.
 
 ## Privacy
@@ -89,7 +91,6 @@ Optional public-demo settings:
 ```bash
 export PUBLIC_DEMO_MODEL=gpt-4o-mini
 export MAX_INPUT_CHARS=8000
-export BYOK_MAX_INPUT_CHARS=30000
 export MAX_OUTPUT_TOKENS=1200
 export MAX_REQUESTS_PER_IP_PER_DAY=3
 export PUBLIC_DAILY_REQUEST_LIMIT=200

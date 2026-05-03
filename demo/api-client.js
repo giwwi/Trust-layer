@@ -1,5 +1,11 @@
 (function () {
-  const DEFAULT_BASE_URL = window.TRUST_LAYER_API_BASE || "http://127.0.0.1:8000";
+  const DEFAULT_BASE_URL = resolveBaseUrl();
+
+  function resolveBaseUrl() {
+    if (window.TRUST_LAYER_API_BASE) return window.TRUST_LAYER_API_BASE;
+    if (window.location.protocol === "http:" || window.location.protocol === "https:") return "/api";
+    return window.TRUST_LAYER_PUBLIC_API_BASE || "https://trust-layer-sand.vercel.app/api";
+  }
 
   async function parseResponse(response) {
     const contentType = response.headers.get("content-type") || "";

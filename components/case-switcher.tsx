@@ -5,7 +5,7 @@ import { documentCases } from "@/lib/mock-data";
 const caseTints: Record<string, string> = {
   "after-labor-and-capital": "from-slate-100 to-emerald-50",
   "ai-job-quality-working-paper": "from-stone-100 to-amber-50",
-  "simple-macroeconomics-ai": "from-zinc-100 to-sky-50",
+  "state-of-ai-2025": "from-zinc-100 to-sky-50",
   "civic-provenance-ledger": "from-blue-100 to-stone-100"
 };
 

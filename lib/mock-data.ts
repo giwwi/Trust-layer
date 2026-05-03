@@ -653,180 +653,182 @@ export const documentCases: DocumentCase[] = [
     }
   },
   {
-    slug: "simple-macroeconomics-ai",
-    profileLabel: "Real economic analysis",
-    title: "The Simple Macroeconomics of AI",
-    shortTitle: "Simple macroeconomics of AI",
-    author: "Daron Acemoglu",
-    type: "Economic policy paper / macroeconomic model",
+    slug: "state-of-ai-2025",
+    profileLabel: "Large consulting report",
+    title: "The State of AI in 2025: Agents, Innovation, and Transformation",
+    shortTitle: "State of AI 2025",
+    author: "QuantumBlack, AI by McKinsey",
+    type: "Survey report / consulting analysis",
     submissionContext:
-      "Author-provided PDF of an April 2024 paper prepared for Economic Policy, used here as a real Trust Layer example.",
+      "McKinsey Global Survey report from November 2025, used here as a large-document Trust Layer test case.",
     landingSummary:
-      "Strong macro frame; check assumptions before stronger use.",
-    previewNote: "Real case: a disciplined macroeconomic estimate of AI's medium-run productivity, wage, inequality and welfare effects.",
+      "Polished and data-rich; check the leap from survey patterns to prescriptions.",
+    previewNote:
+      "Real case: a polished, data-heavy AI market report that is useful but needs careful separation between survey evidence and consulting narrative.",
     deck:
-      "The paper uses a task-based macro framework to argue that AI's medium-run aggregate productivity effects are likely nontrivial but modest unless AI creates valuable new tasks.",
+      "The report argues that AI use is now widespread, agent use is emerging, and enterprise value remains limited unless organizations redesign workflows and treat AI as a transformation and innovation agenda.",
     textSections: [
       {
-        heading: "A task-based model disciplines AI forecasts",
+        heading: "Broad adoption, limited scale",
         zone: "Main claim",
         summary:
-          "The paper argues that if AI works mainly through task-level cost savings, macro gains must be estimated from affected task shares and average cost savings.",
+          "The report's strongest descriptive claim is that AI use is common, but enterprise-wide scaling and financial impact remain limited.",
         paragraphs: [
-          "The source paper builds a task-based model in which AI affects productivity through automation and task complementarities, while new tasks are treated separately.",
-          "Hulten's theorem is used to connect micro-level task productivity improvements to aggregate TFP and GDP changes."
+          "The report says nearly two-thirds of respondents have not yet begun scaling AI across the enterprise, while 62 percent are at least experimenting with agents.",
+          "Only 39 percent report any enterprise-level EBIT impact, and most of those report less than 5 percent EBIT impact from AI."
         ]
       },
       {
-        heading: "The main estimate is modest, not dismissive",
+        heading: "The value story shifts from pilots to management practice",
         zone: "Evidence-bearing area",
         summary:
-          "The first estimate gives about 0.71% TFP growth over 10 years; after hard-to-learn tasks are considered, the estimate falls toward 0.55%.",
+          "The report links high performance to growth goals, workflow redesign, leadership ownership, investment and human validation practices.",
         paragraphs: [
-          "The paper combines a GDP share of impacted tasks with average cost savings and obtains a 0.71% TFP gain over 10 years.",
-          "After classifying exposed tasks into easy and hard categories, the paper reports a tighter 0.55% upper bound for 10-year TFP gains."
+          "High performers are defined as respondents reporting more than 5 percent EBIT impact and significant value; they are more likely to pursue transformative change and redesign workflows.",
+          "The report emphasizes human validation, operating model, technology, data, talent and adoption practices that resemble McKinsey's Rewired transformation playbook."
         ]
       },
       {
-        heading: "GDP gains are not the same as welfare gains",
+        heading: "Survey evidence does not settle the causal story",
         zone: "What needs attention",
         summary:
-          "The paper warns that AI-created tasks can raise measured GDP while reducing welfare if they are manipulative or socially harmful.",
+          "The document is not shallow in the sense of having no evidence, but its strongest prescriptive claims depend on self-reported correlations and a consulting transformation frame.",
         paragraphs: [
-          "The paper uses social media, digital ads and IT attack-defense spending to illustrate how bad new tasks can be counted as GDP gains.",
-          "The conclusion stresses that larger benefits may require a reorientation toward reliable information and new tasks that increase worker productivity."
+          "The workflow-redesign result comes from a relative weights analysis of survey variables, not a direct experimental test.",
+          "The survey uses 1,993 respondents in 105 nations and weights responses by national contribution to global GDP; this supports breadth but not causal proof."
         ]
       }
     ],
     overlay: {
       centralArgument:
-        "If AI's effects mainly come from task-level cost savings, aggregate gains are disciplined by the share of tasks affected and average savings; current estimates imply modest 10-year TFP gains.",
+        "AI adoption is broad but still shallow at enterprise scale; the organizations reporting the most value combine ambitious goals, workflow redesign, leadership ownership, investment and human-in-the-loop practices.",
       mainClaimZones: [
         {
-          label: "Task-share discipline",
-          summary: "Aggregate gains from AI depend on the GDP share of impacted tasks and average task-level cost savings."
+          label: "Adoption is broad, scaling is limited",
+          summary: "Regular AI use is widespread, but most organizations remain in experimentation or piloting rather than enterprise scaling."
         },
         {
-          label: "Modest 10-year estimate",
-          summary: "The paper estimates AI-driven TFP gains at roughly 0.71% over 10 years, falling toward 0.55% after hard tasks are considered."
+          label: "Agents are visible but not widespread",
+          summary: "The report finds high curiosity in agents, but actual scaling appears concentrated and function-specific."
         },
         {
-          label: "Good versus bad new tasks",
-          summary: "AI-created tasks may produce larger gains, but some can raise measured GDP while reducing welfare."
+          label: "Transformation beats efficiency-only framing",
+          summary: "The report's prescriptive center is that high performers pursue growth or innovation and redesign workflows, not just cost reduction."
         }
       ],
       evidenceAreas: [
         {
-          label: "Exposure estimates",
-          summary: "The paper uses Eloundou et al. and Svanberg et al. to estimate exposed tasks and feasible automation shares."
+          label: "Survey base",
+          summary: "The report is based on 1,993 respondents across 105 nations, with weighting by national contribution to global GDP."
         },
         {
-          label: "Cost-savings estimates",
-          summary: "Average labour cost savings are taken from experimental studies such as Noy and Zhang and Brynjolfsson et al."
+          label: "EBIT and qualitative impact",
+          summary: "The report distinguishes limited enterprise-wide EBIT impact from stronger self-reported innovation, customer and employee indicators."
         },
         {
-          label: "Wage and inequality exercise",
-          summary: "The paper adapts Acemoglu and Restrepo estimates and finds no strong evidence that AI will reduce inequality."
+          label: "Risk mitigation evidence",
+          summary: "The report records both increasing mitigation activity and negative consequences, especially inaccuracy."
         }
       ],
       uncertaintyZones: [
         {
-          label: "External validity of early studies",
-          summary: "Early productivity evidence comes from easier tasks and may not transfer to hard-to-learn tasks."
+          label: "Causality",
+          summary: "The report shows patterns among self-described high performers, but does not prove that the listed practices caused the reported value."
         },
         {
-          label: "New task channel",
-          summary: "Potentially larger gains from good new tasks are discussed but not included in the main estimates."
+          label: "Vendor-frame risk",
+          summary: "The prescriptions overlap with McKinsey's transformation playbook, so the reader should separate survey findings from service-positioning logic."
         },
         {
-          label: "GDP versus welfare",
-          summary: "Some AI uses may raise measured GDP while reducing welfare, so route this through welfare-aware review."
+          label: "Outcome measurement",
+          summary: "Some outcomes are financial, but many are qualitative self-reports such as innovation, satisfaction and differentiation."
         }
       ],
       reviewFocus: [
-        "Check the mapping from exposed tasks to GDP shares and the assumed cost-savings numbers.",
-        "Stress-test the easy-versus-hard task split and its impact on the 0.55% estimate.",
-        "Review whether the treatment of bad new tasks is illustrative, speculative, or policy-relevant enough."
+        "Check definitions: regular AI use, scaling, AI agents, high performer and significant value.",
+        "Separate descriptive survey findings from advice about transformation, workflow redesign and investment.",
+        "Ask whether the report is useful as market intelligence, not whether it proves a general theory of AI value capture."
       ],
       reviewMap: [
         {
-          step: "Model read",
-          emphasis: "Check the task framework and Hulten-based aggregation."
+          step: "Survey read",
+          emphasis: "Check sample, definitions, self-reporting and weighting."
         },
         {
-          step: "Estimate check",
-          emphasis: "Inspect the 0.71%, 0.55%, and GDP conversion assumptions."
+          step: "Prescription check",
+          emphasis: "Ask which recommendations follow from evidence and which come from consulting priors."
         },
         {
-          step: "Welfare challenge",
-          emphasis: "Ask when GDP gains should not be treated as social gains."
+          step: "Use-case decision",
+          emphasis: "Use for market orientation, not as standalone proof of enterprise AI strategy."
         }
       ],
-      reviewStatus: "Prepared first reading only. Source traces help checking; they do not prove the interpretation.",
+      reviewStatus:
+        "Prepared first reading only. The report is not dismissed as shallow; the main check is how far survey data support the transformation claims.",
       quickSignals: [
-        { label: "Model discipline", value: "High", tone: "promising" },
-        { label: "Evidence support", value: "Moderate", tone: "promising" },
-        { label: "What needs checking", value: "Assumptions", tone: "fragile" },
-        { label: "Review priority", value: "Specialist review", tone: "promising" }
+        { label: "Presentation polish", value: "High", tone: "promising" },
+        { label: "Survey base", value: "Substantial", tone: "promising" },
+        { label: "What needs checking", value: "Causal leap", tone: "fragile" },
+        { label: "Review priority", value: "Bounded review", tone: "steady" }
       ]
     },
     passport: {
       currentSynthesis:
-        "This is a strong economic analysis with a clear model, inspectable estimates, and explicit uncertainty. It should be escalated to specialist review, especially around exposure measurement, easy/hard task classification, and welfare interpretation.",
+        "This is not merely polished but shallow. It is a useful, data-rich market report with a clear survey base. Its limits are elsewhere: self-reported outcomes, consulting-frame prescriptions and an uncertain causal bridge from management practices to enterprise value.",
       strengths: [
-        "Uses a simple task-based macro model to discipline otherwise large and vague AI-growth forecasts.",
-        "Makes assumptions visible: exposure, feasible automation, cost savings, hard tasks, capital response, and welfare caveats.",
-        "Separates productivity, GDP, wages, inequality, and welfare rather than collapsing them into one optimism/pessimism claim."
+        "Large survey base with explicit dates, sample size, country coverage and weighting note.",
+        "Separates broad AI adoption from limited enterprise-level value, which makes the report more useful than a simple hype deck.",
+        "Includes risk mitigation and human validation rather than presenting AI scaling as frictionless automation."
       ],
       weaknesses: [
-        "Several key estimates remain sensitive to task exposure data and assumptions about what can be feasibly automated.",
-        "The easy-versus-hard task split is plausible and useful, but still partly judgment-based and should be checked.",
-        "The treatment of bad new tasks is intentionally speculative and should not be read as a settled welfare estimate."
+        "Many important outcomes are self-reported and qualitative, so they should not be treated as hard enterprise-performance measures.",
+        "The causal story from ambition, workflow redesign and human validation to value remains underdetermined by survey evidence.",
+        "The report's prescriptions overlap with a consulting transformation playbook, creating possible sponsor-positioning bias."
       ],
       readingStance:
-        "Read as a high-priority economic paper for targeted review. It is useful for routing debate, but the numerical conclusions should be checked before strong public claims.",
+        "Read as a credible market-intelligence report and a useful demonstration of Trust Layer on a large document. Do not use it alone as proof that any specific AI transformation program will create value.",
       disagreement:
-        "Likely disagreement will center on whether the framework underestimates new-task creation, scientific acceleration, or organisational reconfiguration from AI.",
+        "Reviewers may disagree on whether the report is a strong evidence-based analysis or a polished consulting narrative with a strong survey appendix. The current reading keeps both possibilities visible.",
       verificationNeeds: [
-        "Reproduce or inspect the task exposure mapping from Eloundou et al. and the feasible automation adjustment from Svanberg et al.",
-        "Check the sensitivity of the TFP result to cost savings, hard-task productivity assumptions, and capital response.",
-        "Review the welfare treatment of bad new tasks and whether the social-media analogy transfers to generative AI."
+        "Inspect survey definitions, especially regular use, scaling, high performer, significant value and AI agent.",
+        "Check whether relative weights analysis is enough to support the workflow-redesign and management-practice claims.",
+        "Compare the report's prescriptions with independent enterprise AI adoption evidence outside the McKinsey frame."
       ],
       dimensions: [
         {
           name: "Originality",
-          state: "High",
-          note: "The paper applies a compact macro framework to a noisy AI-growth debate.",
-          width: 82,
-          tone: "promising"
+          state: "Moderate",
+          note: "The broad story is familiar, but the 2025 survey gives it timely structure.",
+          width: 55,
+          tone: "steady"
         },
         {
           name: "Coherence",
           state: "Currently coherent",
-          note: "The paper moves clearly from model to estimates to wage, inequality, and welfare implications.",
-          width: 88,
+          note: "The report has a clear sequence from adoption to agents, value, practices, workforce and risks.",
+          width: 82,
           tone: "promising"
         },
         {
           name: "Evidence grounding",
-          state: "Moderate",
-          note: "The estimates are inspectable but depend on external exposure and productivity studies.",
-          width: 67,
-          tone: "promising"
+          state: "Substantial but bounded",
+          note: "The survey base is substantial, but many outcomes are self-reported.",
+          width: 72,
+          tone: "steady"
         },
         {
           name: "Overclaim restraint",
-          state: "High",
-          note: "The argument repeatedly marks limits and speculative components.",
-          width: 84,
-          tone: "promising"
+          state: "Mixed",
+          note: "Descriptive claims are stronger than the transformation prescriptions.",
+          width: 58,
+          tone: "fragile"
         },
         {
           name: "Review stability",
-          state: "Escalate to specialist",
-          note: "Enough confidence to escalate, not enough to settle the macro debate.",
-          width: 79,
-          tone: "promising"
+          state: "Bounded review",
+          note: "Enough confidence for market orientation, not for causal conclusions.",
+          width: 66,
+          tone: "steady"
         }
       ],
       reviewHistory: [
@@ -834,69 +836,69 @@ export const documentCases: DocumentCase[] = [
           stage: "Source intake",
           actor: "Trust Layer demo",
           date: "May 3, 2026",
-          note: "Real Acemoglu PDF added as the third example case."
+          note: "McKinsey State of AI 2025 PDF added as the third example case."
         },
         {
           stage: "Structured reading",
           actor: "Prototype facilitator",
           date: "May 3, 2026",
-          note: "Separated model, estimates, uncertainty zones, welfare caveat and specialist review needs."
+          note: "Separated survey evidence, consulting narrative, uncertainty zones and review focus."
         },
         {
           stage: "Review note gate",
           actor: "Prototype facilitator",
           date: "May 3, 2026",
-          note: "Recommended specialist economic review rather than final reliance on the numerical estimates."
+          note: "Recommended bounded review rather than automatic dismissal or specialist escalation."
         }
       ]
     },
     workflow: {
       strongest:
-        "The paper is strongest where it turns loose claims about AI growth into an inspectable task-share and cost-savings calculation.",
+        "The report is strongest as a broad market snapshot: adoption is high, agent scaling is early, enterprise EBIT impact remains limited and risk mitigation is visible.",
       weakest:
-        "What needs checking is the sensitivity of the estimates, especially exposure mapping, hard-task assumptions, and the treatment of new tasks.",
+        "What needs checking is the jump from survey correlations to prescriptive claims about transformation, workflow redesign and value capture.",
       tryingToDo:
-        "The paper is trying to bound medium-run macro claims about AI and separate productivity, GDP, wages, inequality, and welfare.",
+        "The report is trying to show that AI value depends less on tool rollout and more on organisational redesign, leadership, investment and human validation.",
       uncertainty:
-        "Uncertainty remains around new-task creation, AI-driven scientific acceleration, and whether current industry direction will change.",
+        "Uncertainty remains around causality, self-reporting bias and how much of the report is evidence versus consulting positioning.",
       changeAssessment:
-        "I would revise upward if stronger evidence showed broad task impact, high cost savings in hard tasks, or valuable new tasks for workers.",
+        "I would revise upward if independent datasets showed the same link between workflow redesign and enterprise value; downward if definitions or sampling are weak.",
       deeperReview:
-        "Yes. Escalate to an economist who can review the model, assumptions, and numerical estimates.",
+        "Yes, but bounded. A specialist should review survey methodology and the evidence-to-prescription bridge, not line-edit the whole report.",
       contestStructuredReading:
-        "Do not contest the core structure yet. Keep the new-task and welfare channels open for specialist challenge.",
+        "Contest any reading that treats the report as empty consulting polish. It has real survey evidence, but its prescriptive claims need checking.",
       revisePassport:
-        "Yes. Revise the review note after checking the exposure data, sensitivity assumptions, and welfare argument.",
+        "Yes. Revise the review note after checking definitions, sample composition and whether the transformation claims exceed the survey data.",
       secondary: [
         {
           label: "Originality",
-          value: "High",
-          note: "The paper applies a compact macro framework to a noisy AI-growth debate."
+          value: "Moderate",
+          note: "The broad story is familiar, but the 2025 survey gives it timely structure."
         },
         {
           label: "Coherence",
           value: "High",
-          note: "The paper moves clearly from model to estimates to wage, inequality, and welfare implications."
+          note: "The report has a clear sequence from adoption to agents, value, practices, workforce and risks."
         },
         {
           label: "Evidence support",
-          value: "Moderate",
-          note: "The estimates are inspectable but depend on external exposure and productivity studies."
+          value: "Moderate-high",
+          note: "The survey base is substantial, but many outcomes are self-reported."
         },
         {
           label: "Overclaim risk",
-          value: "Low",
-          note: "The argument repeatedly marks limits and speculative components."
+          value: "Moderate",
+          note: "Descriptive claims are stronger than the transformation prescriptions."
         },
         {
           label: "Review confidence",
-          value: "Moderate-high",
-          note: "Enough confidence to escalate, not enough to settle the macro debate."
+          value: "Moderate",
+          note: "Enough confidence for market orientation, not for causal conclusions."
         },
         {
           label: "Domain fit",
           value: "High",
-          note: "Strong fit for macroeconomics, labour economics and AI policy review."
+          note: "Good fit for enterprise AI strategy and market intelligence review."
         }
       ]
     }

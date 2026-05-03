@@ -1248,6 +1248,36 @@
         padding: 1px 3px;
       }
 
+      .source-ref-detail {
+        margin-top: 10px;
+        border-top: 1px solid rgba(22, 32, 43, 0.08);
+        padding-top: 10px;
+      }
+
+      .source-ref-detail summary {
+        cursor: pointer;
+        color: var(--accent);
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .source-ref-detail blockquote,
+      .original-excerpt {
+        margin: 12px 0 0;
+        border-left: 3px solid rgba(35, 53, 68, 0.18);
+        padding: 0 0 0 14px;
+        color: #33414d;
+        line-height: 1.62;
+        white-space: pre-wrap;
+      }
+
+      .original-link-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
       @media (max-width: 1080px) {
         .hero,
         .text-layout,
@@ -2762,6 +2792,49 @@
             "Information is no longer just one input in production. It acts as a metafactor that reshapes the production function itself, while the verification bottleneck limits which signals become economically effective knowledge.",
             "Информация больше не является просто одним ресурсом производства. Она действует как метафактор, меняющий саму форму производственной функции, а верификационное бутылочное горлышко ограничивает превращение сигналов в экономически действенное знание."
           ),
+          original: {
+            url: "https://osf.io/preprints/socarxiv/2xkdh_v1",
+            title: B("Original manuscript", "Оригинал рукописи"),
+            linkLabel: B("Open original on OSF", "Открыть оригинал на OSF"),
+            helper: B(
+              "Use this to check the prepared first reading. The excerpts below are source fragments from the manuscript, not proof that the reading is correct.",
+              "Используйте это, чтобы проверить подготовленный первый разбор. Фрагменты ниже взяты из рукописи, но сами по себе не доказывают правильность разбора."
+            ),
+            excerpts: [
+              {
+                label: B("Central abstract claim", "Центральный тезис abstract"),
+                sourceRef: B("Abstract, paragraph 29", "Abstract, абзац 29"),
+                excerpt: B(
+                  "This manuscript argues that information should no longer be treated merely as one factor among others, but as a metafactor that increasingly reorganizes labor, capital, institutions, and growth. The central claim is that contemporary economies are entering a transition period in which the cost of generating signals, models, texts, and decisions falls much faster than the cost of verifying them.",
+                  "This manuscript argues that information should no longer be treated merely as one factor among others, but as a metafactor that increasingly reorganizes labor, capital, institutions, and growth. The central claim is that contemporary economies are entering a transition period in which the cost of generating signals, models, texts, and decisions falls much faster than the cost of verifying them."
+                )
+              },
+              {
+                label: B("Verification bottleneck", "Верификационное узкое место"),
+                sourceRef: B("Preface, paragraphs 100 and 104", "Preface, абзацы 100 и 104"),
+                excerpt: B(
+                  "Text generation may become dramatically cheaper, while verification, selection, refinement, and intellectual integration remain far slower and more costly. In the book that idea receives a strict form through the concept of the verification bottleneck κ: the barrier separating a raw signal from reliable, verified, applicable knowledge.",
+                  "Text generation may become dramatically cheaper, while verification, selection, refinement, and intellectual integration remain far slower and more costly. In the book that idea receives a strict form through the concept of the verification bottleneck κ: the barrier separating a raw signal from reliable, verified, applicable knowledge."
+                )
+              },
+              {
+                label: B("Metafactor architecture", "Архитектура метафактора"),
+                sourceRef: B("Chapter 4, paragraphs 534, 554, 566, 620", "Chapter 4, абзацы 534, 554, 566, 620"),
+                excerpt: B(
+                  "Information is not a fourth factor of production. It is a metafactor: a phenomenon at a different categorical level, one that determines the very capacity of all the other factors to be productive. A factor is an argument of the production function: something that stands inside the parentheses. A metafactor is what determines the form of the parentheses themselves. If information is a metafactor, it cannot be removed without destroying the production function itself.",
+                  "Information is not a fourth factor of production. It is a metafactor: a phenomenon at a different categorical level, one that determines the very capacity of all the other factors to be productive. A factor is an argument of the production function: something that stands inside the parentheses. A metafactor is what determines the form of the parentheses themselves. If information is a metafactor, it cannot be removed without destroying the production function itself."
+                )
+              },
+              {
+                label: B("Empirical caution", "Эмпирическая осторожность"),
+                sourceRef: B("Empirical appendix, paragraphs 2377-2380 and 2459-2461", "Empirical appendix, абзацы 2377-2380 и 2459-2461"),
+                excerpt: B(
+                  "The empirical section does not test the whole theory directly. It looks for indirect signs: a shift from generation to verification, faster labor-share decline in information-intensive settings, and country clusters by informational infrastructure. The evidence is presented as a stable divergence between signal production and signal admission, but the manuscript also notes limitations in pricing series, PubMed proxies, Retraction Watch coverage, and causal identification.",
+                  "The empirical section does not test the whole theory directly. It looks for indirect signs: a shift from generation to verification, faster labor-share decline in information-intensive settings, and country clusters by informational infrastructure. The evidence is presented as a stable divergence between signal production and signal admission, but the manuscript also notes limitations in pricing series, PubMed proxies, Retraction Watch coverage, and causal identification."
+                )
+              }
+            ]
+          },
           textSections: [
             {
               heading: B(
@@ -2835,7 +2908,12 @@
                   "Information is treated as the form that reorganizes factors rather than as an additional input beside labor and capital.",
                   "Информация рассматривается как форма, перестраивающая факторы, а не как дополнительный ресурс рядом с трудом и капиталом."
                 ),
-                sourceRef: B("Source: Abstract 29; Introduction 125-131; Chapter 4 534-566.", "Источник: Abstract 29; Introduction 125-131; Chapter 4 534-566.")
+                sourceRef: B("Source: Abstract 29; Introduction 125-131; Chapter 4 534-566.", "Источник: Abstract 29; Introduction 125-131; Chapter 4 534-566."),
+                sourceLocation: B("Chapter 4 - Factor and metafactor", "Chapter 4 - Factor and metafactor"),
+                sourceSnippet: B(
+                  "Information is not a fourth factor of production. It is a metafactor: a phenomenon at a different categorical level, one that determines the very capacity of all the other factors to be productive. A factor is an argument of the production function: something that stands inside the parentheses. A metafactor is what determines the form of the parentheses themselves: what function relates inputs to output, which inputs become relevant, and what counts as a productive combination.",
+                  "Information is not a fourth factor of production. It is a metafactor: a phenomenon at a different categorical level, one that determines the very capacity of all the other factors to be productive. A factor is an argument of the production function: something that stands inside the parentheses. A metafactor is what determines the form of the parentheses themselves: what function relates inputs to output, which inputs become relevant, and what counts as a productive combination."
+                )
               },
               {
                 label: B("Verification bottleneck", "Верификационное узкое место"),
@@ -2843,7 +2921,12 @@
                   "The main scarcity shifts from producing signals to selecting, validating, and institutionally recognizing them.",
                   "Главный дефицит смещается от производства сигналов к их отбору, проверке и институциональному признанию."
                 ),
-                sourceRef: B("Source: Preface 100-104; Introduction 140; Chapter 2 309-342.", "Источник: Preface 100-104; Introduction 140; Chapter 2 309-342.")
+                sourceRef: B("Source: Preface 100-104; Introduction 140; Chapter 2 309-342.", "Источник: Preface 100-104; Introduction 140; Chapter 2 309-342."),
+                sourceLocation: B("Preface and Chapter 2", "Preface и Chapter 2"),
+                sourceSnippet: B(
+                  "Text generation may become dramatically cheaper, while verification, selection, refinement, and intellectual integration remain far slower and more costly. In the book that idea receives a strict form through the concept of the verification bottleneck κ: the barrier separating a raw signal from reliable, verified, applicable knowledge. When that barrier is high, a thought may exist for years and still fail to become a text, a theory, or a technology.",
+                  "Text generation may become dramatically cheaper, while verification, selection, refinement, and intellectual integration remain far slower and more costly. In the book that idea receives a strict form through the concept of the verification bottleneck κ: the barrier separating a raw signal from reliable, verified, applicable knowledge. When that barrier is high, a thought may exist for years and still fail to become a text, a theory, or a technology."
+                )
               },
               {
                 label: B("Transition-period claim", "Тезис о переходном периоде"),
@@ -2851,7 +2934,12 @@
                   "The book describes a historical interval where old economic categories still matter but no longer explain the main source of change.",
                   "Книга описывает исторический интервал, где старые экономические категории еще важны, но уже не объясняют главный источник изменений."
                 ),
-                sourceRef: B("Source: Introduction 131-142.", "Источник: Introduction 131-142.")
+                sourceRef: B("Source: Introduction 131-142.", "Источник: Introduction 131-142."),
+                sourceLocation: B("Introduction - transition period", "Introduction - transition period"),
+                sourceSnippet: B(
+                  "It is precisely this step-by-step dynamic that I call the transition period. It cannot be described either as simple technological progress or as just another wave of modernization. It is a phase in which the old categories still continue to work, but are no longer sufficient; the old institutions still distribute wealth, but explain its mechanisms of emergence less and less well. We are entering an era in which labor and capital still determine who owns wealth, but no longer determine where it comes from.",
+                  "It is precisely this step-by-step dynamic that I call the transition period. It cannot be described either as simple technological progress or as just another wave of modernization. It is a phase in which the old categories still continue to work, but are no longer sufficient; the old institutions still distribute wealth, but explain its mechanisms of emergence less and less well. We are entering an era in which labor and capital still determine who owns wealth, but no longer determine where it comes from."
+                )
               }
             ],
             evidenceAreas: [
@@ -2861,7 +2949,12 @@
                   "The manuscript gives a formal structure for I*, κ, informational regimes, and regime-dependent production effects.",
                   "Рукопись задает формальную структуру для I*, κ, информационных режимов и режимно-зависимых производственных эффектов."
                 ),
-                sourceRef: B("Source: Formal appendix; empirical appendix cross-references 2508-2546.", "Источник: Formal appendix; empirical appendix 2508-2546.")
+                sourceRef: B("Source: Formal appendix; empirical appendix cross-references 2508-2546.", "Источник: Formal appendix; empirical appendix 2508-2546."),
+                sourceLocation: B("Formal model and empirical cross-reference", "Формальная модель и эмпирическая отсылка"),
+                sourceSnippet: B(
+                  "The quantitative data presented in section 4 make this link precise. When the marginal cost of symbolic generation falls by a factor of six hundred, the constraint does not disappear — it migrates. What was once scarce becomes abundant. What was always present but economically invisible — the capacity to verify that the memorandum is correct, the diagnosis sound, the code secure — becomes the binding limit.",
+                  "The quantitative data presented in section 4 make this link precise. When the marginal cost of symbolic generation falls by a factor of six hundred, the constraint does not disappear — it migrates. What was once scarce becomes abundant. What was always present but economically invisible — the capacity to verify that the memorandum is correct, the diagnosis sound, the code secure — becomes the binding limit."
+                )
               },
               {
                 label: B("Empirical appendix", "Эмпирическое приложение"),
@@ -2869,7 +2962,12 @@
                   "The evidence combines verification-lag indicators, platform-era labor-share patterns, and country clusters by informational infrastructure.",
                   "Данные соединяют индикаторы задержки верификации, платформенную динамику доли труда и кластеры стран по информационной инфраструктуре."
                 ),
-                sourceRef: B("Source: Empirical appendix 2377-2380; 2453-2461; 2572-2626.", "Источник: Empirical appendix 2377-2380; 2453-2461; 2572-2626.")
+                sourceRef: B("Source: Empirical appendix 2377-2380; 2453-2461; 2572-2626.", "Источник: Empirical appendix 2377-2380; 2453-2461; 2572-2626."),
+                sourceLocation: B("Empirical appendix - indirect tests", "Empirical appendix - косвенные тесты"),
+                sourceSnippet: B(
+                  "The empirical section does not test the whole theory directly. It looks for indirect signs: a shift from generation to verification, faster labor-share decline in information-intensive settings, and country clusters by informational infrastructure. The evidence is presented as a stable divergence between signal production and signal admission, but the manuscript also notes limitations in pricing series, PubMed proxies, Retraction Watch coverage, and causal identification.",
+                  "The empirical section does not test the whole theory directly. It looks for indirect signs: a shift from generation to verification, faster labor-share decline in information-intensive settings, and country clusters by informational infrastructure. The evidence is presented as a stable divergence between signal production and signal admission, but the manuscript also notes limitations in pricing series, PubMed proxies, Retraction Watch coverage, and causal identification."
+                )
               }
             ],
             uncertainty: [
@@ -2879,7 +2977,12 @@
                   "The definition of information is intentionally broad. A specialist should check whether the metafactor concept adds explanatory power or absorbs too much.",
                   "Определение информации намеренно широкое. Специалист должен проверить, добавляет ли понятие метафактора объяснительную силу или поглощает слишком много."
                 ),
-                sourceRef: B("Source: Chapter 2 244-355; Chapter 4 547-566.", "Источник: Chapter 2 244-355; Chapter 4 547-566.")
+                sourceRef: B("Source: Chapter 2 244-355; Chapter 4 547-566.", "Источник: Chapter 2 244-355; Chapter 4 547-566."),
+                sourceLocation: B("Chapter 2 - definition of information", "Chapter 2 - определение информации"),
+                sourceSnippet: B(
+                  "The problem is not the absence of definitions. There are too many of them — and they are incompatible. For the purposes of this work, a definition is needed that satisfies several conditions simultaneously. It must be fundamental enough to encompass all forms of information — from a physical signal to scientific knowledge, from a market price to a neural-network model. It must be concrete enough to yield economic properties.",
+                  "The problem is not the absence of definitions. There are too many of them — and they are incompatible. For the purposes of this work, a definition is needed that satisfies several conditions simultaneously. It must be fundamental enough to encompass all forms of information — from a physical signal to scientific knowledge, from a market price to a neural-network model. It must be concrete enough to yield economic properties."
+                )
               },
               {
                 label: B("Proxy and identification risk", "Риск прокси и идентификации"),
@@ -2887,7 +2990,12 @@
                   "The empirical appendix is useful but indirect. Verification capacity, I*, and κ remain difficult to measure cleanly.",
                   "Эмпирическое приложение полезно, но косвенно. Верификационная емкость, I* и κ остаются сложными для чистого измерения."
                 ),
-                sourceRef: B("Source: Empirical appendix 2377-2380; 2461; 2622-2626.", "Источник: Empirical appendix 2377-2380; 2461; 2622-2626.")
+                sourceRef: B("Source: Empirical appendix 2377-2380; 2461; 2622-2626.", "Источник: Empirical appendix 2377-2380; 2461; 2622-2626."),
+                sourceLocation: B("Empirical appendix - limitations", "Empirical appendix - ограничения"),
+                sourceSnippet: B(
+                  "The limitations of the evidence are part of the argument. The pricing series refer to list prices rather than realized usage costs. PubMed is a proxy for one segment of scientific admission rather than the whole scientific system. Retraction Watch captures only visible correction events. These limits mean that the empirical appendix should be read as evidence of a pattern, not as a direct proof of the entire theory.",
+                  "The limitations of the evidence are part of the argument. The pricing series refer to list prices rather than realized usage costs. PubMed is a proxy for one segment of scientific admission rather than the whole scientific system. Retraction Watch captures only visible correction events. These limits mean that the empirical appendix should be read as evidence of a pattern, not as a direct proof of the entire theory."
+                )
               }
             ],
             reviewFocus: [
@@ -4421,12 +4529,49 @@
       }
 
       function renderSourceRef(entry) {
-        if (!entry || !entry.sourceRef) return "";
-        return `<div class="tiny" style="margin-top:8px;">${tx(entry.sourceRef)}</div>`;
+        if (!entry || (!entry.sourceRef && !entry.sourceSnippet)) return "";
+        const copy = currentUI();
+        const sourceRef = entry.sourceRef ? `<div class="tiny" style="margin-top:8px;">${tx(entry.sourceRef)}</div>` : "";
+        const location = entry.sourceLocation ? `<div class="tiny" style="margin-top:8px;"><strong>${copy.demo.sourceLocation}:</strong> ${tx(entry.sourceLocation)}</div>` : "";
+        const snippet = entry.sourceSnippet
+          ? `<details class="source-ref-detail">
+              <summary>${copy.demo.sourceTrace}</summary>
+              ${location}
+              <p class="tiny" style="margin-top:8px;">${copy.demo.sourceTraceNote}</p>
+              <blockquote>${esc(tx(entry.sourceSnippet))}</blockquote>
+            </details>`
+          : "";
+        return `${sourceRef}${snippet}`;
       }
 
       function renderSidebarEntry(entry) {
         return `<div class="sidebar-item"><strong>${tx(entry.label)}</strong><p style="margin:6px 0 0;">${tx(entry.summary)}</p>${renderSourceRef(entry)}</div>`;
+      }
+
+      function renderOriginalPanel(item) {
+        if (!item.original) return "";
+        const original = item.original;
+        const url = original.url ? `<a class="cta" href="${esc(original.url)}" target="_blank" rel="noopener noreferrer">${tx(original.linkLabel)}</a>` : "";
+        const excerpts = (original.excerpts || [])
+          .map(
+            (entry) => `
+              <div class="sidebar-item" style="margin-top:12px;">
+                <strong>${tx(entry.label)}</strong>
+                <div class="tiny" style="margin-top:8px;">${tx(entry.sourceRef)}</div>
+                <blockquote class="original-excerpt">${esc(tx(entry.excerpt))}</blockquote>
+              </div>
+            `
+          )
+          .join("");
+
+        return `
+          <details class="panel original-text-panel">
+            <summary style="cursor:pointer; font-weight:800;">${tx(original.title)}</summary>
+            <p class="tiny" style="margin-top:12px;">${tx(original.helper)}</p>
+            <div class="original-link-row">${url}</div>
+            ${excerpts}
+          </details>
+        `;
       }
 
       function renderText() {
@@ -4454,6 +4599,7 @@
                   <div class="info-block"><div class="eyebrow">${copy.text.context}</div><p style="margin-top:10px;">${tx(item.submissionContext)}</p></div>
                 </div>
                 <div class="notice">${copy.text.summaryNote}</div>
+                ${renderOriginalPanel(item)}
               </div>
 
               ${item.textSections

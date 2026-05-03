@@ -47,6 +47,54 @@
         padding: 0 24px 48px;
       }
 
+      .static-fallback {
+        max-width: 1180px;
+        margin: 36px auto 64px;
+        padding: 0 24px;
+      }
+
+      .static-fallback-card {
+        border-radius: 34px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 24px 70px rgba(22, 32, 43, 0.08);
+        padding: 34px 38px;
+      }
+
+      .static-fallback h1 {
+        margin: 10px 0 0;
+        font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+        font-size: clamp(2.4rem, 5vw, 4.2rem);
+        line-height: 1.02;
+        letter-spacing: -0.05em;
+      }
+
+      .static-fallback p {
+        max-width: 780px;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.7;
+      }
+
+      .static-fallback ul {
+        margin: 22px 0 0;
+        padding-left: 1.1rem;
+        color: #344555;
+        line-height: 1.8;
+      }
+
+      .static-fallback-note {
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(22, 32, 43, 0.1);
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .js-ready .static-fallback {
+        display: none;
+      }
+
       .topbar {
         position: sticky;
         top: 0;
@@ -1344,7 +1392,32 @@
       <section id="limitations" class="page"></section>
     </main>
 
+    <section class="static-fallback" aria-label="Trust Layer static overview">
+      <div class="static-fallback-card">
+        <div class="eyebrow">Trust Layer</div>
+        <h1>Paste an analytical text. Get a first reading you can check and edit.</h1>
+        <p>
+          Trust Layer is a bounded prototype for analytical texts: research drafts, policy memos,
+          white papers, analytical essays, and book proposals. It helps identify main claims,
+          what needs attention, and the next review step before deeper human checking.
+        </p>
+        <ul>
+          <li>Upload or paste an analytical text.</li>
+          <li>Get a provisional AI first reading.</li>
+          <li>Check source traces and original text.</li>
+          <li>Edit the result as a human reviewer.</li>
+          <li>Stop, continue, or escalate.</li>
+        </ul>
+        <div class="static-fallback-note">
+          This is not a truth engine, not an AI detector, and not expert review. Open this page in a
+          browser with JavaScript enabled to use the live demo.
+        </div>
+      </div>
+    </section>
+
     <script>
+      document.body.classList.add("js-ready");
+
       const B = (en, ru) => ({ en, ru });
 
       const PUBLIC_DEMO_CONFIG = {

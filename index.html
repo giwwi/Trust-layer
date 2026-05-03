@@ -2148,6 +2148,12 @@
               "The review workflow itself must be periodically reviewed for unnecessary friction and unintended behavioral pressure.",
             smallPoolNote:
               "This prototype assumes bounded reviewer use in institutional settings, not mass consumer use.",
+            bookAnchorCopy:
+              "These limits are structural, not merely technical. The book explains why they cannot be removed by interface design alone, especially in chapters 9 and 14.",
+            bookAnchorLinks: [
+              { label: "Chapter 9 - Verification bottleneck", url: "https://osf.io/2xkdh/download#page=99" },
+              { label: "Chapter 14 - What the theory still does not know", url: "https://osf.io/2xkdh/download#page=145" }
+            ],
             items: [
               {
                 title: "Cannot determine truth",
@@ -2798,6 +2804,12 @@
               "Сам процесс проверки тоже нужно периодически пересматривать: нет ли в нем лишнего трения или непреднамеренного давления на поведение.",
             smallPoolNote:
               "Этот прототип рассчитан на ограниченный круг проверяющих в институциональных контекстах, а не на массовое потребительское использование.",
+            bookAnchorCopy:
+              "Эти ограничения — не просто технические, а структурные. Почему их нельзя устранить одним интерфейсом, объясняется в книге, особенно в главах 9 и 14.",
+            bookAnchorLinks: [
+              { label: "Глава 9 - Верификационное узкое место", url: "https://osf.io/2xkdh/download#page=99" },
+              { label: "Глава 14 - Что теория пока не знает", url: "https://osf.io/2xkdh/download#page=145" }
+            ],
             items: [
               {
                 title: "Не может определить истину",
@@ -5748,6 +5760,14 @@
 
           <div class="section limitations-grid">
             ${copy.limitations.items.map((item) => `<div class="card"><h3 style="font-size:2rem;">${item.title}</h3><p style="margin-top:14px; color:#5f6c79;">${item.body}</p></div>`).join("")}
+          </div>
+
+          <div class="section case-book-connection" style="max-width:920px;">
+            <div class="eyebrow">${copy.landing.bookLead}</div>
+            <p>${copy.limitations.bookAnchorCopy}</p>
+            <div class="book-case-links">
+              ${copy.limitations.bookAnchorLinks.map((link) => `<a class="book-case-link" href="${esc(link.url)}" target="_blank" rel="noopener noreferrer">${link.label}</a>`).join("")}
+            </div>
           </div>
 
           <div class="section panel" style="padding:28px;">

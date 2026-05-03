@@ -904,207 +904,205 @@ export const documentCases: DocumentCase[] = [
     }
   },
   {
-    slug: "civic-provenance-ledger",
-    profileLabel: "Ambiguous / contested text",
-    title: "A Civic Provenance Ledger for Research Procurement",
-    shortTitle: "Civic provenance ledger",
-    author: "Marta Levin and Kai Soto",
-    type: "Analytical essay / hybrid proposal",
+    slug: "why-ai-isnt-going-to-make-art",
+    profileLabel: "Conceptual essay / disagreement-visible",
+    title: "Why A.I. Isn't Going to Make Art",
+    shortTitle: "Why AI isn't making art",
+    author: "Ted Chiang",
+    type: "Conceptual essay",
     submissionContext:
-      "Shared with a public-sector innovation lab exploring new procurement rules for commissioned research and advisory work.",
+      "Published in The New Yorker as a Weekend Essay on August 31, 2024; used here as a real conceptual-essay case with safe paraphrased source cues.",
     landingSummary:
-      "Disagreement across reviewers, unstable trust profile, and unresolved current trust state requiring domain-specific follow-up.",
-    previewNote: "Ambiguity case: disagreement remains visible and no stable trust profile exists yet.",
+      "Strong conceptual frame; disagreement remains visible around art, intention, and machine generation.",
+    previewNote:
+      "Real case: a conceptual essay that argues AI-generated output lacks the human choices that make art, while leaving room for disagreement about tools, authorship, and intention.",
     deck:
-      "The essay proposes a provenance ledger for commissioned research outputs, but readers disagree sharply over whether it is a governance innovation or a category error wrapped in procedural fluency.",
+      "Ted Chiang's essay argues that generative AI may produce artifacts, but art depends on intentional choices across many scales. The useful disagreement is whether this clarifies art or defines it too narrowly.",
     textSections: [
       {
-        heading: "The proposal begins from a real concern about outsourced epistemic opacity",
-        zone: "Claim zone",
+        heading: "The essay shifts the question from output to intention",
+        zone: "Core idea",
         summary:
-          "The essay argues that public institutions increasingly commission analysis whose evidentiary lineage is hard to inspect after delivery.",
+          "The essay argues that the relevant question is not whether AI can produce artifacts that resemble art, but whether it participates in the intentional practice that makes art.",
         paragraphs: [
-          "Levin and Soto start from an intelligible problem: commissioned research often arrives as a polished output with thin visibility into intermediate sourcing, subcontracting, prompt use, or interpretive handoffs. When public agencies later need to revisit how a recommendation was formed, much of that trail has already collapsed.",
-          "On a sympathetic reading, the authors are trying to design a governance layer for analytical procurement in conditions where AI-assisted production and outsourced synthesis have made provenance more important, not less."
+          "The piece is useful for Trust Layer because it is not a memo asking for evidence-first approval. It is a conceptual essay trying to define what is at stake when AI systems generate culture-like outputs.",
+          "A good first reading should therefore preserve the distinction the essay makes, rather than flatten the text into simple claims about AI capability."
         ]
       },
       {
-        heading: "The ledger concept is analytically suggestive but structurally unstable",
-        zone: "Interpretive uncertainty",
+        heading: "The strongest move is conceptual, not empirical",
+        zone: "New distinction",
         summary:
-          "Some readers see a tractable audit layer; others see a confused import of traceability metaphors into contexts that remain deeply interpretive.",
+          "The essay separates artifact production from artistic agency, which makes it a conceptual-essay case rather than a policy report.",
         paragraphs: [
-          "The proposed ledger would record source classes, material transformations, model-assisted steps, reviewer interventions, and unresolved objections across the life of a commissioned output. In theory this creates a legible trail of analytical production rather than a single end-state document.",
-          "The difficulty is that provenance in analytical work is not equivalent to provenance in material supply chains. Interpretive leaps, framing choices, and contested synthesis steps may not become clearer merely because they are logged. One reviewer therefore reads the proposal as a useful transparency scaffold, while another reads it as false procedural solidity."
+          "The essay's force comes from a distinction: an artifact can satisfy surface expectations while still lacking the chain of intention and choice that we usually associate with art-making.",
+          "That makes source checking different here. The reviewer is not simply asking whether data supports a claim; the reviewer is asking whether the definition of art and agency is persuasive."
         ]
       },
       {
-        heading: "Reviewers disagree on whether the text is disciplined or overextended",
-        zone: "Evidence-bearing area",
+        heading: "The disagreement is real",
+        zone: "Alternative readings",
         summary:
-          "The same sections read to one reviewer as responsibly scoped and to another as quietly overclaiming what procedural traceability can accomplish.",
+          "One reading finds a precise account of art as intentional practice; another sees a restrictive human-centered definition that underplays tool-mediated creativity.",
         paragraphs: [
-          "The essay contains self-limiting language. It repeatedly says the ledger would not determine truth or settle interpretation. That restraint helps the sympathetic reading: perhaps the proposal is merely a bounded overlay for commissioned analytical texts, not a universal solution.",
-          "Yet the skeptical reading remains live because the document also implies that improved provenance records could materially stabilize trust in outsourced analysis. Whether that implication is modest and sensible or subtly overextended is precisely where the trust profile becomes unstable."
+          "A favorable reviewer may say the essay names something important: AI generation changes the relation between tool, maker, and finished work.",
+          "A skeptical reviewer may answer that art has always involved tools, delegation, constraints, and procedures. On that reading, the essay clarifies one position but does not close the debate."
         ]
       }
     ],
     overlay: {
       centralArgument:
-        "Public-sector commissioned analysis may benefit from a provenance layer that records how analytical outputs were assembled, but it is unclear whether the proposed ledger clarifies interpretation or merely formalizes it.",
+        "Art is not merely the production of a pleasing artifact; it involves a chain of human choices, constraints, and intentions that prompt-based generation tends to compress or bypass.",
       mainClaimZones: [
         {
-          label: "Problem diagnosis",
-          summary: "Outsourced and AI-assisted analytical production creates real opacity around how conclusions were assembled."
+          label: "Artifact versus practice",
+          summary: "The essay separates producing an artifact from participating in the practice of making art."
         },
         {
-          label: "Governance proposal",
-          summary: "A provenance ledger would preserve more of the production trail for commissioned analytical texts."
+          label: "Choice density",
+          summary: "The essay's main standard is the density of choices and revisions made by a human artist."
         },
         {
-          label: "Trust implication",
-          summary: "The text hints that better provenance could improve warranted trust, but the extent of that claim is contested."
+          label: "Tool objection",
+          summary: "The main disagreement is whether AI is merely another tool or whether it removes too much of the maker's decision process."
         }
       ],
       evidenceAreas: [
         {
-          label: "Procurement examples",
-          summary: "Examples of commissioned research opacity make the problem plausible but do not yet validate the proposed mechanism."
+          label: "Examples from art practice",
+          summary: "The essay relies on examples about artistic decision-making rather than statistical evidence."
         },
         {
-          label: "Scope disclaimers",
-          summary: "The essay repeatedly says it is not building a truth engine, which matters for the favorable reading."
+          label: "Analogy to auto-complete",
+          summary: "The auto-complete analogy organizes the essay but should be checked as a framing device, not empirical proof."
         }
       ],
       uncertaintyZones: [
         {
-          label: "Category fit",
-          summary: "It is unsettled whether provenance logging meaningfully maps onto interpretive analytical work."
+          label: "Definition of art",
+          summary: "The essay's force depends on accepting a definition of art centered on intention, choice, and practice."
         },
         {
-          label: "Governance effect",
-          summary: "Better records may help oversight, but they may not stabilize trust in the way the text sometimes implies."
+          label: "Tool-mediated creativity",
+          summary: "It remains contestable whether AI tools necessarily bypass artistic agency or can be absorbed into it."
         },
         {
-          label: "Adoption incentives",
-          summary: "The burden on authors and contractors could trigger strategic compliance rather than substantive transparency."
+          label: "Audience response",
+          summary: "The essay gives less weight to whether viewers can experience AI outputs as art regardless of origin."
         }
       ],
       reviewFocus: [
-        "Clarify the strongest version of the claim before deciding whether the proposal is serious or confused.",
-        "Ask where provenance records genuinely help and where interpretive disagreement remains untouched.",
-        "Bring procurement, administrative law, and knowledge-governance expertise into the next review step."
+        "Check whether the distinction between artifact and artistic practice is persuasive.",
+        "Ask whether the essay treats AI as categorically different from earlier artistic tools.",
+        "Keep disagreement visible: this is a conceptual dispute, not a fact-checking problem."
       ],
       reviewMap: [
         {
-          step: "Claim narrowing",
-          emphasis: "Define whether the ledger is meant as an audit aid, a trust aid, or both."
+          step: "Conceptual read",
+          emphasis: "Clarify the definition of art and why intention matters."
         },
         {
-          step: "Conceptual challenge",
-          emphasis: "Test whether provenance can travel from material traceability to interpretive analytical production."
+          step: "Adversarial read",
+          emphasis: "Test the tool objection and cases of assisted or procedural art."
         },
         {
-          step: "Governance follow-up",
-          emphasis: "Review procurement burden, incentives, and compliance gaming risk."
-        },
-        {
-          step: "Passport hold",
-          emphasis: "Maintain provisional disagreement rather than collapse the profile into a single verdict."
+          step: "Disagreement note",
+          emphasis: "Record what exactly remains disputed rather than forcing a route verdict."
         }
       ],
-      reviewStatus: "Illustrative structured reading only. Human readers still disagree over the text's basic profile.",
+      reviewStatus:
+        "Prepared first reading only. Source cues are paraphrased because the original is copyrighted; they help checking but do not prove the interpretation.",
       quickSignals: [
-        { label: "Interpretive stability", value: "Contested", tone: "contested" },
-        { label: "Evidence grounding", value: "Partial", tone: "fragile" },
-        { label: "Operational relevance", value: "Unclear", tone: "contested" },
-        { label: "Need for follow-up", value: "High", tone: "promising" }
+        { label: "Conceptual clarity", value: "High", tone: "promising" },
+        { label: "Evidence support", value: "Illustrative", tone: "steady" },
+        { label: "Disagreement", value: "Visible", tone: "contested" },
+        { label: "Review priority", value: "Conceptual review", tone: "promising" }
       ]
     },
     passport: {
       currentSynthesis:
-        "No stable trust profile exists yet. One reading sees a bounded governance overlay for commissioned analytical texts; another sees a procedural shell that risks overstating what provenance can do for interpretation.",
+        "No stable review state exists yet. One reading sees a strong account of art as intentional human practice; another sees a restrictive definition that underplays tools, procedure, and audience response.",
       strengths: [
-        "Starts from a real procurement problem rather than a purely abstract anxiety.",
-        "Includes explicit scope limits that resist the strongest truth-engine reading.",
-        "May provide a useful vocabulary for discussing outsourced analytical provenance."
+        "Names a real conceptual dispute: whether generated artifacts can be separated from art-making practice.",
+        "Offers a clear distinction between surface output and the human choices behind artistic work.",
+        "Creates a productive disagreement rather than asking for a simple fact verdict."
       ],
       weaknesses: [
-        "The key category move from provenance to interpretive analytical work remains undertheorized.",
-        "Mechanism claims rely more on plausibility than on validated governance outcomes.",
-        "The administrative burden and strategic adaptation risks are acknowledged but not robustly modeled."
+        "The argument depends heavily on a definition of art centered on intention and choice.",
+        "It may understate cases where tools, delegation, rules, or procedures are themselves part of artistic agency.",
+        "The essay is conceptually strong but not designed to settle the social question of how audiences treat AI outputs."
       ],
       readingStance:
-        "Read with active disagreement preserved. Treat the proposal as unresolved and in need of domain-specific follow-up rather than as either validated innovation or obvious error.",
+        "Read as a strong conceptual essay with disagreement preserved. Use philosophical and art-practice review, not a generic evidence checklist.",
       disagreement:
-        "Reviewer disagreement is substantive, not cosmetic. The core dispute is about whether the proposal has found a useful bounded intervention or imported traceability logic into a domain where it does not fit cleanly.",
+        "Reviewer disagreement is substantive, not cosmetic. The core dispute is whether the essay clarifies why art requires human intention or narrows art too much by treating AI as categorically different from earlier tools.",
       verificationNeeds: [
-        "Clarify whether the strongest defensible claim is auditability, trust calibration, or procurement discipline.",
-        "Test the proposal against real procurement workflows and administrative-law constraints.",
-        "Assess author and contractor burden, including strategic compliance behavior.",
-        "Compare against less formal alternatives such as structured disclosure appendices or bounded review passports."
+        "Clarify the essay's definition of art and whether it is meant descriptively, normatively, or both.",
+        "Compare the argument with tool-mediated, procedural, conceptual, and collaborative art practices.",
+        "Ask whether audience reception can matter even if the production process lacks human intention.",
+        "Keep the New Yorker article open as the source; this demo uses paraphrased cues, not reproduced text."
       ],
       dimensions: [
         {
           name: "Originality",
-          state: "High but unstable",
-          note: "The idea is distinctive, but its value depends on a contested category move.",
-          width: 79,
-          tone: "contested"
+          state: "High",
+          note: "The distinction is crisp and gives the debate structure.",
+          width: 80,
+          tone: "promising"
         },
         {
           name: "Coherence",
-          state: "Mixed",
-          note: "Some sections are disciplined; others appear to smuggle in stronger trust implications.",
-          width: 52,
-          tone: "contested"
+          state: "Currently coherent",
+          note: "The essay has a clear conceptual line.",
+          width: 76,
+          tone: "promising"
         },
         {
           name: "Evidence grounding",
-          state: "Partial",
-          note: "Problem examples are plausible, but mechanism validation is weak.",
-          width: 38,
-          tone: "fragile"
+          state: "Illustrative",
+          note: "Support comes through examples and analogies, not empirical proof.",
+          width: 48,
+          tone: "steady"
         },
         {
           name: "Overclaim restraint",
-          state: "Contested",
-          note: "Self-limiting language exists, yet some reviewers think the implied promise still runs too far.",
-          width: 46,
+          state: "Disagreement visible",
+          note: "The main risk is narrowing art too quickly.",
+          width: 56,
           tone: "contested"
         },
         {
           name: "Review stability",
-          state: "Low",
-          note: "Current readings diverge enough that no single settled passport should be inferred.",
-          width: 24,
+          state: "Conceptual review",
+          note: "No single verdict should be inferred from the first reading.",
+          width: 62,
           tone: "contested"
         }
       ],
       reviewHistory: [
         {
           stage: "Initial read",
-          actor: "Innovation lab editor",
-          date: "April 10, 2026",
-          note: "Marked as unusually relevant to current procurement anxieties but conceptually hard to place."
+          actor: "Prototype editor",
+          date: "May 3, 2026",
+          note: "Selected as a real conceptual essay for the disagreement-visible case."
         },
         {
-          stage: "Reviewer A memo",
-          actor: "Governance reviewer",
-          date: "April 14, 2026",
-          note: "Argued that the proposal offers a bounded transparency scaffold worth prototyping."
+          stage: "Source handling",
+          actor: "Trust Layer",
+          date: "May 3, 2026",
+          note: "Full text was not reproduced; source cues are paraphrased and link back to the original article."
         },
         {
-          stage: "Reviewer B memo",
-          actor: "Research methods reviewer",
-          date: "April 16, 2026",
-          note: "Argued that the proposal confuses procedural logging with warranted interpretive trust."
+          stage: "Review note",
+          actor: "Conceptual reviewer",
+          date: "May 3, 2026",
+          note: "Marked as strong but contestable, requiring conceptual rather than evidence-first review."
         },
         {
-          stage: "Passport hold",
+          stage: "Review state",
           actor: "Prototype facilitator",
-          date: "April 21, 2026",
-          note: "Kept the passport explicitly unresolved rather than collapsing the disagreement into a single score or verdict."
+          date: "May 3, 2026",
+          note: "Kept disagreement visible rather than collapsing the case into a score or verdict."
         }
       ],
       reviewerViews: [
@@ -1112,73 +1110,73 @@ export const documentCases: DocumentCase[] = [
           reviewer: "Reviewer A",
           stance: "Provisionally favorable",
           summary:
-            "Sees the essay as a bounded governance overlay that could make commissioned analytical work easier to inspect without claiming to determine truth.",
+            "Sees the essay as a strong account of why art is a practice of intentional choices rather than merely the production of outputs.",
           bullets: [
-            "The authors start from a real administrative problem around outsourced analytical opacity.",
-            "The proposal repeatedly limits its scope and does not present itself as an authorship detector or universal trust system.",
-            "Even partial provenance records could improve procurement oversight and downstream review."
+            "The artifact/practice distinction is clear and useful.",
+            "The essay avoids treating output quality alone as the whole question.",
+            "It gives reviewers a better vocabulary for discussing authorship, agency, and tools."
           ]
         },
         {
           reviewer: "Reviewer B",
           stance: "Substantively skeptical",
           summary:
-            "Sees the essay as importing supply-chain traceability logic into a domain where interpretation remains contested no matter how much logging is performed.",
+            "Sees the essay as relying on a narrow account of art that may underplay how artists have always worked through tools, constraints, and procedures.",
           bullets: [
-            "Analytical texts are not material objects whose meaning stabilizes through trace records alone.",
-            "The proposal risks procedural theater by giving agencies a cleaner interface for uncertainty rather than better judgment.",
-            "Burden and gaming dynamics may swamp the intended transparency gains."
+            "Tool use does not automatically remove artistic agency.",
+            "Audience reception may matter more than the essay allows.",
+            "The argument may treat AI as categorically different before fully testing borderline cases."
           ]
         }
       ]
     },
     workflow: {
       strongest:
-        "The text is strongest where it diagnoses a real procurement problem and draws explicit boundaries around what the proposed provenance layer would not do.",
+        "The text is strongest where it separates artifact production from intentional artistic practice.",
       weakest:
-        "It is weakest on the conceptual leap from provenance logging to warranted trust in interpretive analytical work, and on the practical burden this would impose.",
+        "What needs checking is whether the definition of art is too narrow for tool-mediated or procedural creativity.",
       tryingToDo:
-        "The essay is trying to carve out a middle path between naive trust in polished outputs and impossible demands for full epistemic certainty.",
+        "The essay is trying to show why AI-generated outputs should not be confused with art-making by a human agent.",
       uncertainty:
-        "My assessment remains uncertain at the deepest level: I am not yet sure whether the proposal is a tractable governance tool or a category error with good rhetoric.",
+        "Uncertainty remains around tools, delegation, audience reception, and borderline cases of conceptual or procedural art.",
       changeAssessment:
-        "I would revise upward if a narrow pilot showed genuine oversight benefits without excessive burden. I would revise downward if the proposal could not specify what provenance records actually change in review practice.",
+        "I would revise if a stronger account showed that AI can remain inside a human chain of intention rather than bypass it.",
       deeperReview:
-        "Yes, but only with domain-specific follow-up across procurement, research methods, and administrative law.",
+        "Yes. Use conceptual review by someone familiar with aesthetics, art practice, and AI tools.",
       contestStructuredReading:
-        "Yes, partly. The current structured reading is appropriately careful, but I would insist on keeping the trust implication explicitly unsettled.",
+        "Yes. Keep the disagreement explicit: this is not a weak text, but an arguable conceptual position.",
       revisePassport:
-        "Yes. The passport should remain revisable and visibly contested until stronger domain review narrows the claim.",
+        "Yes. The review note should stay revisable after checking the original article and alternative readings.",
       secondary: [
         {
           label: "Originality",
-          value: "High but unstable",
-          note: "Distinctive idea whose value depends on contested assumptions."
+          value: "High",
+          note: "The distinction is crisp and gives the debate structure."
         },
         {
           label: "Coherence",
-          value: "Mixed",
-          note: "Readable and disciplined in places, unstable in others."
+          value: "High",
+          note: "The essay has a clear conceptual line."
         },
         {
           label: "Evidence support",
-          value: "Partial",
-          note: "Problem diagnosis is plausible; mechanism support is limited."
+          value: "Illustrative",
+          note: "Support comes through examples and analogies, not empirical proof."
         },
         {
           label: "Overclaim risk",
-          value: "Contested",
-          note: "Scope limits help, but some implications may still run too far."
+          value: "Moderate",
+          note: "The main risk is narrowing art too quickly."
         },
         {
           label: "Review confidence",
-          value: "Low to moderate",
-          note: "Confidence is capped by active reviewer disagreement."
+          value: "Moderate",
+          note: "Good first reading, but source checking and adversarial review matter."
         },
         {
           label: "Domain fit",
-          value: "High for specialist follow-up",
-          note: "Needs the right reviewers, not a fast queue decision."
+          value: "High",
+          note: "Good fit for conceptual essay review."
         }
       ]
     }
@@ -1186,7 +1184,7 @@ export const documentCases: DocumentCase[] = [
 ];
 
 export const defaultDocumentSlug = documentCases[0].slug;
-export const contestedDocumentSlug = "civic-provenance-ledger";
+export const contestedDocumentSlug = "why-ai-isnt-going-to-make-art";
 
 export function getDocumentBySlug(slug: string) {
   return documentCases.find((document) => document.slug === slug);

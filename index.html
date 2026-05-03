@@ -3704,186 +3704,280 @@
         },
         {
           id: "d",
-          slug: "civic-provenance-ledger",
-          profile: B("Ambiguous / disagreement-visible text", "Неоднозначный текст с видимым разногласием"),
+          slug: "why-ai-isnt-going-to-make-art",
+          profile: B("Conceptual essay / disagreement-visible", "Концептуальное эссе / видимое разногласие"),
           title: B(
-            "A Civic Provenance Ledger for Research Procurement",
-            "Гражданский provenance ledger для закупки исследований"
+            "Why A.I. Isn't Going to Make Art",
+            "Why A.I. Isn't Going to Make Art"
           ),
-          shortTitle: B("Civic provenance ledger", "Civic provenance ledger"),
-          author: "Marta Levin and Kai Soto",
-          type: B("Analytical essay / hybrid proposal", "Аналитическое эссе / гибридное предложение"),
+          shortTitle: B("Why AI isn't making art", "Почему AI не создает art"),
+          author: "Ted Chiang",
+          type: B("Conceptual essay", "Концептуальное эссе"),
           submissionContext: B(
-            "Shared with a public-sector innovation lab exploring procurement rules for commissioned research.",
-            "Передан в public-sector innovation lab, изучающий новые procurement rules для заказных исследований."
+            "Published in The New Yorker as a Weekend Essay on August 31, 2024; used here as a real conceptual-essay case with safe paraphrased source cues.",
+            "Опубликовано в The New Yorker как Weekend Essay 31 августа 2024; здесь используется как реальный кейс conceptual essay с безопасными paraphrased source cues."
           ),
           landingSummary: B(
-            "Disagreement visible and unresolved.",
-            "Есть разногласие, вопрос не решен."
+            "Strong conceptual frame; disagreement remains visible.",
+            "Сильная концептуальная рамка; разногласие остается видимым."
           ),
           landingStance: B(
-            "Escalate and keep it open.",
-            "Эскалировать и не закрывать вывод."
+            "Use conceptual review, not evidence-first triage.",
+            "Использовать концептуальную проверку, а не evidence-first отбор."
           ),
           previewNote: B(
-            "Ambiguity case: disagreement remains visible and no stable review state exists yet.",
-            "Кейс неоднозначности: разногласие остается видимым, а устойчивого состояния проверки пока нет."
+            "Real case: a conceptual essay that argues AI-generated output lacks the human choices that make art, while leaving room for disagreement about tools, authorship, and intention.",
+            "Реальный кейс: conceptual essay, где AI-output отделяется от человеческого выбора, делающего artefact искусством. При этом остается спор о tools, authorship и intention."
           ),
           deck: B(
-            "The essay proposes a provenance ledger for commissioned research outputs, but readers disagree sharply over whether it is a governance innovation or a category error wrapped in procedural fluency.",
-            "Эссе предлагает provenance ledger для заказных исследовательских outputs, но читатели резко расходятся в том, является ли это governance innovation или category error, обернутой в процедурную гладкость."
+            "Ted Chiang's essay argues that generative AI may produce artifacts, but art depends on intentional choices across many scales. The useful disagreement is whether this clarifies art or defines it too narrowly.",
+            "Эссе Ted Chiang утверждает, что generative AI может производить артефакты, но искусство зависит от намеренных choices на многих уровнях. Полезное разногласие: это проясняет искусство или слишком узко его определяет."
           ),
           centralArgument: B(
-            "Public-sector commissioned analysis may benefit from a provenance layer, but it remains unclear whether the ledger clarifies interpretation or merely formalizes it.",
-            "Заказной анализ для публичного сектора может выиграть от provenance-layer, но неясно, проясняет ли такой ledger интерпретацию или только формализует ее."
+            "Art is not merely the production of a pleasing artifact; it involves a chain of human choices, constraints, and intentions that prompt-based generation tends to compress or bypass.",
+            "Искусство — не просто производство удачного артефакта; оно связано с цепочкой человеческих choices, ограничений и намерений, которые prompt-based generation часто сжимает или обходит."
           ),
+          original: {
+            url: "https://www.newyorker.com/culture/the-weekend-essay/why-ai-isnt-going-to-make-art",
+            title: B("Original article", "Оригинальная статья"),
+            linkLabel: B("Open original article", "Открыть оригинальную статью"),
+            helper: B(
+              "Because this is a copyrighted article, this demo uses short paraphrased source cues rather than reproducing the text. Open the original to check the reading.",
+              "Поскольку это copyrighted article, демо использует короткие paraphrased source cues вместо воспроизведения текста. Откройте оригинал, чтобы проверить разбор."
+            ),
+            excerpts: [
+              {
+                label: B("Auto-complete frame", "Рамка auto-complete"),
+                sourceRef: B("Source cue: opening argument", "Source cue: начало эссе"),
+                excerpt: B(
+                  "Paraphrased cue: the essay frames generative AI as pattern extension rather than a maker with lived intention.",
+                  "Парафраз: эссе описывает generative AI как продолжение паттернов, а не как maker с прожитым намерением."
+                )
+              },
+              {
+                label: B("Art as choices", "Искусство как choices"),
+                sourceRef: B("Source cue: discussion of artistic decisions", "Source cue: часть о художественных решениях"),
+                excerpt: B(
+                  "Paraphrased cue: the essay stresses that art involves choices at many levels, from form and constraint to revision.",
+                  "Парафраз: эссе подчеркивает, что искусство включает choices на многих уровнях: form, constraints, revision."
+                )
+              },
+              {
+                label: B("Prompting and intention", "Prompting и intention"),
+                sourceRef: B("Source cue: prompting discussion", "Source cue: обсуждение prompting"),
+                excerpt: B(
+                  "Paraphrased cue: the article contrasts entering a prompt with making the many situated decisions involved in artistic practice.",
+                  "Парафраз: статья противопоставляет ввод prompt и множество situated decisions внутри художественной практики."
+                )
+              },
+              {
+                label: B("Disagreement point", "Точка разногласия"),
+                sourceRef: B("Source cue: implication for AI art debate", "Source cue: implication for AI art debate"),
+                excerpt: B(
+                  "Paraphrased cue: one reviewer may see the essay as clarifying intention; another may see it as too narrow about tool-mediated art.",
+                  "Парафраз: один проверяющий увидит прояснение intention; другой — слишком узкий взгляд на tool-mediated art."
+                )
+              }
+            ]
+          },
           textSections: [
             {
-              heading: B("The proposal begins from a real concern about outsourced epistemic opacity", "Предложение начинается с реальной тревоги по поводу аутсорсинговой эпистемической непрозрачности"),
-              zone: B("Claim", "Тезис"),
-              summary: B("The essay argues that commissioned analysis often arrives with too little visibility into how it was assembled.", "Эссе утверждает, что заказной анализ часто приходит с недостаточной видимостью того, как именно он был собран."),
+              heading: B("The essay shifts the question from output to intention", "Эссе переносит вопрос с output на intention"),
+              zone: B("Core idea", "Главная идея"),
+              summary: B("The essay argues that the relevant question is not whether AI can produce artifacts that resemble art, but whether it participates in the intentional practice that makes art.", "Эссе утверждает: вопрос не в том, может ли AI производить артефакты, похожие на искусство, а в том, участвует ли он в intentional practice, которая делает искусство искусством."),
               paragraphs: [
-                B("Levin and Soto start from an intelligible problem: commissioned research often arrives as a polished output with thin visibility into sourcing, subcontracting, model use, or interpretive handoffs.", "Левин и Сото начинают с понятной проблемы: заказное исследование часто приходит как polished output с тонкой видимостью источников, субподрядов, model use и interpretive handoffs."),
-                B("On a sympathetic reading, the authors are trying to design a governance layer for analytical procurement under conditions of AI-assisted overproduction.", "В благожелательном прочтении авторы пытаются спроектировать governance-layer для закупки аналитики в условиях AI-assisted перепроизводства.")
+                B("The piece is useful for Trust Layer because it is not a memo asking for evidence-first approval. It is a conceptual essay trying to define what is at stake when AI systems generate culture-like outputs.", "Для Trust Layer этот текст полезен именно потому, что это не memo, требующий evidence-first approval. Это conceptual essay, который пытается определить, что поставлено на карту, когда AI systems генерируют outputs, похожие на культуру."),
+                B("A good first reading should therefore preserve the distinction the essay makes, rather than flatten the text into simple claims about AI capability.", "Хороший первый разбор должен сохранить distinction, которую проводит эссе, а не сводить текст к простым тезисам о capability AI.")
               ]
             },
             {
-              heading: B("The ledger concept is analytically suggestive but structurally unstable", "Сам concept ledger аналитически многообещающий, но структурно нестабильный"),
-              zone: B("Interpretive uncertainty", "Интерпретативная неопределенность"),
-              summary: B("Some readers see a tractable audit layer; others see a confused import of traceability metaphors into an interpretive domain.", "Одни читатели видят реализуемый audit-layer, другие — спутанный перенос traceability-метафор в интерпретативную область."),
+              heading: B("The strongest move is conceptual, not empirical", "Самый сильный ход — концептуальный, а не эмпирический"),
+              zone: B("New distinction", "Новое различие"),
+              summary: B("The essay separates artifact production from artistic agency, which makes it a conceptual-essay case rather than a policy report.", "Эссе отделяет artifact production от artistic agency, поэтому это conceptual-essay case, а не policy report."),
               paragraphs: [
-                B("The proposed ledger would record source classes, transformations, model-assisted steps, reviewer interventions, and unresolved objections across the life of a commissioned output.", "Предлагаемый ledger должен фиксировать классы источников, трансформации, model-assisted steps, вмешательства проверяющих и неразрешенные objections по ходу жизни заказного output."),
-                B("The difficulty is that provenance in analytical work is not the same as provenance in material supply chains.", "Сложность в том, что provenance в аналитической работе не равна provenance в материальных supply chains.")
+                B("The essay's force comes from a distinction: an artifact can satisfy surface expectations while still lacking the chain of intention and choice that we usually associate with art-making.", "Сила эссе в distinction: артефакт может удовлетворять поверхностные ожидания, но не иметь цепочки intention и choice, которую мы обычно связываем с art-making."),
+                B("That makes source checking different here. The reviewer is not simply asking whether data supports a claim; the reviewer is asking whether the definition of art and agency is persuasive.", "Поэтому source checking здесь работает иначе. Проверяющий спрашивает не только, подтверждают ли данные claim, а убедительны ли definition of art и agency.")
               ]
             },
             {
-              heading: B("Reviewers disagree on whether the text is disciplined or overextended", "Проверяющие расходятся в том, дисциплинирован ли текст или все же переходит границы"),
-              zone: B("Evidence-bearing area", "Участок с опорой на данные"),
-              summary: B("The same passages read to one reviewer as carefully bounded and to another as quietly overclaiming what traceability can do.", "Одни и те же пассажи одному проверяющему кажутся аккуратно ограниченными, другому — тихо завышающими возможности traceability."),
+              heading: B("The disagreement is real", "Разногласие здесь реальное"),
+              zone: B("Alternative readings", "Альтернативные прочтения"),
+              summary: B("One reading finds a precise account of art as intentional practice; another sees a restrictive human-centered definition that underplays tool-mediated creativity.", "Одно прочтение видит точный account of art as intentional practice; другое — слишком узкое human-centered definition, которое недооценивает tool-mediated creativity."),
               paragraphs: [
-                B("The essay repeatedly says the ledger would not determine truth or settle interpretation. That helps the favorable reading.", "Эссе многократно говорит, что ledger не будет определять истину и не будет закрывать интерпретацию. Это усиливает благожелательное прочтение."),
-                B("Yet the skeptical reading remains live because the document still hints that improved provenance records could materially stabilize trust.", "Но скептическое прочтение остается живым, потому что текст все же намекает, будто более полные provenance records способны materially стабилизировать доверие.")
+                B("A favorable reviewer may say the essay names something important: AI generation changes the relation between tool, maker, and finished work.", "Благожелательный проверяющий скажет: эссе называет важную вещь — AI generation меняет отношение между tool, maker и finished work."),
+                B("A skeptical reviewer may answer that art has always involved tools, delegation, constraints, and procedures. On that reading, the essay clarifies one position but does not close the debate.", "Скептический проверяющий ответит: искусство всегда включало tools, delegation, constraints и procedures. В таком чтении эссе проясняет одну позицию, но не закрывает debate.")
               ]
             }
           ],
           overlay: {
             claimZones: [
-              { label: B("Problem diagnosis", "Диагноз проблемы"), summary: B("AI-assisted and outsourced production creates real opacity around how analytical conclusions were assembled.", "AI-assisted и аутсорсинговое производство создает реальную непрозрачность вокруг того, как собирались аналитические выводы.") },
-              { label: B("Governance proposal", "Управленческое предложение"), summary: B("A provenance ledger would preserve more of the production trail for commissioned analytical texts.", "Provenance ledger должен сохранить большую часть production trail для заказных аналитических текстов.") },
-              { label: B("Trust implication", "Импликация для доверия"), summary: B("The text hints that better provenance could improve warranted trust, but disagreement remains visible.", "Текст намекает, что лучшая provenance может улучшить обоснованное доверие, но разногласие остается видимым.") }
+              {
+                label: B("Artifact versus practice", "Артефакт и практика"),
+                summary: B("The essay separates producing an artifact from participating in the practice of making art.", "Эссе отделяет производство artifact от участия в практике создания искусства."),
+                sourceRef: B("Source cue: opening argument.", "Source cue: начало эссе."),
+                sourceLocation: B("Opening conceptual frame", "Начальная концептуальная рамка"),
+                sourceSnippet: B(
+                  "Paraphrased cue: the article frames generative AI as extending patterns from existing material, then asks whether this is enough to count as art-making.",
+                  "Парафраз: статья описывает generative AI как продолжение паттернов из уже существующего материала, а затем спрашивает, достаточно ли этого для art-making."
+                )
+              },
+              {
+                label: B("Choice density", "Плотность choices"),
+                summary: B("The essay's main standard is the density of choices and revisions made by a human artist.", "Главный стандарт эссе — плотность choices и revisions, которые делает human artist."),
+                sourceRef: B("Source cue: discussion of artistic decisions.", "Source cue: часть о художественных решениях."),
+                sourceLocation: B("Middle conceptual section", "Средняя концептуальная часть"),
+                sourceSnippet: B(
+                  "Paraphrased cue: the essay treats art as a sequence of decisions about subject, form, constraint, and revision rather than a single instruction followed by output.",
+                  "Парафраз: эссе описывает искусство как последовательность decisions о subject, form, constraint и revision, а не как один instruction followed by output."
+                )
+              },
+              {
+                label: B("Tool objection", "Возражение про tools"),
+                summary: B("The main disagreement is whether AI is merely another tool or whether it removes too much of the maker's decision process.", "Главное разногласие: AI — просто еще один tool или он убирает слишком большую часть decision process автора."),
+                sourceRef: B("Source cue: implications for tools and authorship.", "Source cue: implications for tools and authorship."),
+                sourceLocation: B("AI art debate", "AI art debate"),
+                sourceSnippet: B(
+                  "Paraphrased cue: the live objection is that artists have always used tools, procedures, and delegation; the essay's answer depends on how much choice remains with the maker.",
+                  "Парафраз: живое возражение в том, что artists всегда использовали tools, procedures и delegation; ответ эссе зависит от того, сколько choice остается у maker."
+                )
+              }
             ],
             evidenceAreas: [
-              { label: B("Procurement examples", "Примеры из procurement"), summary: B("Examples of commissioned opacity make the problem plausible but do not validate the mechanism.", "Примеры непрозрачности в procurement делают проблему правдоподобной, но не валидируют сам механизм.") },
-              { label: B("Scope disclaimers", "Оговорки о границах"), summary: B("The essay repeatedly says it is not a truth engine, which matters for the favorable reading.", "Текст многократно подчеркивает, что это не машина истины, и это важно для благожелательного прочтения.") }
+              {
+                label: B("Examples from art practice", "Примеры из художественной практики"),
+                summary: B("The essay relies on examples about artistic decision-making rather than statistical evidence.", "Эссе опирается на examples of artistic decision-making, а не на статистическую evidence."),
+                sourceRef: B("Source cue: examples of artistic choice.", "Source cue: примеры художественного выбора."),
+                sourceSnippet: B(
+                  "Paraphrased cue: the examples are used to show how much artistic meaning is carried by choices that are not captured by a prompt alone.",
+                  "Парафраз: примеры показывают, сколько artistic meaning несут choices, которые не сводятся к одному prompt."
+                )
+              },
+              {
+                label: B("Analogy to auto-complete", "Аналогия с auto-complete"),
+                summary: B("The auto-complete analogy organizes the essay but should be checked as a framing device, not empirical proof.", "Аналогия с auto-complete организует эссе, но ее нужно проверять как framing device, а не как empirical proof."),
+                sourceRef: B("Source cue: AI capability framing.", "Source cue: framing AI capability."),
+                sourceSnippet: B(
+                  "Paraphrased cue: the essay treats generative systems as powerful pattern continuers, which supports the argument but also creates a possible point of dispute.",
+                  "Парафраз: эссе трактует generative systems как powerful pattern continuers; это поддерживает argument, но также создает point of dispute."
+                )
+              }
             ],
             uncertainty: [
-              { label: B("Category fit", "Категориальное соответствие"), summary: B("It is unsettled whether provenance logging maps meaningfully onto interpretive analytical work.", "Неясно, насколько осмысленно provenance logging вообще ложится на интерпретативную аналитическую работу.") },
-              { label: B("Governance effect", "Governance effect"), summary: B("Better records may help oversight without stabilizing trust as much as the text implies.", "Лучшие записи могут помочь oversight, но не стабилизировать trust в той мере, в какой текст иногда подразумевает.") },
-              { label: B("Adoption incentives", "Стимулы к внедрению"), summary: B("Burden and gaming risks may produce strategic compliance rather than real transparency.", "Риски нагрузки и gaming могут привести к стратегическому соблюдению формы, а не к реальной прозрачности.") }
+              {
+                label: B("Definition of art", "Определение искусства"),
+                summary: B("The essay's force depends on accepting a definition of art centered on intention, choice, and practice.", "Сила эссе зависит от принятия definition of art, сосредоточенного на intention, choice и practice.")
+              },
+              {
+                label: B("Tool-mediated creativity", "Tool-mediated creativity"),
+                summary: B("It remains contestable whether AI tools necessarily bypass artistic agency or can be absorbed into it.", "Остается спорным, обязательно ли AI tools обходят artistic agency или могут быть включены в нее.")
+              },
+              {
+                label: B("Audience response", "Реакция аудитории"),
+                summary: B("The essay gives less weight to whether viewers can experience AI outputs as art regardless of origin.", "Эссе меньше учитывает вопрос, может ли audience переживать AI outputs как искусство независимо от origin.")
+              }
             ],
             reviewFocus: [
-              B("Clarify the strongest version of the claim before deciding whether the proposal is serious or confused.", "Уточнить самую сильную версию тезиса до того, как решать, серьезно предложение или спутано."),
-              B("Ask where provenance records genuinely help and where disagreement remains untouched.", "Спросить, где provenance records реально помогают, а где разногласие остается нетронутым."),
-              B("Bring procurement, administrative-law, and knowledge-governance expertise into the next review step.", "Подключить экспертизу по закупкам, administrative law и knowledge governance на следующем шаге проверки.")
+              B("Check whether the distinction between artifact and artistic practice is persuasive.", "Проверить, убедительно ли distinction между artifact и artistic practice."),
+              B("Ask whether the essay treats AI as categorically different from earlier artistic tools.", "Спросить, трактует ли эссе AI как категориально отличный от прежних artistic tools."),
+              B("Keep disagreement visible: this is a conceptual dispute, not a fact-checking problem.", "Сохранить разногласие видимым: это conceptual dispute, а не простая fact-checking problem.")
             ],
             reviewMap: [
-              { step: B("Claim narrowing", "Сужение тезиса"), emphasis: B("Define whether the ledger is meant as an audit aid, a trust aid, or both.", "Определить, мыслится ли ledger как audit aid, trust aid или и то и другое.") },
-              { step: B("Conceptual challenge", "Концептуальная проверка"), emphasis: B("Test whether provenance can travel from material traceability to interpretive production.", "Проверить, переносится ли provenance из материальной traceability в интерпретативное производство.") },
-              { step: B("Governance follow-up", "Следующая проверка"), emphasis: B("Review burden, incentives, and compliance gaming risk.", "Проверить нагрузку, стимулы и риск compliance gaming.") },
-              { step: B("Keep open", "Оставить открытым"), emphasis: B("Keep disagreement visible rather than collapse it into a single verdict.", "Удерживать несогласие видимым, а не сворачивать его в один verdict.") }
+              { step: B("Conceptual read", "Концептуальное чтение"), emphasis: B("Clarify the definition of art and why intention matters.", "Уточнить definition of art и почему intention важна.") },
+              { step: B("Adversarial read", "Adversarial чтение"), emphasis: B("Test the tool objection and cases of assisted or procedural art.", "Проверить tool objection и cases of assisted/procedural art.") },
+              { step: B("Disagreement note", "Заметка о разногласии"), emphasis: B("Record what exactly remains disputed rather than forcing a route verdict.", "Записать, что именно остается спорным, вместо forcing a verdict.") }
             ],
             signals: [
-              { label: B("Interpretive state", "Состояние интерпретации"), value: B("Disagreement visible", "Есть разногласие"), tone: "contested" },
-              { label: B("Evidence grounding", "Опора на данные"), value: B("Partial", "Частичная"), tone: "fragile" },
-              { label: B("Operational relevance", "Операционная релевантность"), value: B("Unclear", "Неясная"), tone: "contested" },
-              { label: B("Need for follow-up", "Нужна дальнейшая проверка"), value: B("High", "Высокая"), tone: "promising" }
+              { label: B("Conceptual clarity", "Концептуальная ясность"), value: B("High", "Высокая"), tone: "promising" },
+              { label: B("Evidence support", "Опора"), value: B("Illustrative", "Иллюстративная"), tone: "steady" },
+              { label: B("Disagreement", "Разногласие"), value: B("Visible", "Видимое"), tone: "contested" },
+              { label: B("Review priority", "Приоритет проверки"), value: B("Conceptual review", "Концептуальная проверка"), tone: "promising" }
             ],
             status: B(
-              "Illustrative structured reading only. Human readers still disagree over the text's basic profile.",
-              "Это только иллюстративное структурированное чтение. Человеческие читатели по-прежнему расходятся в базовом профиле текста."
+              "Prepared first reading only. Source cues are paraphrased because the original is copyrighted; they help checking but do not prove the interpretation.",
+              "Это только подготовленный первый разбор. Source cues перефразированы, потому что оригинал copyrighted; они помогают проверке, но ничего не доказывают."
             )
           },
           passport: {
             synthesis: B(
-              "No stable review state exists yet. One reading sees a bounded governance overlay for analytical procurement; another sees a procedural shell that overstates what provenance can do for interpretation.",
-              "Устойчивого состояния проверки пока нет. Одно прочтение видит здесь ограниченный слой для закупки аналитики; другое — процедурную оболочку, преувеличивающую то, что provenance способна сделать для интерпретации."
+              "No stable review state exists yet. One reading sees a strong account of art as intentional human practice; another sees a restrictive definition that underplays tools, procedure, and audience response.",
+              "Устойчивого состояния проверки пока нет. Одно прочтение видит сильный account of art as intentional human practice; другое — слишком узкое definition, которое недооценивает tools, procedure и response аудитории."
             ),
             strengths: [
-              B("Starts from a real procurement problem rather than an abstract anxiety.", "Начинается с реальной procurement-проблемы, а не с абстрактной тревоги."),
-              B("Includes explicit scope limits that resist the strongest truth-engine reading.", "Содержит явные ограничения, которые сдерживают наиболее сильное прочтение в духе «машины истины»."),
-              B("May provide a useful vocabulary for discussing outsourced analytical provenance.", "Может дать полезный словарь для разговора об outsourced analytical provenance.")
+              B("Names a real conceptual dispute: whether generated artifacts can be separated from art-making practice.", "Называет реальный conceptual dispute: можно ли отделить generated artifacts от практики art-making."),
+              B("Offers a clear distinction between surface output and the human choices behind artistic work.", "Проводит ясное различие между surface output и human choices за художественной работой."),
+              B("Creates a productive disagreement rather than asking for a simple fact verdict.", "Создает продуктивное разногласие, а не просит простой fact verdict.")
             ],
             weaknesses: [
-              B("The move from provenance to interpretive analytical work remains undertheorized.", "Переход от provenance к интерпретативной аналитической работе остается недотеоретизированным."),
-              B("Mechanism claims rely more on plausibility than on validated outcomes.", "Тезисы о механизме больше опираются на правдоподобие, чем на валидированные outcomes."),
-              B("Administrative burden and strategic adaptation risks are acknowledged but not robustly modeled.", "Административная нагрузка и риски стратегической адаптации признаны, но не смоделированы надежно.")
+              B("The argument depends heavily on a definition of art centered on intention and choice.", "Аргумент сильно зависит от definition of art, сосредоточенного на intention и choice."),
+              B("It may understate cases where tools, delegation, rules, or procedures are themselves part of artistic agency.", "Он может недооценивать случаи, где tools, delegation, rules или procedures сами являются частью artistic agency."),
+              B("The essay is conceptually strong but not designed to settle the social question of how audiences treat AI outputs.", "Эссе концептуально сильное, но не закрывает social question о том, как audiences воспринимают AI outputs.")
             ],
             stance: B(
-              "Read with active disagreement preserved. Treat the proposal as unresolved and in need of specialist follow-up.",
-              "Читать так, чтобы активное несогласие сохранялось. Рассматривать предложение как незавершенное и нуждающееся в проверке специалистом."
+              "Read as a strong conceptual essay with disagreement preserved. Use philosophical and art-practice review, not a generic evidence checklist.",
+              "Читать как сильное conceptual essay с сохраненным разногласием. Нужна философская и art-practice проверка, а не generic evidence checklist."
             ),
             disagreement: B(
-              "Reviewer disagreement is substantive, not cosmetic. The core dispute is whether the proposal has found a useful bounded intervention or imported traceability logic into a domain where it does not fit cleanly.",
-              "Разногласие между проверяющими содержательное, а не косметическое. Главный спор — нашло ли предложение полезную ограниченную интервенцию или просто перенесло traceability-логику в область, где она плохо подходит."
+              "Reviewer disagreement is substantive, not cosmetic. The core dispute is whether the essay clarifies why art requires human intention or narrows art too much by treating AI as categorically different from earlier tools.",
+              "Разногласие между проверяющими содержательное, а не косметическое. Главный спор — проясняет ли эссе, почему искусству нужна human intention, или слишком сужает art, делая AI категориально отличным от прежних tools."
             ),
             verification: [
-              B("Clarify whether the strongest defensible claim is auditability, trust calibration, or procurement discipline.", "Уточнить, какой тезис здесь сильнее всего защищается: auditability, trust calibration или procurement discipline."),
-              B("Test the proposal against real procurement workflows and administrative-law constraints.", "Проверить предложение на реальных процессах закупок и ограничениях административного права."),
-              B("Assess burden and strategic compliance behavior for authors and contractors.", "Оценить нагрузку и стратегическое compliance behavior со стороны авторов и подрядчиков."),
-              B("Compare against less formal alternatives such as structured disclosure appendices.", "Сравнить с менее формальными альтернативами, например structured disclosure appendices.")
+              B("Clarify the essay's definition of art and whether it is meant descriptively, normatively, or both.", "Уточнить definition of art в эссе: это descriptive claim, normative claim или оба сразу."),
+              B("Compare the argument with tool-mediated, procedural, conceptual, and collaborative art practices.", "Сравнить argument с tool-mediated, procedural, conceptual и collaborative art practices."),
+              B("Ask whether audience reception can matter even if the production process lacks human intention.", "Спросить, имеет ли значение audience reception, даже если production process лишен human intention."),
+              B("Keep the New Yorker article open as the source; this demo uses paraphrased cues, not reproduced text.", "Держать оригинал New Yorker открытым как source; демо использует paraphrased cues, а не воспроизведенный текст.")
             ],
             dimensions: [
-              { id: "originality", label: B("Originality", "Оригинальность"), state: B("High but unstable", "Высокая, но нестабильная"), width: 79 },
-              { id: "coherence", label: B("Coherence", "Связность"), state: B("Mixed", "Смешанная"), width: 52 },
-              { id: "evidence", label: B("Evidence grounding", "Опора на данные"), state: B("Partial", "Частичная"), width: 38 },
-              { id: "overclaim", label: B("Overclaim restraint", "Сдержанность завышения"), state: B("Disagreement visible", "Есть разногласие"), width: 46 },
-              { id: "confidence", label: B("Review state", "Состояние проверки"), state: B("Unsettled", "Неустойчиво"), width: 24 }
+              { id: "originality", label: B("Originality", "Оригинальность"), state: B("High", "Высокая"), width: 80 },
+              { id: "coherence", label: B("Coherence", "Связность"), state: B("Currently coherent", "Пока выглядит связно"), width: 76 },
+              { id: "evidence", label: B("Evidence grounding", "Опора"), state: B("Illustrative", "Иллюстративная"), width: 48 },
+              { id: "overclaim", label: B("Overclaim restraint", "Сдержанность завышения"), state: B("Disagreement visible", "Есть разногласие"), width: 56 },
+              { id: "confidence", label: B("Review state", "Состояние проверки"), state: B("Conceptual review", "Концептуальная проверка"), width: 62 }
             ],
             reviewerViews: [
               {
                 reviewer: B("Reviewer A", "Проверяющий A"),
                 stance: B("Provisionally favorable", "Предварительно благожелательный"),
                 summary: B(
-                  "Sees the essay as a bounded governance overlay that could make commissioned analytical work easier to inspect without claiming to determine truth.",
-                  "Считает эссе ограниченным governance-overlay, который может облегчить inspectability заказной аналитики, не претендуя на определение истины."
+                  "Sees the essay as a strong account of why art is a practice of intentional choices rather than merely the production of outputs.",
+                  "Считает эссе сильным account of art как practice of intentional choices, а не просто production of outputs."
                 ),
                 bullets: [
-                  B("The authors start from a real administrative problem around outsourced analytical opacity.", "Авторы начинают с реальной административной проблемы непрозрачности outsourced analytical work."),
-                  B("The proposal repeatedly limits its scope and does not present itself as a universal trust system.", "Предложение многократно ограничивает свои рамки и не выдает себя за универсальную систему доверия."),
-                  B("Even partial provenance records could improve procurement oversight and downstream review.", "Даже частичные provenance records могут улучшить procurement oversight и последующую проверку.")
+                  B("The artifact/practice distinction is clear and useful.", "Различие artifact/practice ясное и полезное."),
+                  B("The essay avoids treating output quality alone as the whole question.", "Эссе не сводит вопрос только к output quality."),
+                  B("It gives reviewers a better vocabulary for discussing authorship, agency, and tools.", "Оно дает reviewers лучший vocabulary для разговора об authorship, agency и tools.")
                 ]
               },
               {
                 reviewer: B("Reviewer B", "Проверяющий B"),
                 stance: B("Substantively skeptical", "Содержательно скептический"),
                 summary: B(
-                  "Sees the essay as importing supply-chain traceability logic into a domain where interpretation remains disputed regardless of logging.",
-                  "Считает, что эссе переносит supply-chain traceability logic в область, где интерпретация остается предметом разногласия независимо от объема logging."
+                  "Sees the essay as relying on a narrow account of art that may underplay how artists have always worked through tools, constraints, and procedures.",
+                  "Считает, что эссе опирается на узкий account of art и недооценивает, что artists всегда работали через tools, constraints и procedures."
                 ),
                 bullets: [
-                  B("Analytical texts are not material objects whose meaning stabilizes through trace records alone.", "Аналитические тексты — не материальные объекты, значение которых стабилизируется одним лишь trace record."),
-                  B("The proposal risks procedural theater by giving agencies a cleaner interface for uncertainty rather than better judgment.", "Предложение рискует стать процедурным театром: дать ведомствам более чистый интерфейс неопределенности вместо лучшего суждения."),
-                  B("Burden and gaming dynamics may swamp the intended transparency gains.", "Нагрузка и gaming dynamics могут перекрыть предполагаемые выигрыши в прозрачности.")
+                  B("Tool use does not automatically remove artistic agency.", "Использование tool не обязательно убирает artistic agency."),
+                  B("Audience reception may matter more than the essay allows.", "Audience reception может быть важнее, чем допускает эссе."),
+                  B("The argument may treat AI as categorically different before fully testing borderline cases.", "Argument может считать AI категориально другим до проверки borderline cases.")
                 ]
               }
             ]
           },
           workflow: {
-            strongest: B("The text is strongest where it diagnoses a real procurement problem and draws explicit boundaries around what the provenance layer would not do.", "Текст сильнее всего там, где он диагностирует реальную procurement-проблему и явно ограничивает то, чего provenance-layer делать не будет."),
-            weakest: B("It is weakest on the conceptual leap from provenance logging to warranted trust in interpretive analytical work.", "Слабее всего текст на концептуальном прыжке от provenance logging к warranted trust в интерпретативной аналитике."),
-            trying: B("The essay is trying to carve out a middle path between naive trust in polished outputs and impossible demands for certainty.", "Эссе пытается проложить средний путь между наивным доверием к polished outputs и невозможным требованием полной определенности."),
-            uncertain: B("My assessment remains uncertain at the deepest level: I am not yet sure whether the proposal is a tractable governance tool or a category error with good rhetoric.", "Моя оценка остается неуверенной на самом глубоком уровне: я пока не уверен, является ли предложение реализуемым инструментом управления или категориальной ошибкой с хорошей риторикой."),
-            change: B("I would revise upward if a narrow pilot showed oversight benefits without excessive burden.", "Я бы повысил оценку, если бы узкий пилот показал выгоды для oversight без чрезмерной нагрузки."),
-            deeper: B("Yes, but only with specialist follow-up across procurement, research methods, and administrative law.", "Да, но только с проверкой специалистов по procurement, research methods и administrative law."),
-            contest: B("Yes, partly. I would insist on keeping the trust implication explicitly unsettled.", "Да, частично. Я бы настаивал на том, чтобы trust implication оставалась явно незакрытой."),
-            revise: B("Yes. The note should remain revisable with disagreement visible until stronger specialist checking narrows the claim.", "Да. Заметка должна оставаться пересматриваемой, а разногласие — видимым до тех пор, пока более сильная проверка специалистом не сузит тезис."),
+            strongest: B("The text is strongest where it separates artifact production from intentional artistic practice.", "Текст сильнее всего там, где отделяет artifact production от intentional artistic practice."),
+            weakest: B("What needs checking is whether the definition of art is too narrow for tool-mediated or procedural creativity.", "Проверки требует вопрос, не слишком ли definition of art узкая для tool-mediated или procedural creativity."),
+            trying: B("The essay is trying to show why AI-generated outputs should not be confused with art-making by a human agent.", "Эссе пытается показать, почему AI-generated outputs не стоит путать с art-making by a human agent."),
+            uncertain: B("Uncertainty remains around tools, delegation, audience reception, and borderline cases of conceptual or procedural art.", "Неопределенность остается вокруг tools, delegation, audience reception и borderline cases of conceptual/procedural art."),
+            change: B("I would revise if a stronger account showed that AI can remain inside a human chain of intention rather than bypass it.", "Я бы пересмотрел оценку, если stronger account покажет, что AI может оставаться внутри human chain of intention, а не bypass ее."),
+            deeper: B("Yes. Use conceptual review by someone familiar with aesthetics, art practice, and AI tools.", "Да. Нужна conceptual review специалистом по aesthetics, art practice и AI tools."),
+            contest: B("Yes. Keep the disagreement explicit: this is not a weak text, but an arguable conceptual position.", "Да. Сохранить disagreement явным: это не weak text, а спорная conceptual position."),
+            revise: B("Yes. The review note should stay revisable after checking the original article and alternative readings.", "Да. Заметка проверки должна оставаться пересматриваемой после проверки оригинала и alternative readings."),
             secondary: [
-              { id: "originality", label: B("Originality", "Оригинальность"), value: B("High but unstable", "Высокая, но нестабильная"), note: B("Distinctive idea whose value depends on disputed assumptions.", "Отличимая идея, ценность которой зависит от предпосылок, по которым есть разногласие.") },
-              { id: "coherence", label: B("Coherence", "Связность"), value: B("Mixed", "Смешанная"), note: B("Readable and disciplined in places, unstable in others.", "Местами текст читаем и дисциплинирован, местами — нет.") },
-              { id: "evidence", label: B("Evidence support", "Опора на данные"), value: B("Partial", "Частичная"), note: B("Problem diagnosis is plausible; mechanism support is limited.", "Диагноз проблемы правдоподобен, но поддержка механизма ограничена.") },
-              { id: "overclaim", label: B("Overclaim risk", "Риск завышения"), value: B("Disagreement visible", "Есть разногласие"), note: B("Scope limits help, but some implications may still run too far.", "Оговорки о границах помогают, но часть импликаций все равно может заходить слишком далеко.") },
-              { id: "confidence", label: B("Review confidence", "Уверенность проверки"), value: B("Low to moderate", "Низкая или умеренная"), note: B("Confidence is capped by active reviewer disagreement.", "Уверенность ограничена активным несогласием между проверяющими.") },
-              { id: "domainfit", label: B("Domain fit", "Соответствие области"), value: B("High for specialist follow-up", "Высокое для проверки специалистом"), note: B("Needs the right reviewers, not a fast queue decision.", "Этому тексту нужны правильные проверяющие, а не быстрое решение по очереди.") }
+              { id: "originality", label: B("Originality", "Оригинальность"), value: B("High", "Высокая"), note: B("The distinction is crisp and gives the debate structure.", "Distinction ясная и структурирует debate.") },
+              { id: "coherence", label: B("Coherence", "Связность"), value: B("High", "Высокая"), note: B("The essay has a clear conceptual line.", "У эссе ясная conceptual line.") },
+              { id: "evidence", label: B("Evidence support", "Опора"), value: B("Illustrative", "Иллюстративная"), note: B("Support comes through examples and analogies, not empirical proof.", "Опора идет через examples и analogies, не через empirical proof.") },
+              { id: "overclaim", label: B("Overclaim risk", "Риск завышения"), value: B("Moderate", "Умеренный"), note: B("The main risk is narrowing art too quickly.", "Главный риск — слишком быстро сузить art.") },
+              { id: "confidence", label: B("Review confidence", "Уверенность проверки"), value: B("Moderate", "Умеренная"), note: B("Good first reading, but source checking and adversarial review matter.", "Хороший первый разбор, но нужны source checking и adversarial review.") },
+              { id: "domainfit", label: B("Domain fit", "Соответствие области"), value: B("High", "Высокое"), note: B("Good fit for conceptual essay review.", "Хорошо подходит для review conceptual essay.") }
             ]
           }
         }

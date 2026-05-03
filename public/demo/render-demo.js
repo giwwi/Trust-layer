@@ -196,6 +196,8 @@
     const rules = [
       [/^Unsupported file type/, "Неподдерживаемый формат. Загрузите .txt, .md или .docx."],
       [/^PDF support is not available/, "PDF в этом демо пока не поддерживается. Загрузите .txt, .md или .docx."],
+      [/^Could not extract this \.docx/, "Не удалось извлечь текст из .docx в браузере. Вставьте текст вручную или загрузите .txt/.md."],
+      [/^No readable text was found/, "В загруженном файле не найден читаемый текст."],
       [/^Please paste text or upload/, "Загрузите файл перед запуском."],
       [/^Text is too short/, "Текст слишком короткий для первого прохода."],
       [/^Missing API key/, liveFallback],
@@ -708,7 +710,11 @@
     render();
 
     try {
-      demoState.extractedText = await window.TrustLayerUpload.extractFile(file);
+      const extractedText = await window.TrustLayerUpload.extractFile(file);
+      if (!String(extractedText || "").trim()) {
+        throw new Error("No readable text was found in the uploaded file.");
+      }
+      demoState.extractedText = extractedText;
     } catch (error) {
       demoState.error = localizeError(error, getCopy());
     } finally {

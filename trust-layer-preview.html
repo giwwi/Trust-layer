@@ -918,6 +918,35 @@
         line-height: 1.45;
       }
 
+      .book-connection {
+        margin-top: 18px;
+        max-width: 620px;
+        border-left: 3px solid rgba(31, 42, 54, 0.18);
+        padding-left: 16px;
+        color: #394a59;
+      }
+
+      .book-connection-lead {
+        font-size: 0.98rem;
+        line-height: 1.5;
+      }
+
+      .book-connection-title {
+        margin-top: 8px;
+        font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+        font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        color: var(--ink);
+      }
+
+      .book-connection-subtitle {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.96rem;
+        line-height: 1.45;
+      }
+
       .landing-action-note {
         margin-top: 16px;
         color: var(--muted);
@@ -1427,6 +1456,11 @@
         <div class="eyebrow">Trust Layer</div>
         <h1>Paste an analytical text. Get a first reading you can check and edit.</h1>
         <p>
+          Trust Layer is an interactive illustration for the book
+          <strong>After Labor and Capital</strong>,
+          <em>The Political Economy of the Transitional Period</em>.
+        </p>
+        <p>
           Trust Layer is a bounded prototype for analytical texts: research drafts, policy memos,
           white papers, analytical essays, and book proposals. It helps identify main claims,
           what needs attention, and the next review step before deeper human checking.
@@ -1495,6 +1529,10 @@
             actionSubtitle: "Trust Layer helps identify the main claims, what needs attention, and the next review step.",
             actionPrimary: "Try example",
             actionSecondary: "Try with your own text",
+            bookLead: "Trust Layer is an interactive illustration for the book",
+            bookTitle: "After Labor and Capital",
+            bookSubtitle: "The Political Economy of the Transitional Period",
+            readBook: "Read the book",
             actionNote: "AI draft. Human check required.",
             heroTitle: "Why this exists",
             subtitle: "AI made analytical writing easier to produce. Human checking is still slow. Trust Layer helps with the first reading before deeper review.",
@@ -2138,6 +2176,10 @@
             actionSubtitle: "Trust Layer помогает увидеть главные тезисы, что требует внимания, и следующий шаг проверки.",
             actionPrimary: "Попробовать пример",
             actionSecondary: "Попробовать свой текст",
+            bookLead: "Trust Layer — интерактивная иллюстрация к книге",
+            bookTitle: "After Labor and Capital",
+            bookSubtitle: "The Political Economy of the Transitional Period",
+            readBook: "Читать книгу",
             actionNote: "AI-черновик. Нужна проверка человеком.",
             heroTitle: "Зачем это нужно",
             subtitle: "ИИ упростил создание аналитических текстов. Но человеческая проверка всё еще медленная. Trust Layer помогает сделать первый разбор перед более глубокой проверкой.",
@@ -4733,10 +4775,16 @@
               ${renderFlowIndicator(1)}
               <div class="eyebrow">${copy.landing.actionEyebrow}</div>
               <h1>${copy.landing.actionTitle}</h1>
+              <div class="book-connection">
+                <div class="book-connection-lead">${copy.landing.bookLead}</div>
+                <div class="book-connection-title">${copy.landing.bookTitle}</div>
+                <div class="book-connection-subtitle">${copy.landing.bookSubtitle}</div>
+              </div>
               <div class="landing-action-subtitle">${copy.landing.actionSubtitle}</div>
               <div class="landing-action-note">${copy.landing.actionNote}</div>
               <div class="hero-actions">
                 <button class="cta primary" onclick="openExampleWorkflow('a')">${copy.landing.actionPrimary}</button>
+                <a class="cta primary" href="https://osf.io/preprints/socarxiv/2xkdh_v1" target="_blank" rel="noreferrer">${copy.landing.readBook}</a>
                 <button class="cta" onclick="focusDemoInput()">${copy.landing.actionSecondary}</button>
               </div>
             </div>

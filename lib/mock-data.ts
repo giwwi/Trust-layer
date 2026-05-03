@@ -412,242 +412,242 @@ export const documentCases: DocumentCase[] = [
     }
   },
   {
-    slug: "institutional-memory-infrastructure",
-    profileLabel: "Strong but speculative text",
-    title: "After the Audit: Institutional Memory as Public Infrastructure",
-    shortTitle: "Institutional memory",
-    author: "Jonas Keller",
-    type: "Book proposal fragment",
+    slug: "ai-job-quality-working-paper",
+    profileLabel: "Real policy working paper",
+    title: "The Impact of Artificial Intelligence on the Nature and Quality of Jobs",
+    shortTitle: "AI and job quality",
+    author: "Laura Nurski and Mia Hoffmann",
+    type: "Working paper / policy research review",
     submissionContext:
-      "Circulated to an academic press editor and two public policy fellows as a concept memo for a longer book project.",
+      "Bruegel Working Paper 14/2022, used here as a real Trust Layer first-reading example.",
     landingSummary:
-      "Strong conceptual framing, low empirical support, and worth conceptual engagement rather than operational use.",
-    previewNote: "Useful case with caution: analytically generative, empirically thin.",
+      "Solid policy paper; worth short specialist check before deeper use.",
+    previewNote: "Real case: a policy working paper linking workplace AI use cases to job quality and worker participation.",
     deck:
-      "The fragment argues that recurring institutional failure is often a memory problem rather than a monitoring problem, and proposes treating public memory capacity as a form of infrastructure.",
+      "The paper argues that AI changes job quality through job design: automation rebundles tasks, while algorithmic management changes autonomy, skill use, workload, and employment conditions.",
     textSections: [
       {
-        heading: "The text reframes institutional failure as memory loss",
-        zone: "Claim zone",
+        heading: "AI is read through job design, not just automation",
+        zone: "Main claim",
         summary:
-          "The essay claims that many reforms over-invest in auditing and under-invest in durable institutional memory.",
+          "The paper connects AI to the division of labour inside organisations and to the resulting quality of jobs.",
         paragraphs: [
-          "The opening move is conceptual rather than empirical. Keller suggests that governments repeatedly confront the same preventable failures because they remember them episodically rather than infrastructurally. Reports are produced, inquiries are archived, and personnel rotate, but the institution's usable memory remains shallow.",
-          "This is a strong framing move because it shifts the conversation away from a simple more-oversight reflex. The text asks whether recurring breakdowns persist not because institutions lack data, but because they lack durable formats for carrying situated lessons across time, teams, and political cycles."
+          "The source paper states that AI changes the division of labour and the resulting design of jobs. Automation changes task bundles, while algorithmic management reaches into workers' control, autonomy, skill use, and workload.",
+          "The paper grounds this in a job-design vocabulary of job breadth and depth: horizontal specialisation shapes task variety, while vertical specialisation shapes control over how, when, and why work is done."
         ]
       },
       {
-        heading: "The proposed category of memory infrastructure is suggestive but lightly evidenced",
-        zone: "Interpretive uncertainty",
-        summary:
-          "The essay builds a typology of repositories, rituals, and handoff systems, but empirical support remains fragmentary.",
-        paragraphs: [
-          "Keller's most interesting conceptual move is to define memory infrastructure as the combined set of repositories, transmission rituals, and obligation-bearing handoffs that keep learned experience from dissolving after a crisis passes. The typology is crisp and likely productive for further research.",
-          "What the fragment does not yet do is establish how often this category explains failure better than neighboring explanations such as incentives, underfunding, or political conflict. It offers vivid examples, but the evidentiary role of those examples remains illustrative rather than demonstrative."
-        ]
-      },
-      {
-        heading: "The text is valuable as a conceptual invitation, not as a policy instrument",
+        heading: "Use cases matter because they affect workers differently",
         zone: "Evidence-bearing area",
         summary:
-          "The proposal earns attention by naming a potentially fertile category, while stopping short of actionable proof.",
+          "The paper separates automation from algorithmic scheduling, work-method instructions, surveillance, evaluation, discipline, and task coordination.",
         paragraphs: [
-          "The strongest reading of the fragment is not that it has solved a governance problem, but that it has identified a lens through which specialists might reinterpret a range of governance failures. That matters for editorial and intellectual review because some texts are useful before they are evidentially complete.",
-          "Still, the text would be misread if its current rhetoric were translated directly into operational claims. It is not yet ready to justify procurement reform, staffing models, or institutional design choices without much more empirical work."
+          "The authors focus on organisational function rather than product type because the same technology can support or prescribe work depending on how it is used.",
+          "The paper's useful distinction between supportive and prescriptive uses still needs checking, because real workplace systems often combine scheduling, monitoring, feedback and discipline."
+        ]
+      },
+      {
+        heading: "The policy claim rests on participation and power",
+        zone: "Review focus",
+        summary:
+          "The paper argues that worker participation, social partners, and labour regulation are needed to mitigate harmful workplace AI effects.",
+        paragraphs: [
+          "The source frames harmful AI effects as design choices shaped by organisational power, not as technologically predetermined outcomes.",
+          "Its policy section points to GDPR, the proposed AI Act and platform-work rules, while arguing that workplace AI risks go beyond conventional health, safety and privacy categories."
         ]
       }
     ],
     overlay: {
       centralArgument:
-        "Public institutions repeatedly fail because memory capacity is treated as incidental rather than infrastructural, and that category deserves sustained analytical attention.",
+        "AI should be assessed by its organisational use case and its effects on job design, not only by whether it automates tasks or raises productivity.",
       mainClaimZones: [
         {
-          label: "Reframing move",
-          summary: "Failure is often misread as an oversight deficit when it may be a memory deficit."
+          label: "Job-design lens",
+          summary: "AI affects job quality through task bundles, control over work, autonomy, skill use, workload and working conditions."
         },
         {
-          label: "Typology",
-          summary: "Repositories, rituals, and handoffs are proposed as elements of institutional memory infrastructure."
+          label: "Use-case typology",
+          summary: "The paper separates automation from algorithmic management functions such as scheduling, instructions, surveillance, evaluation, discipline and coordination."
         },
         {
-          label: "Scope caution",
-          summary: "The essay is strongest as conceptual provocation, not as an implementation guide."
+          label: "Power and participation",
+          summary: "Workplace AI design reflects organisational power, so worker participation and social partners are central safeguards."
         }
       ],
       evidenceAreas: [
         {
-          label: "Illustrative cases",
-          summary: "Examples help make the concept vivid but do not yet carry broad inferential weight."
+          label: "Literature review base",
+          summary: "The review draws on scientific reviews, micro-level empirical research, qualitative case studies, reports, books and news articles."
         },
         {
-          label: "Conceptual distinctions",
-          summary: "The typology itself is one of the text's main contributions."
+          label: "Mechanism examples",
+          summary: "Examples include shift scheduling, warehouse instructions, call-centre feedback, performance dashboards and platform work."
         }
       ],
       uncertaintyZones: [
         {
-          label: "Causal reach",
-          summary: "It remains unclear when memory is the right explanatory variable versus incentives, politics, or budget constraints."
+          label: "Evidence aggregation",
+          summary: "The evidence base is wide but heterogeneous; sector-to-sector transfer needs careful checking."
         },
         {
-          label: "Operational translation",
-          summary: "The fragment does not yet show how to move from concept to implementable institutional design."
+          label: "Policy translation",
+          summary: "The paper identifies important regulatory gaps, but implementation and enforcement questions remain compressed."
         }
       ],
       reviewFocus: [
-        "Test whether the memory-infrastructure category adds explanatory power beyond neighboring governance concepts.",
-        "Ask whether the rhetorical confidence of the essay outruns the thinness of its empirical support.",
-        "Review as a book or essay proposal rather than a policy design document."
+        "Check whether the use-case typology covers the main workplace AI modes without over-combining distinct systems.",
+        "Assess how strongly the evidence supports the prescriptive-versus-supportive claim across sectors.",
+        "Review the policy translation with labour-law and industrial-relations expertise."
       ],
       reviewMap: [
         {
-          step: "Conceptual read",
-          emphasis: "Check whether the distinction between audits and memory infrastructure is analytically stable."
+          step: "Structure check",
+          emphasis: "Confirm that the paper's job-design frame is the right organizing lens."
         },
         {
-          step: "Comparative challenge",
-          emphasis: "Look for cases where the proposed framing clearly outperforms other explanations."
+          step: "Evidence check",
+          emphasis: "Look at whether the case literature is used proportionately."
         },
         {
-          step: "Editorial decision",
-          emphasis: "Assess whether the idea is fertile enough to justify extended development."
+          step: "Policy check",
+          emphasis: "Ask what follows for EU regulation, worker participation and social partners."
         }
       ],
-      reviewStatus: "Illustrative structured reading only. The decomposition is provisional and contestable.",
+      reviewStatus: "Prepared first reading only. Source traces help checking; they do not prove the interpretation.",
       quickSignals: [
-        { label: "Conceptual originality", value: "High", tone: "promising" },
-        { label: "Evidence support", value: "Thin", tone: "fragile" },
-        { label: "Operational suitability", value: "Low", tone: "fragile" },
-        { label: "Review priority", value: "Worth conceptual engagement", tone: "promising" }
+        { label: "Policy relevance", value: "High", tone: "promising" },
+        { label: "Evidence support", value: "Moderate", tone: "promising" },
+        { label: "What needs checking", value: "Sector transfer", tone: "fragile" },
+        { label: "Review priority", value: "Worth targeted review", tone: "promising" }
       ]
     },
     passport: {
       currentSynthesis:
-        "This is a strong conceptual fragment with low empirical maturity. It earns attention by naming a potentially generative category, but it should not be treated as ready for high-confidence operational application.",
+        "This is a serious and useful policy working paper. Its core frame is clear: AI affects job quality through task design and organisational control. It deserves targeted review, especially on evidence aggregation and policy translation.",
       strengths: [
-        "Introduces a memorable conceptual distinction that could sharpen future governance analysis.",
-        "Uses examples well enough to make the thesis legible without overloading the reader.",
-        "Signals a potentially substantial long-form project rather than a generic trend essay."
+        "Gives the AI-and-work debate a concrete job-design frame rather than staying at the level of automation anxiety.",
+        "Separates organisational use cases, which makes the review more useful than a generic AI-impact summary.",
+        "Connects empirical workplace examples to a clear policy emphasis on worker participation and social partners."
       ],
       weaknesses: [
-        "Examples remain illustrative rather than evidentially decisive.",
-        "Causal claims about recurring failure may outrun what the fragment currently supports.",
-        "The bridge from conceptual framing to actionable institutional design is underdeveloped."
+        "The evidence base is broad and mixed; sector-to-sector transfer needs careful checking.",
+        "Some categories overlap in real systems, so the typology may look cleaner than workplace practice.",
+        "The policy section identifies important gaps but leaves implementation and enforcement questions relatively compressed."
       ],
       readingStance:
-        "Read as a concept-rich essay or proposal fragment. Engage intellectually, but do not lean on it for operational decisions.",
+        "Read as a strong policy research review. Use it for orientation and agenda-setting after a short specialist check, not as a settled empirical verdict.",
       disagreement:
-        "Most disagreement is about how much empirical thinness a conceptually ambitious proposal can carry at this stage.",
+        "Likely disagreement concerns how far the paper's literature review supports general claims across sectors, and how directly the policy recommendations follow.",
       verificationNeeds: [
-        "Compare the framework against adjacent explanations such as incentive failures or political turnover.",
-        "Add cases where memory infrastructure clearly alters outcomes rather than merely re-describes them.",
-        "Clarify the intended audience: scholarly monograph, public essay, or policy-adjacent conceptual book."
+        "Check whether the supportive-versus-prescriptive distinction holds across the cited case literature.",
+        "Review legal claims about GDPR, the AI Act proposal, and the platform work directive with labour-law expertise.",
+        "Ask whether worker participation is specified enough for institutional design, not only as a principle."
       ],
       dimensions: [
         {
           name: "Originality",
-          state: "High",
-          note: "The framing is distinctive and potentially fertile.",
-          width: 88,
+          state: "Moderate",
+          note: "The frame combines known job-design theory with AI workplace policy in a useful way.",
+          width: 62,
           tone: "promising"
         },
         {
           name: "Coherence",
-          state: "Moderately high",
-          note: "The concept hangs together, though causal reach remains uncertain.",
-          width: 73,
+          state: "Currently coherent",
+          note: "The paper has a clear sequence from definitions to typology, evidence, participation and policy.",
+          width: 81,
           tone: "promising"
         },
         {
           name: "Evidence grounding",
-          state: "Thin",
-          note: "Examples clarify the argument but do not yet substantiate it strongly.",
-          width: 34,
-          tone: "fragile"
+          state: "Moderate",
+          note: "Broad review, but heterogeneous sources need careful weighting.",
+          width: 66,
+          tone: "promising"
         },
         {
           name: "Overclaim restraint",
-          state: "Mixed",
-          note: "The proposal is careful in places but occasionally sounds more settled than it is.",
-          width: 49,
-          tone: "fragile"
+          state: "Mostly careful",
+          note: "Most claims are framed cautiously, though policy translation remains compressed.",
+          width: 74,
+          tone: "promising"
         },
         {
           name: "Review stability",
-          state: "Moderately stable",
-          note: "Readers may agree on the concept's promise while disagreeing on how much that promise currently counts for.",
-          width: 61,
+          state: "Ready for short review",
+          note: "Enough confidence for targeted review, not enough for final policy reliance.",
+          width: 78,
           tone: "promising"
         }
       ],
       reviewHistory: [
         {
-          stage: "Editorial intake",
-          actor: "Press reader",
-          date: "April 11, 2026",
-          note: "Marked as unusually strong conceptually but not yet anchored enough for a confident acquisition argument."
+          stage: "Source intake",
+          actor: "Trust Layer demo",
+          date: "May 3, 2026",
+          note: "Real Bruegel working paper added as the second example case."
         },
         {
           stage: "Structured reading",
-          actor: "Policy fellow",
-          date: "April 17, 2026",
-          note: "Separated the value of the framing from the current weakness of the evidence base."
+          actor: "Prototype facilitator",
+          date: "May 3, 2026",
+          note: "Separated job-design frame, evidence base, uncertainty zones and policy review needs."
         },
         {
-          stage: "Passport update",
+          stage: "Review note gate",
           actor: "Prototype facilitator",
-          date: "April 20, 2026",
-          note: "Emphasized conceptual engagement rather than operational trust."
+          date: "May 3, 2026",
+          note: "Recommended targeted review rather than final policy reliance."
         }
       ]
     },
     workflow: {
       strongest:
-        "The text is strongest where it differentiates memory infrastructure from ordinary auditing and gives readers a fresh conceptual handle on recurring institutional failure.",
+        "The paper is strongest where it translates AI impact into job design: autonomy, skill use, workload, task breadth and depth, and organisational control.",
       weakest:
-        "It is weakest where examples are asked to do causal work they cannot yet bear and where the rhetoric sounds readier for application than the evidence allows.",
+        "What needs checking is not the basic frame but the strength of generalisation across heterogeneous sectors and case studies.",
       tryingToDo:
-        "The fragment is trying to establish a new lens for understanding institutional breakdown and to justify a larger intellectual project around that lens.",
+        "The paper is trying to move AI policy from generic automation talk toward job quality, worker power and participatory governance.",
       uncertainty:
-        "My assessment remains uncertain about explanatory reach, intended audience, and whether the central concept can survive stronger comparative challenge.",
+        "Uncertainty remains around evidence aggregation, category overlap in real algorithmic systems, and the institutional path from principle to enforcement.",
       changeAssessment:
-        "I would revise upward with strong comparative cases showing that memory infrastructure clarifies outcomes better than adjacent concepts. I would revise downward if the category proved mostly metaphorical.",
+        "A stronger sector-by-sector evidence table or clearer legal implementation pathway would increase confidence.",
       deeperReview:
-        "Yes, but in a conceptual or editorial context rather than an implementation setting.",
+        "Yes. It merits short specialist review by someone with labour economics, work design, or industrial-relations expertise.",
       contestStructuredReading:
-        "Only slightly. I might push the current reading to state even more clearly that the text's value is conceptual rather than evidential.",
+        "I would not contest the main structure, but I would keep the evidence and policy translation open for checking.",
       revisePassport:
-        "Yes, if the author develops a stronger case base or narrows the operational rhetoric.",
+        "Yes. Revise the review note after checking the cited evidence base and the legal-policy section.",
       secondary: [
         {
           label: "Originality",
-          value: "High",
-          note: "The core framing is distinct and memorable."
+          value: "Moderate",
+          note: "The frame combines known job-design theory with AI workplace policy in a useful way."
         },
         {
           label: "Coherence",
-          value: "Moderately high",
-          note: "Conceptual scaffolding is solid, though causal precision is still thin."
+          value: "High",
+          note: "The paper has a clear sequence from definitions to typology, evidence, participation and policy."
         },
         {
           label: "Evidence support",
-          value: "Low",
-          note: "Illustrative rather than robust."
+          value: "Moderate",
+          note: "Broad review, but heterogeneous sources need careful weighting."
         },
         {
           label: "Overclaim risk",
-          value: "Moderate",
-          note: "Rhetorical force occasionally outruns support."
+          value: "Low to moderate",
+          note: "Most claims are framed cautiously, though policy translation remains compressed."
         },
         {
           label: "Review confidence",
-          value: "Moderate",
-          note: "Confidence in promise is higher than confidence in current substantiation."
+          value: "Moderate-high",
+          note: "Enough confidence for targeted review, not enough for final policy reliance."
         },
         {
           label: "Domain fit",
-          value: "High for editorial review",
-          note: "Strong fit for conceptual development, poor fit for operational decision contexts."
+          value: "High",
+          note: "Strong fit for labour, workplace AI and EU policy readers."
         }
       ]
     }

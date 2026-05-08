@@ -137,6 +137,6 @@ Institutional legitimacy cannot be solved by interface design alone. Any real de
 
 ## License
 
-No license has been chosen yet. Treat the code and materials as all rights reserved until a license is added.
+The prototype code is licensed under the MIT License. See [LICENSE](LICENSE).
 
-Before a public Show HN-style launch, choose a license. MIT is the simplest option if the goal is easy cloning, testing, and reuse of the prototype.
+Included source excerpts, book references, and third-party analytical texts may be governed by their original rights and licenses. The MIT License applies to the prototype code, not necessarily to every referenced document.

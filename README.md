@@ -4,6 +4,19 @@ A bounded first-reading prototype for analytical texts when AI makes writing che
 
 Trust Layer is a public demo and concept prototype. It is meant to show one narrow loop: add an analytical text, get a provisional first reading, check it against the source, and turn it into a human review note only when that is useful.
 
+## Quick Start
+
+The fastest way to understand Trust Layer is to open the demo and choose Example Mode.
+
+For private or longer documents, run it locally:
+
+1. Clone this repository.
+2. Start the backend with your own server-side API key.
+3. Open `trust-layer-preview.html`.
+4. Use the built-in example first, then test short excerpts.
+
+Do not paste confidential material into the public demo.
+
 ## What It Does
 
 - Accepts or shows an analytical text.
@@ -36,17 +49,19 @@ Trust Layer therefore treats text type as a provisional reading choice, not as a
 
 ### 1. Example Mode
 
-Works immediately. No setup is needed.
+Works immediately. No setup is needed. It sends no user text to an AI provider.
 
 This is the safest way to explore the full workflow without sending any text to an AI provider.
 
 ### 2. Public Live Demo
 
-Uses a small shared budget. Short excerpts only.
+Uses a small shared budget. Short, non-confidential excerpts only.
 
 The public live path has input limits, per-client rate limits, and a daily demo budget. If the live demo is unavailable or the budget is exhausted, the app should fall back to the built-in example.
 
-### 3. Run Locally From GitHub
+The public demo should be treated as a demonstration of the workflow, not as a safe place for sensitive documents.
+
+### 3. Local Run
 
 For private, longer, or sensitive documents, run the prototype locally.
 
@@ -123,3 +138,5 @@ Institutional legitimacy cannot be solved by interface design alone. Any real de
 ## License
 
 No license has been chosen yet. Treat the code and materials as all rights reserved until a license is added.
+
+Before a public Show HN-style launch, choose a license. MIT is the simplest option if the goal is easy cloning, testing, and reuse of the prototype.

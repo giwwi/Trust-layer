@@ -11,7 +11,7 @@ class RouteRecommendation(str, Enum):
     escalate = "escalate"
 
 
-class PassportRecommendation(str, Enum):
+class ReviewNoteRecommendation(str, Enum):
     not_warranted = "not_warranted"
     optional = "optional"
     warranted = "warranted"
@@ -48,8 +48,8 @@ class TriageResult(BaseModel):
     review_focus: list[str] = Field(default_factory=list)
     route_recommendation: RouteRecommendation
     route_reason: str = Field(min_length=1, max_length=420)
-    passport_recommendation: PassportRecommendation
-    passport_reason: str = Field(min_length=1, max_length=420)
+    review_note_recommendation: ReviewNoteRecommendation
+    review_note_reason: str = Field(min_length=1, max_length=420)
     confidence_note: str = Field(min_length=1, max_length=420)
 
 

@@ -167,10 +167,10 @@ export default function DocumentPage({ params }: { params: { slug: string } }) {
             <p className="eyebrow">Next Views</p>
             <div className="mt-4 flex flex-col gap-3">
               <Link
-                href={`/passport/${document.slug}`}
+                href={`/review-note/${document.slug}`}
                 className="rounded-full border border-slate-900/10 bg-slate-900 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-slate-800"
               >
-                Open trust passport
+                Open review note
               </Link>
               <Link
                 href="/reviewer-workflow"

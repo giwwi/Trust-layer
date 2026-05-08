@@ -74,10 +74,10 @@ export default function LimitationsPage() {
             Open sample text
           </Link>
           <Link
-            href={`/passport/${contestedDocumentSlug}`}
+            href={`/review-note/${contestedDocumentSlug}`}
             className="rounded-full border border-slate-900/10 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:border-slate-900/20"
           >
-            See contested passport
+            See contested review note
           </Link>
         </div>
       </section>

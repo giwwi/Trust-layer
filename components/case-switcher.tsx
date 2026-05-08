@@ -16,7 +16,7 @@ export function CaseSwitcher({
   description
 }: {
   currentSlug: string;
-  destination: "document" | "passport";
+  destination: "document" | "reviewNote";
   title: string;
   description: string;
 }) {
@@ -29,7 +29,7 @@ export function CaseSwitcher({
       </div>
       <div className="grid gap-4 lg:grid-cols-4">
         {documentCases.map((item) => {
-          const href = destination === "document" ? `/documents/${item.slug}` : `/passport/${item.slug}`;
+          const href = destination === "document" ? `/documents/${item.slug}` : `/review-note/${item.slug}`;
           const isCurrent = item.slug === currentSlug;
 
           return (
@@ -50,7 +50,7 @@ export function CaseSwitcher({
               <h3 className="mt-2 text-2xl leading-tight text-slate-950">{item.shortTitle}</h3>
               <p className="mt-3 text-sm leading-6 text-slate-600">{item.landingSummary}</p>
               <div className="mt-4 inline-flex items-center rounded-full border border-black/10 px-3 py-1.5 text-xs uppercase tracking-[0.16em] text-slate-700">
-                {isCurrent ? "Current view" : destination === "document" ? "Open text" : "Open passport"}
+                {isCurrent ? "Current view" : destination === "document" ? "Open text" : "Open review note"}
               </div>
             </Link>
           );

@@ -177,8 +177,8 @@ export function WorkflowSimulator() {
             <textarea className="text-field mt-3" rows={4} defaultValue={currentDocument.workflow.contestStructuredReading} />
           </div>
           <div className="panel p-5">
-            <label className="block text-sm font-semibold text-slate-900">Should this passport be revised?</label>
-            <textarea className="text-field mt-3" rows={4} defaultValue={currentDocument.workflow.revisePassport} />
+            <label className="block text-sm font-semibold text-slate-900">Should this review note be revised?</label>
+            <textarea className="text-field mt-3" rows={4} defaultValue={currentDocument.workflow.reviseReviewNote} />
           </div>
         </section>
       </div>

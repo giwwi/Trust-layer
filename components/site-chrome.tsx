@@ -6,7 +6,7 @@ import { contestedDocumentSlug, defaultDocumentSlug } from "@/lib/mock-data";
 const navigation = [
   { href: "/", label: "Home" },
   { href: `/documents/${defaultDocumentSlug}`, label: "Sample Text" },
-  { href: `/passport/${contestedDocumentSlug}`, label: "Trust Passport" },
+  { href: `/review-note/${contestedDocumentSlug}`, label: "Review Note" },
   { href: "/reviewer-workflow", label: "Reviewer Workflow" },
   { href: "/limitations", label: "Limitations" }
 ];
@@ -54,8 +54,8 @@ export function SiteChrome({ children }: { children: ReactNode }) {
             <Link href={`/documents/${defaultDocumentSlug}`} className="hover:text-slate-900">
               Sample text
             </Link>
-            <Link href={`/passport/${contestedDocumentSlug}`} className="hover:text-slate-900">
-              Contested passport
+            <Link href={`/review-note/${contestedDocumentSlug}`} className="hover:text-slate-900">
+              Contested review note
             </Link>
             <Link href="/limitations" className="hover:text-slate-900">
               Limits

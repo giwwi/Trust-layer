@@ -26,11 +26,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const document = getDocumentBySlug(params.slug);
 
   return {
-    title: document ? `${document.shortTitle} passport` : "Trust passport"
+    title: document ? `${document.shortTitle} review note` : "Trust Layer review note"
   };
 }
 
-export default function PassportPage({ params }: { params: { slug: string } }) {
+export default function ReviewNotePage({ params }: { params: { slug: string } }) {
   const document = getDocumentBySlug(params.slug);
 
   if (!document) {
@@ -43,9 +43,9 @@ export default function PassportPage({ params }: { params: { slug: string } }) {
     <div className="space-y-12">
       <section className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="panel-strong subtle-grid p-8 lg:p-10">
-          <p className="eyebrow">Trust Passport</p>
+          <p className="eyebrow">Review Note</p>
           <h1 className="mt-3 text-4xl leading-tight text-slate-950 md:text-5xl">{document.title}</h1>
-          <p className="mt-5 max-w-3xl text-xl leading-8 text-slate-600">{document.passport.currentSynthesis}</p>
+          <p className="mt-5 max-w-3xl text-xl leading-8 text-slate-600">{document.reviewNote.currentSynthesis}</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <div className="rounded-[1.5rem] border border-slate-900/10 bg-white/80 p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Title and metadata</p>
@@ -62,17 +62,17 @@ export default function PassportPage({ params }: { params: { slug: string } }) {
               </div>
             </div>
             <div className="rounded-[1.5rem] border border-slate-900/10 bg-white/80 p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Current passport posture</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Current review note posture</p>
               <div className="mt-3 space-y-2 text-sm leading-6 text-slate-700">
                 <p>No single overall score.</p>
-                <p>Trust is provisional and revisable.</p>
+                <p>Review state is provisional and revisable.</p>
                 <p>Disagreement stays visible where it matters.</p>
               </div>
             </div>
           </div>
           {isContested ? (
             <div className="mt-6 rounded-[1.5rem] border border-rose-900/10 bg-rose-50/80 p-5 text-base leading-7 text-rose-950">
-              No stable trust profile exists yet. The current synthesis remains deliberately unresolved pending
+              No stable review state exists yet. The current synthesis remains deliberately unresolved pending
               domain-specific follow-up.
             </div>
           ) : null}
@@ -82,13 +82,13 @@ export default function PassportPage({ params }: { params: { slug: string } }) {
           <section className="panel p-6">
             <p className="eyebrow">Suggested Reading Stance</p>
             <h2 className="mt-2 text-3xl text-slate-950">How to hold this text</h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">{document.passport.readingStance}</p>
+            <p className="mt-4 text-base leading-7 text-slate-600">{document.reviewNote.readingStance}</p>
           </section>
 
           <section className="panel p-6">
             <p className="eyebrow">What Needs Further Verification</p>
             <div className="mt-4 space-y-3">
-              {document.passport.verificationNeeds.map((item) => (
+              {document.reviewNote.verificationNeeds.map((item) => (
                 <div key={item} className="rounded-[1.25rem] border border-slate-900/10 bg-white/70 p-4 text-sm leading-6 text-slate-700">
                   {item}
                 </div>
@@ -99,7 +99,7 @@ export default function PassportPage({ params }: { params: { slug: string } }) {
           <section className="panel p-6">
             <p className="eyebrow">Review History</p>
             <div className="mt-4 space-y-4">
-              {document.passport.reviewHistory.map((entry) => (
+              {document.reviewNote.reviewHistory.map((entry) => (
                 <div key={`${entry.stage}-${entry.date}`} className="rounded-[1.25rem] border border-slate-900/10 bg-white/70 p-4">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="text-sm font-semibold text-slate-900">{entry.stage}</p>
@@ -119,7 +119,7 @@ export default function PassportPage({ params }: { params: { slug: string } }) {
           <p className="eyebrow">Strengths</p>
           <h2 className="mt-2 text-3xl text-slate-950">What currently holds up best</h2>
           <div className="mt-5 space-y-3">
-            {document.passport.strengths.map((item) => (
+            {document.reviewNote.strengths.map((item) => (
               <div key={item} className="rounded-[1.25rem] border border-emerald-900/10 bg-emerald-50/70 p-4 text-sm leading-6 text-emerald-950">
                 {item}
               </div>
@@ -129,9 +129,9 @@ export default function PassportPage({ params }: { params: { slug: string } }) {
 
         <div className="panel p-6">
           <p className="eyebrow">Weaknesses</p>
-          <h2 className="mt-2 text-3xl text-slate-950">What currently resists trust</h2>
+          <h2 className="mt-2 text-3xl text-slate-950">What needs checking</h2>
           <div className="mt-5 space-y-3">
-            {document.passport.weaknesses.map((item) => (
+            {document.reviewNote.weaknesses.map((item) => (
               <div key={item} className="rounded-[1.25rem] border border-amber-900/10 bg-amber-50/80 p-4 text-sm leading-6 text-amber-950">
                 {item}
               </div>
@@ -141,10 +141,10 @@ export default function PassportPage({ params }: { params: { slug: string } }) {
       </section>
 
       <section className="panel p-6 lg:p-8">
-        <p className="eyebrow">Trust Dimensions</p>
+        <p className="eyebrow">Review Dimensions</p>
         <h2 className="mt-2 text-4xl text-slate-950">Provisional dimensions, not a single verdict</h2>
         <div className="mt-6 grid gap-5 lg:grid-cols-2">
-          {document.passport.dimensions.map((dimension) => (
+          {document.reviewNote.dimensions.map((dimension) => (
             <div key={dimension.name} className="rounded-[1.5rem] border border-slate-900/10 bg-white/75 p-5">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <p className="text-lg font-semibold text-slate-950">{dimension.name}</p>
@@ -165,10 +165,10 @@ export default function PassportPage({ params }: { params: { slug: string } }) {
       <section className="panel-strong p-8 lg:p-10">
         <p className="eyebrow">Reviewer Disagreement</p>
         <h2 className="mt-2 text-4xl text-slate-950">Disagreement stays visible</h2>
-        <p className="mt-4 max-w-4xl text-lg leading-8 text-slate-600">{document.passport.disagreement}</p>
-        {document.passport.reviewerViews?.length ? (
+        <p className="mt-4 max-w-4xl text-lg leading-8 text-slate-600">{document.reviewNote.disagreement}</p>
+        {document.reviewNote.reviewerViews?.length ? (
           <div className="mt-6 grid gap-4 lg:grid-cols-2">
-            {document.passport.reviewerViews.map((view) => (
+            {document.reviewNote.reviewerViews.map((view) => (
               <div key={view.reviewer} className="rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">{view.reviewer}</p>
                 <h3 className="mt-2 text-3xl text-slate-950">{view.stance}</h3>
@@ -185,7 +185,7 @@ export default function PassportPage({ params }: { params: { slug: string } }) {
           </div>
         ) : (
           <div className="mt-6 rounded-[1.5rem] border border-slate-900/10 bg-white/75 p-5 text-base leading-7 text-slate-700">
-            No sharply conflicting reviewer positions are currently recorded for this sample. The passport remains
+            No sharply conflicting reviewer positions are currently recorded for this sample. The review note remains
             provisional anyway, but disagreement is not the main active issue in this case.
           </div>
         )}
@@ -193,9 +193,9 @@ export default function PassportPage({ params }: { params: { slug: string } }) {
 
       <CaseSwitcher
         currentSlug={document.slug}
-        destination="passport"
-        title="Compare the other trust passports"
-        description="Each passport keeps trust provisional, avoids a single score, and shows where deeper review still needs to happen."
+        destination="reviewNote"
+        title="Compare the other review notes"
+        description="Each review note keeps the review state provisional, avoids a single score, and shows where deeper review still needs to happen."
       />
     </div>
   );

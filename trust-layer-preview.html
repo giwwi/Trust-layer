@@ -234,7 +234,7 @@
 
       .hero,
       .text-layout,
-      .passport-layout,
+      .review-note-layout,
       .workflow-layout {
         display: grid;
         gap: 24px;
@@ -248,7 +248,7 @@
         grid-template-columns: minmax(0, 1.15fr) 360px;
       }
 
-      .passport-layout {
+      .review-note-layout {
         grid-template-columns: 1.15fr 0.85fr;
       }
 
@@ -259,7 +259,7 @@
       .hero h1,
       .section-title,
       .article h2,
-      .passport-title,
+      .review-note-title,
       .workflow-title {
         font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
         letter-spacing: -0.035em;
@@ -272,7 +272,7 @@
       }
 
       .article-title,
-      .passport-main h1,
+      .review-note-main h1,
       .workflow-title {
         margin: 10px 0 0;
         font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
@@ -412,8 +412,8 @@
       .article,
       .article-header,
       .sidebar-block,
-      .passport-main,
-      .passport-side,
+      .review-note-main,
+      .review-note-side,
       .workflow-side,
       .workflow-main > .panel,
       .workflow-main > .panel-strong {
@@ -564,7 +564,7 @@
       .track-grid,
       .route-grid,
       .success-grid,
-      .passport-mini-grid,
+      .review-note-mini-grid,
       .workflow-compact-grid {
         display: grid;
         gap: 16px;
@@ -583,7 +583,7 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .passport-mini-grid {
+      .review-note-mini-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
@@ -611,7 +611,7 @@
 
       .ladder-card,
       .metric-card,
-      .passport-note-card,
+      .review-note-note-card,
       .guardrail-card {
         border-radius: 24px;
         border: 1px solid var(--border);
@@ -1333,7 +1333,7 @@
       @media (max-width: 1080px) {
         .hero,
         .text-layout,
-        .passport-layout,
+        .review-note-layout,
         .workflow-layout {
           grid-template-columns: 1fr;
         }
@@ -1351,7 +1351,7 @@
         }
 
         .review-ladder-grid,
-        .passport-mini-grid,
+        .review-note-mini-grid,
         .workflow-compact-grid,
         .demo-grid {
           grid-template-columns: 1fr;
@@ -1404,7 +1404,7 @@
         .track-grid,
         .route-grid,
         .success-grid,
-        .passport-mini-grid,
+        .review-note-mini-grid,
         .workflow-compact-grid,
         .dual-views,
         .limitations-grid,
@@ -1421,8 +1421,8 @@
         .article,
         .article-header,
         .sidebar-block,
-        .passport-main,
-        .passport-side,
+        .review-note-main,
+        .review-note-side,
         .workflow-side,
         .workflow-main > .panel,
         .workflow-main > .panel-strong {
@@ -1468,7 +1468,7 @@
     <main class="shell">
       <section id="landing" class="page active"></section>
       <section id="text" class="page"></section>
-      <section id="passport" class="page"></section>
+      <section id="reviewNote" class="page"></section>
       <section id="workflow" class="page"></section>
       <section id="limitations" class="page"></section>
     </main>
@@ -1547,7 +1547,7 @@
             landing: "Try it",
             demo: "Try it",
             text: "Example",
-            passport: "Example",
+            reviewNote: "Example",
             workflow: "Review",
             limitations: "Limits",
             about: "About"
@@ -1555,11 +1555,11 @@
           flowSteps: ["Add text", "Get first reading", "Check and edit", "Save review note"],
           buttons: {
             openText: "Open text",
-            openPassport: "Open review note",
-            openTrustPassport: "View review note",
+            openReviewNote: "Open review note",
+            openTrustReviewNote: "View review note",
             openWorkflow: "Open review",
             openSampleText: "Open sample text",
-            viewPassport: "View review note",
+            viewReviewNote: "View review note",
             readLimitations: "Read limitations",
             seeContested: "See disagreement example"
           },
@@ -1839,11 +1839,11 @@
             reviewFocus: "What to check next",
             suggestedRoute: "Suggested next step",
             routeReason: "Why this step",
-            passportWarranted: "Review note",
-            passportReason: "Review note reason",
+            reviewNoteWarranted: "Review note",
+            reviewNoteReason: "Review note reason",
             confidenceNote: "Caution",
             showDetails: "Show details",
-            passportLabels: {
+            reviewNoteLabels: {
               not_warranted: "Not warranted",
               optional: "Optional",
               warranted: "Warranted"
@@ -1906,7 +1906,7 @@
             summaryNote:
               "This is a prepared example of a first reading. It is not proof of reliable automatic interpretation."
           },
-          passport: {
+          reviewNote: {
             eyebrow: "Review note",
             meta: "Document",
             posture: "Status",
@@ -1966,7 +1966,7 @@
             routingCopy: "Pick the next step.",
             timeQuick: "30–90 sec",
             timeBounded: "3–5 min",
-            timePassport: "Review note if needed",
+            timeReviewNote: "Review note if needed",
             watchFor: "Watch for:",
             eyebrow: "Review",
             title: "Review",
@@ -1988,7 +1988,7 @@
             advancedOptions: "Advanced reviewer options",
             advancedForm: "Advanced review note",
             partialNote: "Incomplete is fine.",
-            passportExceptional: "Review note only if needed.",
+            reviewNoteExceptional: "Review note only if needed.",
             mostTextsNote: "Most texts stop earlier.",
             lightestReminder: "Use the lightest useful review.",
             noDecorativeReminder: "Skip fields that do not change the route.",
@@ -2019,7 +2019,7 @@
             importNotice: "AI draft imported. Check and edit before using.",
             importedHelper: "AI draft. Edit freely.",
             importedRoute: "Next step",
-            importedPassport: "Review note",
+            importedReviewNote: "Review note",
             importedTextType: "Suggested text type",
             importedDocumentType: "Document type",
             importedMainPoint: "Main point",
@@ -2039,7 +2039,7 @@
             escalationCopy: "Pick a reason if you escalate.",
             recordTitle: "Record",
             recordCopy: "Use only if needed.",
-            viewPassport: "View review note",
+            viewReviewNote: "View review note",
             editDraftPrompt: "Edit the AI draft into your reviewer note.",
             fields: {
               kind: "Main point",
@@ -2054,22 +2054,22 @@
               reviewerNote: "Reviewer note",
               claimNotes: "Claim notes",
               evidenceNotes: "Evidence notes",
-              passportGate: "Review note decision",
+              reviewNoteGate: "Review note decision",
               confidence: "Caution",
-              passportSynthesis: "Review note synthesis",
-              passportStrengths: "Strengths",
-              passportWeaknesses: "What needs checking",
-              passportChecks: "Still check",
-              passportDisagreement: "What is disputed?"
+              reviewNoteSynthesis: "Review note synthesis",
+              reviewNoteStrengths: "Strengths",
+              reviewNoteWeaknesses: "What needs checking",
+              reviewNoteChecks: "Still check",
+              reviewNoteDisagreement: "What is disputed?"
             },
-            passportGateRules: {
+            reviewNoteGateRules: {
               not_warranted: "Do not create a review note unless the reviewer overrides.",
               optional: "Use only if externally circulated or disagreement is visible.",
               warranted: "Consider a review note after human check."
             },
-            passportLocked: "Review note not ready yet.",
-            passportRequires: "Complete the checklist below.",
-            passportUnlockTitle: "Complete the human note and next-step checklist to create a review note.",
+            reviewNoteLocked: "Review note not ready yet.",
+            reviewNoteRequires: "Complete the checklist below.",
+            reviewNoteUnlockTitle: "Complete the human note and next-step checklist to create a review note.",
             secondary: "Signals",
             secondaryTitle: "Signals",
             triggerTitle: "Why escalate?",
@@ -2196,7 +2196,7 @@
             landing: "Попробовать",
             demo: "Попробовать",
             text: "Пример",
-            passport: "Пример",
+            reviewNote: "Пример",
             workflow: "Проверка",
             limitations: "Границы",
             about: "О проекте"
@@ -2204,11 +2204,11 @@
           flowSteps: ["Добавьте текст", "Получите первый разбор", "Проверьте и исправьте", "Сохраните заметку"],
           buttons: {
             openText: "Открыть текст",
-            openPassport: "Открыть заметку проверки",
-            openTrustPassport: "Смотреть заметку проверки",
+            openReviewNote: "Открыть заметку проверки",
+            openTrustReviewNote: "Смотреть заметку проверки",
             openWorkflow: "Открыть проверку",
             openSampleText: "Открыть пример текста",
-            viewPassport: "Смотреть заметку проверки",
+            viewReviewNote: "Смотреть заметку проверки",
             readLimitations: "Читать ограничения",
             seeContested: "Смотреть пример разногласия"
           },
@@ -2490,11 +2490,11 @@
             reviewFocus: "Что проверить дальше",
             suggestedRoute: "Следующий шаг",
             routeReason: "Почему этот шаг",
-            passportWarranted: "Заметка проверки",
-            passportReason: "Причина для заметки",
+            reviewNoteWarranted: "Заметка проверки",
+            reviewNoteReason: "Причина для заметки",
             confidenceNote: "Оговорка",
             showDetails: "Показать детали",
-            passportLabels: {
+            reviewNoteLabels: {
               not_warranted: "Не нужен",
               optional: "Опционально",
               warranted: "Нужен"
@@ -2557,7 +2557,7 @@
             summaryNote:
               "Это подготовленный пример первого разбора. Он не доказывает надежную автоматическую интерпретацию."
           },
-          passport: {
+          reviewNote: {
             eyebrow: "Заметка проверки",
             meta: "Документ",
             posture: "Статус",
@@ -2617,7 +2617,7 @@
             routingCopy: "Выберите следующий шаг.",
             timeQuick: "30–90 сек",
             timeBounded: "3–5 мин",
-            timePassport: "Заметка если нужна",
+            timeReviewNote: "Заметка если нужна",
             watchFor: "Риск режима:",
             eyebrow: "Проверка",
             title: "Проверка",
@@ -2639,7 +2639,7 @@
             advancedOptions: "Дополнительные настройки проверки",
             advancedForm: "Расширенная заметка проверки",
             partialNote: "Неполная запись — это нормально.",
-            passportExceptional: "Заметка проверки только если нужна.",
+            reviewNoteExceptional: "Заметка проверки только если нужна.",
             mostTextsNote: "Большинство текстов останавливаются раньше.",
             lightestReminder: "Используйте самую лёгкую полезную проверку.",
             noDecorativeReminder: "Не заполняйте лишние поля.",
@@ -2670,7 +2670,7 @@
             importNotice: "Импортирован AI-черновик. Проверьте и исправьте перед использованием.",
             importedHelper: "AI-черновик. Можно свободно править.",
             importedRoute: "Следующий шаг",
-            importedPassport: "Заметка проверки",
+            importedReviewNote: "Заметка проверки",
             importedTextType: "Предполагаемый тип текста",
             importedDocumentType: "Тип документа",
             importedMainPoint: "Главная мысль",
@@ -2690,7 +2690,7 @@
             escalationCopy: "Если эскалируете, выберите причину.",
             recordTitle: "Запись",
             recordCopy: "Используйте только если нужно.",
-            viewPassport: "Посмотреть заметку",
+            viewReviewNote: "Посмотреть заметку",
             editDraftPrompt: "Превратите AI-черновик в свою запись проверки.",
             fields: {
               kind: "Главная мысль",
@@ -2705,22 +2705,22 @@
               reviewerNote: "Заметка проверяющего",
               claimNotes: "Заметки о тезисах",
               evidenceNotes: "Заметки об опоре",
-              passportGate: "Решение по заметке",
+              reviewNoteGate: "Решение по заметке",
               confidence: "Оговорка",
-              passportSynthesis: "Синтез для заметки",
-              passportStrengths: "Сильные стороны",
-              passportWeaknesses: "Что требует проверки",
-              passportChecks: "Что еще проверить",
-              passportDisagreement: "Где разногласие?"
+              reviewNoteSynthesis: "Синтез для заметки",
+              reviewNoteStrengths: "Сильные стороны",
+              reviewNoteWeaknesses: "Что требует проверки",
+              reviewNoteChecks: "Что еще проверить",
+              reviewNoteDisagreement: "Где разногласие?"
             },
-            passportGateRules: {
+            reviewNoteGateRules: {
               not_warranted: "Не создавайте заметку проверки, если проверяющий явно не переопределит это.",
               optional: "Используйте только если текст будет внешне циркулировать или есть видимое разногласие.",
               warranted: "Рассмотрите заметку только после проверки человеком."
             },
-            passportLocked: "Заметка пока не готова.",
-            passportRequires: "Заполните список условий ниже.",
-            passportUnlockTitle: "Заполните заметку человека и список условий, чтобы создать заметку проверки.",
+            reviewNoteLocked: "Заметка пока не готова.",
+            reviewNoteRequires: "Заполните список условий ниже.",
+            reviewNoteUnlockTitle: "Заполните заметку человека и список условий, чтобы создать заметку проверки.",
             secondary: "Сигналы",
             secondaryTitle: "Сигналы",
             triggerTitle: "Почему эскалировать?",
@@ -3144,7 +3144,7 @@
               "Реальный кейс рукописи. Это предварительный первый разбор, а не экспертная проверка и не подтверждение тезисов книги."
             )
           },
-          passport: {
+          reviewNote: {
             synthesis: B(
               "This reads as a serious theoretical manuscript with a clear central architecture: information as metafactor, verification as bottleneck, and political economy as the struggle over legitimate knowledge. The case warrants specialist review, not a final trust judgment.",
               "Текст читается как серьезная теоретическая рукопись с ясной центральной архитектурой: информация как метафактор, верификация как узкое место, политическая экономия как борьба за легитимное знание. Кейс заслуживает проверки специалистом, но не финального суждения о доверии."
@@ -3500,7 +3500,7 @@
               "Это подготовленный первый разбор. Фрагменты источника помогают проверке, но не доказывают интерпретацию."
             )
           },
-          passport: {
+          reviewNote: {
             synthesis: B(
               "This is a serious and useful policy working paper. Its core frame is clear: AI affects job quality through task design and organisational control. It deserves targeted review, especially on evidence aggregation and policy translation.",
               "Это серьезная и полезная policy working paper. Ее основная рамка ясна: AI влияет на качество рабочих мест через дизайн задач и организационный контроль. Текст заслуживает целевой проверки, особенно по evidence aggregation и policy translation."
@@ -3767,7 +3767,7 @@
               "Это подготовленный первый разбор. Отчет не списан как shallow; главный вопрос - насколько survey data поддерживают transformation claims."
             )
           },
-          passport: {
+          reviewNote: {
             synthesis: B(
               "This is not merely polished but shallow. It is a useful, data-rich market report with a clear survey base. Its limits are elsewhere: self-reported outcomes, consulting-frame prescriptions, and an uncertain causal bridge from management practices to enterprise value.",
               "Это не просто polished but shallow. Это полезный, data-rich market report с ясной survey base. Ограничения в другом: self-reported outcomes, consulting-frame prescriptions и uncertain causal bridge от management practices к enterprise value."
@@ -4029,7 +4029,7 @@
               "Это только подготовленный первый разбор. Source cues перефразированы, потому что оригинал copyrighted; они помогают проверке, но ничего не доказывают."
             )
           },
-          passport: {
+          reviewNote: {
             synthesis: B(
               "No stable review state exists yet. One reading sees a strong account of art as intentional human practice; another sees a restrictive definition that underplays tools, procedure, and audience response.",
               "Устойчивого состояния проверки пока нет. Одно прочтение видит сильный account of art as intentional human practice; другое — слишком узкое definition, которое недооценивает tools, procedure и response аудитории."
@@ -4215,7 +4215,7 @@
           ]
         },
         {
-          id: "passport",
+          id: "reviewNote",
           title: B("Review note", "Заметка проверки"),
           time: B("Escalated only", "Только после эскалации"),
           summary: B("Only for escalated cases or cases with visible disagreement.", "Только для эскалированных кейсов или кейсов с видимым разногласием."),
@@ -4271,11 +4271,11 @@
           tone: "escalate"
         },
         {
-          id: "passport",
+          id: "reviewNote",
           label: B("Review note", "Заметка проверки"),
           summary: B("Create a durable note.", "Сделать устойчивую заметку."),
           hint: B("Only if needed.", "Только если нужен."),
-          tone: "passport"
+          tone: "reviewNote"
         }
       ];
 
@@ -4338,7 +4338,7 @@
         lang: safeStorage.getItem("trust-layer-lang") || "ru",
         page: "landing",
         currentCase: "d",
-        passportView: "sample",
+        reviewNoteView: "sample",
         workflowCase: "d",
         workflowMode: "evidence",
         workflowTrack: safeStorage.getItem("trust-layer-workflow-track") || "scratch",
@@ -4469,8 +4469,8 @@
         return document.querySelector(`[data-workflow-field="${key}"]`)?.value.trim() || fallback || "";
       }
 
-      function getCreatedPassport() {
-        return window.trustLayerCreatedPassport || null;
+      function getCreatedReviewNote() {
+        return window.trustLayerCreatedReviewNote || null;
       }
 
       function captureWorkflowFields() {
@@ -4543,7 +4543,7 @@
         const button = document.querySelector("[data-review-note-action]");
         if (button) {
           button.disabled = !ready;
-          button.title = ready ? "" : copy.workflow.passportUnlockTitle;
+          button.title = ready ? "" : copy.workflow.reviewNoteUnlockTitle;
         }
       }
 
@@ -4561,20 +4561,20 @@
           : `<div class="entry-card" ${style ? `style="${style}"` : ""}>—</div>`;
       }
 
-      function renderPassportTabs(activeId) {
+      function renderReviewNoteTabs(activeId) {
         const copy = currentUI();
-        const createdPassport = getCreatedPassport();
+        const createdReviewNote = getCreatedReviewNote();
         return `
           <div class="case-tabs">
             ${
-              createdPassport
-                ? `<button class="case-button ${activeId === "created" ? "active" : ""}" onclick="showCreatedPassport()">${esc(compactText(createdPassport.title || copy.passport.createdEyebrow, 42))}</button>`
+              createdReviewNote
+                ? `<button class="case-button ${activeId === "created" ? "active" : ""}" onclick="showCreatedReviewNote()">${esc(compactText(createdReviewNote.title || copy.reviewNote.createdEyebrow, 42))}</button>`
                 : ""
             }
             ${cases
               .map(
                 (candidate) =>
-                  `<button class="case-button ${activeId === candidate.id ? "active" : ""}" onclick="selectCase('${candidate.id}', 'passport')">${tx(candidate.shortTitle)}</button>`
+                  `<button class="case-button ${activeId === candidate.id ? "active" : ""}" onclick="selectCase('${candidate.id}', 'reviewNote')">${tx(candidate.shortTitle)}</button>`
               )
               .join("")}
           </div>
@@ -4637,9 +4637,9 @@
         if (!result) return null;
 
         const routeId = routeFromFirstPass(result.route_recommendation);
-        const passportValue = result.passport_recommendation || "optional";
-        const passportRule = currentUI().workflow.passportGateRules?.[passportValue] || "";
-        const passportLabel = currentUI().demo.passportLabels?.[passportValue] || passportValue;
+        const reviewNoteValue = result.review_note_recommendation || "optional";
+        const reviewNoteRule = currentUI().workflow.reviewNoteGateRules?.[reviewNoteValue] || "";
+        const reviewNoteLabel = currentUI().demo.reviewNoteLabels?.[reviewNoteValue] || reviewNoteValue;
         const routeReason = result.route_reason || "";
         const textType = inferWorkflowTextTypeId(result, source);
 
@@ -4650,7 +4650,7 @@
           unusualIdea: Boolean(source.unusualIdea) || conceptualWorkflowTypeIds.has(textType),
           documentType: result.document_type || "",
           routeLabel: currentUI().demo.routeLabels?.[result.route_recommendation] || result.route_recommendation || "",
-          passportLabel,
+          reviewNoteLabel,
           mainPoint: result.probable_central_argument || "",
           whyContinue: routeId === "stop" ? "" : routeReason,
           whyStop: routeId === "stop" ? routeReason : "",
@@ -4659,7 +4659,7 @@
           reviewerNote: [routeReason, result.confidence_note].filter(Boolean).join("\n"),
           claimNotes: zoneText(result.claim_zones),
           evidenceNotes: zoneText(result.evidence_areas),
-          passportGate: [`${currentUI().demo.passportWarranted}: ${passportLabel}`, result.passport_reason, passportRule].filter(Boolean).join("\n"),
+          reviewNoteGate: [`${currentUI().demo.reviewNoteWarranted}: ${reviewNoteLabel}`, result.review_note_reason, reviewNoteRule].filter(Boolean).join("\n"),
           confidence: result.confidence_note || ""
         };
       }
@@ -4824,7 +4824,7 @@
           const isActive =
             target === state.page ||
             (target === "demo" && state.page === "landing") ||
-            (target === "text" && state.page === "passport");
+            (target === "text" && state.page === "reviewNote");
           button.textContent = copy.nav[target];
           button.classList.toggle("active", isActive);
         });
@@ -5163,7 +5163,7 @@
                   ${item.overlay.signals.map((signal) => `<div class="signal-card ${signal.tone}"><div class="eyebrow">${tx(signal.label)}</div><div style="margin-top:8px; font-weight:700;">${tx(signal.value)}</div></div>`).join("")}
                 </div>
                 <div class="section-actions">
-                  <button class="cta primary" onclick="openPassport('${item.id}')">${copy.buttons.openTrustPassport}</button>
+                  <button class="cta primary" onclick="openReviewNote('${item.id}')">${copy.buttons.openTrustReviewNote}</button>
                 </div>
               </div>
             </aside>
@@ -5171,7 +5171,7 @@
         `;
       }
 
-      function buildCreatedPassportFromWorkflow() {
+      function buildCreatedReviewNoteFromWorkflow() {
         const copy = currentUI();
         const workflowImport = getWorkflowImport();
         const importedActive = state.workflowCase === IMPORTED_WORKFLOW_CASE && Boolean(workflowImport);
@@ -5197,11 +5197,11 @@
           sourceLabel,
           route: tx(route.label),
           escalation: escalation ? tx(escalation.label) : "",
-          synthesis: readWorkflowField("passportSynthesis", mainPoint),
-          strengths: readWorkflowField("passportStrengths", whyContinue),
-          weaknesses: readWorkflowField("passportWeaknesses", [whyStop, unclear].filter(Boolean).join("\n")),
-          verification: readWorkflowField("passportChecks", checkNext),
-          disagreement: readWorkflowField("passportDisagreement", unclear),
+          synthesis: readWorkflowField("reviewNoteSynthesis", mainPoint),
+          strengths: readWorkflowField("reviewNoteStrengths", whyContinue),
+          weaknesses: readWorkflowField("reviewNoteWeaknesses", [whyStop, unclear].filter(Boolean).join("\n")),
+          verification: readWorkflowField("reviewNoteChecks", checkNext),
+          disagreement: readWorkflowField("reviewNoteDisagreement", unclear),
           mainPoint,
           whyContinue,
           whyStop,
@@ -5210,107 +5210,107 @@
           reviewerNote,
           claimNotes: readWorkflowField("claimNotes", importedDraft ? importedDraft.claimNotes : ""),
           evidenceNotes: readWorkflowField("evidenceNotes", importedDraft ? importedDraft.evidenceNotes : ""),
-          passportGate: readWorkflowField("passportGate", importedDraft ? importedDraft.passportGate : copy.workflow.passportExceptional),
-          confidence: readWorkflowField("confidence", importedDraft ? importedDraft.confidence : copy.passport.notExpert)
+          reviewNoteGate: readWorkflowField("reviewNoteGate", importedDraft ? importedDraft.reviewNoteGate : copy.workflow.reviewNoteExceptional),
+          confidence: readWorkflowField("confidence", importedDraft ? importedDraft.confidence : copy.reviewNote.notExpert)
         };
       }
 
-      function renderCreatedPassport(passport) {
+      function renderCreatedReviewNote(reviewNote) {
         const copy = currentUI();
 
-        document.getElementById("passport").innerHTML = `
-          ${renderPassportTabs("created")}
+        document.getElementById("reviewNote").innerHTML = `
+          ${renderReviewNoteTabs("created")}
 
-          <div class="panel-strong passport-main" style="padding:30px;">
-            <div class="eyebrow">${copy.passport.createdEyebrow}</div>
-            <h1>${esc(passport.title)}</h1>
-            <div class="tiny" style="margin-top:16px;">${copy.passport.createdNotice} ${copy.passport.exceptional}</div>
+          <div class="panel-strong review-note-main" style="padding:30px;">
+            <div class="eyebrow">${copy.reviewNote.createdEyebrow}</div>
+            <h1>${esc(reviewNote.title)}</h1>
+            <div class="tiny" style="margin-top:16px;">${copy.reviewNote.createdNotice} ${copy.reviewNote.exceptional}</div>
             <div class="grid-2" style="margin-top:22px;">
               <div class="info-block">
-                <div class="eyebrow">${copy.passport.createdMeta}</div>
-                <p style="margin-top:10px;"><strong>${copy.text.type}:</strong> ${esc(passport.documentType)}</p>
-                <p><strong>${copy.text.context}:</strong> ${esc(passport.sourceLabel)}</p>
+                <div class="eyebrow">${copy.reviewNote.createdMeta}</div>
+                <p style="margin-top:10px;"><strong>${copy.text.type}:</strong> ${esc(reviewNote.documentType)}</p>
+                <p><strong>${copy.text.context}:</strong> ${esc(reviewNote.sourceLabel)}</p>
               </div>
               <div class="info-block">
-                <div class="eyebrow">${copy.passport.posture}</div>
-                <p style="margin-top:10px;"><strong>${copy.passport.createdRoute}:</strong> ${esc(passport.route)}</p>
-                ${passport.escalation ? `<p><strong>${copy.workflow.escalationTitle}:</strong> ${esc(passport.escalation)}</p>` : ""}
-                <div class="eyebrow" style="margin-top:18px;">${copy.passport.nextAction}</div>
-                <p style="margin-top:10px;">${multiline(passport.passportGate)}</p>
+                <div class="eyebrow">${copy.reviewNote.posture}</div>
+                <p style="margin-top:10px;"><strong>${copy.reviewNote.createdRoute}:</strong> ${esc(reviewNote.route)}</p>
+                ${reviewNote.escalation ? `<p><strong>${copy.workflow.escalationTitle}:</strong> ${esc(reviewNote.escalation)}</p>` : ""}
+                <div class="eyebrow" style="margin-top:18px;">${copy.reviewNote.nextAction}</div>
+                <p style="margin-top:10px;">${multiline(reviewNote.reviewNoteGate)}</p>
               </div>
             </div>
-            <div class="section-copy" style="margin-top:18px;">${multiline(passport.synthesis)}</div>
+            <div class="section-copy" style="margin-top:18px;">${multiline(reviewNote.synthesis)}</div>
             <div class="section-actions">
-              <button class="cta" onclick="goToPage('workflow')">${copy.passport.backToReview}</button>
+              <button class="cta" onclick="goToPage('workflow')">${copy.reviewNote.backToReview}</button>
             </div>
           </div>
 
           <div class="section grid-2">
             <div class="panel" style="padding:28px;">
-              <div class="eyebrow">${copy.passport.strengths}</div>
-              <div class="passport-title" style="font-size:2rem; margin-top:10px;">${copy.passport.strengthsTitle}</div>
+              <div class="eyebrow">${copy.reviewNote.strengths}</div>
+              <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${copy.reviewNote.strengthsTitle}</div>
               <div class="dimension-grid" style="margin-top:16px;">
-                ${renderEntryCards(passport.strengths, "background:rgba(244,246,247,0.9);")}
+                ${renderEntryCards(reviewNote.strengths, "background:rgba(244,246,247,0.9);")}
               </div>
             </div>
             <div class="panel" style="padding:28px;">
-              <div class="eyebrow">${copy.passport.weaknesses}</div>
-              <div class="passport-title" style="font-size:2rem; margin-top:10px;">${copy.passport.weaknessesTitle}</div>
+              <div class="eyebrow">${copy.reviewNote.weaknesses}</div>
+              <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${copy.reviewNote.weaknessesTitle}</div>
               <div class="dimension-grid" style="margin-top:16px;">
-                ${renderEntryCards(passport.weaknesses, "background:rgba(247,245,241,0.9);")}
+                ${renderEntryCards(reviewNote.weaknesses, "background:rgba(247,245,241,0.9);")}
               </div>
             </div>
           </div>
 
           <div class="section panel" style="padding:28px;">
-            <div class="eyebrow">${copy.passport.verification}</div>
-            <div class="passport-title" style="font-size:2rem; margin-top:10px;">${copy.passport.verification}</div>
+            <div class="eyebrow">${copy.reviewNote.verification}</div>
+            <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${copy.reviewNote.verification}</div>
             <div class="dimension-grid" style="margin-top:16px;">
-              ${renderEntryCards(passport.verification)}
+              ${renderEntryCards(reviewNote.verification)}
             </div>
           </div>
 
           <div class="section panel" style="padding:28px;">
-            <div class="eyebrow">${copy.passport.createdReviewNote}</div>
-            <div class="entry-card" style="margin-top:16px;">${multiline(passport.reviewerNote)}</div>
+            <div class="eyebrow">${copy.reviewNote.createdReviewNote}</div>
+            <div class="entry-card" style="margin-top:16px;">${multiline(reviewNote.reviewerNote)}</div>
             <div class="grid-2" style="margin-top:18px;">
               <div class="entry-card">
                 <div class="eyebrow">${copy.workflow.fields.confidence}</div>
-                <p style="margin-top:12px;">${multiline(passport.confidence)}</p>
+                <p style="margin-top:12px;">${multiline(reviewNote.confidence)}</p>
               </div>
               <div class="entry-card">
-                <div class="eyebrow">${copy.passport.createdUnclear}</div>
-                <p style="margin-top:12px;">${multiline(passport.unclear)}</p>
+                <div class="eyebrow">${copy.reviewNote.createdUnclear}</div>
+                <p style="margin-top:12px;">${multiline(reviewNote.unclear)}</p>
               </div>
             </div>
           </div>
 
           <div class="section panel" style="padding:28px;">
-            <div class="eyebrow">${copy.passport.disagreement}</div>
-            <div class="passport-title" style="font-size:2rem; margin-top:10px;">${copy.passport.disagreementTitle}</div>
+            <div class="eyebrow">${copy.reviewNote.disagreement}</div>
+            <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${copy.reviewNote.disagreementTitle}</div>
             <div class="grid-2" style="margin-top:18px;">
               <div class="entry-card">
-                <div class="eyebrow">${copy.passport.disagreementWhat}</div>
-                <p style="margin-top:12px; color:#5f6c79;">${multiline(passport.disagreement)}</p>
+                <div class="eyebrow">${copy.reviewNote.disagreementWhat}</div>
+                <p style="margin-top:12px; color:#5f6c79;">${multiline(reviewNote.disagreement)}</p>
               </div>
               <div class="entry-card">
-                <div class="eyebrow">${copy.passport.disagreementReduce}</div>
-                <p style="margin-top:12px; color:#5f6c79;">${multiline(passport.verification)}</p>
+                <div class="eyebrow">${copy.reviewNote.disagreementReduce}</div>
+                <p style="margin-top:12px; color:#5f6c79;">${multiline(reviewNote.verification)}</p>
               </div>
             </div>
           </div>
 
           ${
-            passport.claimNotes || passport.evidenceNotes
+            reviewNote.claimNotes || reviewNote.evidenceNotes
               ? `
                 <div class="section grid-2">
                   <div class="panel" style="padding:28px;">
-                    <div class="eyebrow">${copy.passport.createdClaims}</div>
-                    <div class="entry-card" style="margin-top:16px;">${multiline(passport.claimNotes)}</div>
+                    <div class="eyebrow">${copy.reviewNote.createdClaims}</div>
+                    <div class="entry-card" style="margin-top:16px;">${multiline(reviewNote.claimNotes)}</div>
                   </div>
                   <div class="panel" style="padding:28px;">
-                    <div class="eyebrow">${copy.passport.createdEvidence}</div>
-                    <div class="entry-card" style="margin-top:16px;">${multiline(passport.evidenceNotes)}</div>
+                    <div class="eyebrow">${copy.reviewNote.createdEvidence}</div>
+                    <div class="entry-card" style="margin-top:16px;">${multiline(reviewNote.evidenceNotes)}</div>
                   </div>
                 </div>
               `
@@ -5319,83 +5319,83 @@
         `;
       }
 
-      function renderPassport() {
+      function renderReviewNote() {
         const copy = currentUI();
-        const createdPassport = state.passportView === "created" ? getCreatedPassport() : null;
+        const createdReviewNote = state.reviewNoteView === "created" ? getCreatedReviewNote() : null;
 
-        if (state.passportView === "created" && !createdPassport) {
-          document.getElementById("passport").innerHTML = `
-            ${renderPassportTabs("created")}
+        if (state.reviewNoteView === "created" && !createdReviewNote) {
+          document.getElementById("reviewNote").innerHTML = `
+            ${renderReviewNoteTabs("created")}
             <div class="panel-strong" style="padding:34px;">
-              <div class="eyebrow">${copy.passport.createdEyebrow}</div>
-              <div class="section-title">${copy.passport.noCreatedTitle}</div>
-              <div class="section-copy">${copy.passport.noCreatedCopy}</div>
+              <div class="eyebrow">${copy.reviewNote.createdEyebrow}</div>
+              <div class="section-title">${copy.reviewNote.noCreatedTitle}</div>
+              <div class="section-copy">${copy.reviewNote.noCreatedCopy}</div>
               <div class="section-actions">
-                <button class="cta primary" onclick="goToPage('workflow')">${copy.passport.backToReview}</button>
+                <button class="cta primary" onclick="goToPage('workflow')">${copy.reviewNote.backToReview}</button>
               </div>
             </div>
           `;
           return;
         }
 
-        if (createdPassport) {
-          renderCreatedPassport(createdPassport);
+        if (createdReviewNote) {
+          renderCreatedReviewNote(createdReviewNote);
           return;
         }
 
         const item = getCase(state.currentCase);
         const contested = item.id === "d";
-        const showDisagreement = contested || Boolean(item.passport.reviewerViews);
-        const disagreementFocus = contested ? tx(item.overlay.uncertainty[0].summary) : tx(item.passport.disagreement);
-        const disagreementReduction = tx(item.passport.verification[0]);
+        const showDisagreement = contested || Boolean(item.reviewNote.reviewerViews);
+        const disagreementFocus = contested ? tx(item.overlay.uncertainty[0].summary) : tx(item.reviewNote.disagreement);
+        const disagreementReduction = tx(item.reviewNote.verification[0]);
 
-        document.getElementById("passport").innerHTML = `
-          ${renderPassportTabs(item.id)}
+        document.getElementById("reviewNote").innerHTML = `
+          ${renderReviewNoteTabs(item.id)}
 
-          <div class="panel-strong passport-main" style="padding:30px;">
-            <div class="eyebrow">${copy.passport.eyebrow}</div>
+          <div class="panel-strong review-note-main" style="padding:30px;">
+            <div class="eyebrow">${copy.reviewNote.eyebrow}</div>
             <h1>${tx(item.title)}</h1>
-            <div class="tiny" style="margin-top:16px;">${copy.passport.routingArtifact} ${copy.passport.notExpert} ${copy.passport.exceptional}</div>
+            <div class="tiny" style="margin-top:16px;">${copy.reviewNote.routingArtifact} ${copy.reviewNote.notExpert} ${copy.reviewNote.exceptional}</div>
             <div class="grid-2" style="margin-top:22px;">
               <div class="info-block">
-                <div class="eyebrow">${copy.passport.meta}</div>
+                <div class="eyebrow">${copy.reviewNote.meta}</div>
                 <p style="margin-top:10px;"><strong>${copy.text.author}:</strong> ${item.author}</p>
                 <p><strong>${copy.text.type}:</strong> ${tx(item.type)}</p>
                 <p><strong>${copy.text.context}:</strong> ${tx(item.submissionContext)}</p>
               </div>
               <div class="info-block">
-                <div class="eyebrow">${copy.passport.posture}</div>
+                <div class="eyebrow">${copy.reviewNote.posture}</div>
                 <p style="margin-top:10px;">${tx(item.landingSummary)}</p>
-                <div class="eyebrow" style="margin-top:18px;">${copy.passport.nextAction}</div>
+                <div class="eyebrow" style="margin-top:18px;">${copy.reviewNote.nextAction}</div>
                 <p style="margin-top:10px;">${tx(item.landingStance)}</p>
               </div>
             </div>
-            <div class="section-copy" style="margin-top:18px;">${tx(item.passport.synthesis)}</div>
-            ${contested ? `<div class="tiny" style="margin-top:14px;">${copy.passport.unresolved}</div>` : ""}
+            <div class="section-copy" style="margin-top:18px;">${tx(item.reviewNote.synthesis)}</div>
+            ${contested ? `<div class="tiny" style="margin-top:14px;">${copy.reviewNote.unresolved}</div>` : ""}
           </div>
 
           <div class="section grid-2">
             <div class="panel" style="padding:28px;">
-              <div class="eyebrow">${copy.passport.strengths}</div>
-              <div class="passport-title" style="font-size:2rem; margin-top:10px;">${copy.passport.strengthsTitle}</div>
+              <div class="eyebrow">${copy.reviewNote.strengths}</div>
+              <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${copy.reviewNote.strengthsTitle}</div>
               <div class="dimension-grid" style="margin-top:16px;">
-                ${item.passport.strengths.map((entry) => `<div class="entry-card" style="background:rgba(244,246,247,0.9);">${tx(entry)}</div>`).join("")}
+                ${item.reviewNote.strengths.map((entry) => `<div class="entry-card" style="background:rgba(244,246,247,0.9);">${tx(entry)}</div>`).join("")}
               </div>
             </div>
             <div class="panel" style="padding:28px;">
-              <div class="eyebrow">${copy.passport.weaknesses}</div>
-              <div class="passport-title" style="font-size:2rem; margin-top:10px;">${copy.passport.weaknessesTitle}</div>
+              <div class="eyebrow">${copy.reviewNote.weaknesses}</div>
+              <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${copy.reviewNote.weaknessesTitle}</div>
               <div class="dimension-grid" style="margin-top:16px;">
-                ${item.passport.weaknesses.map((entry) => `<div class="entry-card" style="background:rgba(247,245,241,0.9);">${tx(entry)}</div>`).join("")}
+                ${item.reviewNote.weaknesses.map((entry) => `<div class="entry-card" style="background:rgba(247,245,241,0.9);">${tx(entry)}</div>`).join("")}
               </div>
             </div>
           </div>
 
           <div class="section panel" style="padding:28px;">
-            <div class="eyebrow">${copy.passport.verification}</div>
-            <div class="passport-title" style="font-size:2rem; margin-top:10px;">${copy.passport.verification}</div>
+            <div class="eyebrow">${copy.reviewNote.verification}</div>
+            <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${copy.reviewNote.verification}</div>
             <div class="dimension-grid" style="margin-top:16px;">
-              ${item.passport.verification.map((entry) => `<div class="entry-card">${tx(entry)}</div>`).join("")}
+              ${item.reviewNote.verification.map((entry) => `<div class="entry-card">${tx(entry)}</div>`).join("")}
             </div>
           </div>
 
@@ -5403,24 +5403,24 @@
             showDisagreement
               ? `
                 <div class="section panel" style="padding:28px;">
-                  <div class="eyebrow">${copy.passport.disagreement}</div>
-                  <div class="passport-title" style="font-size:2rem; margin-top:10px;">${copy.passport.disagreementTitle}</div>
-                  <p class="section-copy" style="margin-top:14px;">${tx(item.passport.disagreement)}</p>
+                  <div class="eyebrow">${copy.reviewNote.disagreement}</div>
+                  <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${copy.reviewNote.disagreementTitle}</div>
+                  <p class="section-copy" style="margin-top:14px;">${tx(item.reviewNote.disagreement)}</p>
                   <div class="grid-2" style="margin-top:18px;">
                     <div class="entry-card">
-                      <div class="eyebrow">${copy.passport.disagreementWhat}</div>
+                      <div class="eyebrow">${copy.reviewNote.disagreementWhat}</div>
                       <p style="margin-top:12px; color:#5f6c79;">${disagreementFocus}</p>
                     </div>
                     <div class="entry-card">
-                      <div class="eyebrow">${copy.passport.disagreementReduce}</div>
+                      <div class="eyebrow">${copy.reviewNote.disagreementReduce}</div>
                       <p style="margin-top:12px; color:#5f6c79;">${disagreementReduction}</p>
                     </div>
                   </div>
                   ${
-                    item.passport.reviewerViews
+                    item.reviewNote.reviewerViews
                       ? `
                         <div class="dual-views" style="margin-top:18px;">
-                          ${item.passport.reviewerViews
+                          ${item.reviewNote.reviewerViews
                             .map(
                               (view) => `
                                 <div class="entry-card" style="padding:20px;">
@@ -5457,7 +5457,7 @@
         const item = getCase(state.workflowCase);
         const rejectionProfile = getRejectionProfile(item.id);
 
-        if (state.workflowRoute === "passport") {
+        if (state.workflowRoute === "reviewNote") {
           state.workflowRoute = "specialist";
           safeStorage.setItem("trust-layer-workflow-route", state.workflowRoute);
         }
@@ -5484,7 +5484,7 @@
               reviewerNote: importedDraft.reviewerNote,
               claimNotes: importedDraft.claimNotes,
               evidenceNotes: importedDraft.evidenceNotes,
-              passportGate: importedDraft.passportGate,
+              reviewNoteGate: importedDraft.reviewNoteGate,
               confidence: importedDraft.confidence
             }
           : {
@@ -5497,7 +5497,7 @@
               reviewerNote: item.workflow.revise,
               claimNotes: "",
               evidenceNotes: "",
-              passportGate: "",
+              reviewNoteGate: "",
               confidence: ""
             };
         const readiness = {
@@ -5523,7 +5523,7 @@
         const routePanel = `
           <div class="panel" style="margin-top:18px;">
             <div class="eyebrow">${copy.workflow.routingEyebrow}</div>
-            <div class="passport-title" style="font-size:2rem; margin-top:10px;">${copy.workflow.routingTitle}</div>
+            <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${copy.workflow.routingTitle}</div>
             <div class="tiny" style="margin-top:12px;">${copy.workflow.routingCopy}</div>
             <div class="route-grid" style="margin-top:18px;">
               ${routingOptions
@@ -5550,7 +5550,7 @@
           <div class="workflow-layout">
             <aside class="workflow-side panel">
               <div class="eyebrow">${copy.workflow.sampleDocument}</div>
-              <div class="passport-title" style="font-size:1.7rem; margin-top:10px;">${copy.workflow.chooseTarget}</div>
+              <div class="review-note-title" style="font-size:1.7rem; margin-top:10px;">${copy.workflow.chooseTarget}</div>
               <div class="button-stack">
                 ${
                   workflowImport
@@ -5559,7 +5559,7 @@
                 }
                 ${cases.map((entry) => `<button class="case-button ${!importedActive && entry.id === item.id ? "active" : ""}" onclick="selectWorkflowCase('${entry.id}')">${tx(entry.shortTitle)}</button>`).join("")}
               </div>
-              <div class="tiny" style="margin-top:16px;">${copy.workflow.passportExceptional}</div>
+              <div class="tiny" style="margin-top:16px;">${copy.workflow.reviewNoteExceptional}</div>
             </aside>
 
             <div class="workflow-main">
@@ -5583,8 +5583,8 @@
                     <p>${importedDraft ? esc(importedDraft.routeLabel) : tx(route.label)}</p>
                   </div>
                   <div class="import-cell">
-                    <div class="eyebrow">${copy.workflow.importedPassport}</div>
-                    <p>${importedDraft ? esc(importedDraft.passportLabel) : copy.workflow.passportExceptional}</p>
+                    <div class="eyebrow">${copy.workflow.importedReviewNote}</div>
+                    <p>${importedDraft ? esc(importedDraft.reviewNoteLabel) : copy.workflow.reviewNoteExceptional}</p>
                   </div>
                   ${
                     importedDraft
@@ -5630,7 +5630,7 @@
 
               <div class="panel" style="margin-top:18px;">
                 <div class="eyebrow">${copy.workflow.correctionsTitle}</div>
-                <div class="passport-title" style="font-size:2rem; margin-top:10px;">${copy.workflow.boundedTitle}</div>
+                <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${copy.workflow.boundedTitle}</div>
                 <div class="tiny" style="margin-top:12px;">${importedDraft ? copy.workflow.editDraftPrompt : copy.workflow.boundedCopy}</div>
                 <div class="workflow-compact-grid" style="margin-top:18px;">
                   ${field(copy.workflow.fields.kind, workflowValues.mainPoint, "short", "", "mainPoint")}
@@ -5649,7 +5649,7 @@
                   ? `
                     <div class="panel" style="margin-top:18px;">
                       <div class="eyebrow">${copy.workflow.fastStopTitle}</div>
-                      <div class="passport-title" style="font-size:2rem; margin-top:10px;">${tx(route.label)}</div>
+                      <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${tx(route.label)}</div>
                       <div class="helper-strip">
                         <span class="helper-pill">${copy.workflow.rejectionStatusLabel}: ${copy.workflow.rejectionStatusStop}</span>
                         <span class="helper-pill">${copy.workflow.rejectionReasonTagLabel}: ${copy.landing.rejectedReasonTags[rejectionProfile.tagIndex]}</span>
@@ -5689,7 +5689,7 @@
                   ? `
                     <div class="panel" style="margin-top:18px;">
                       <div class="eyebrow">${copy.workflow.escalationTitle}</div>
-                      <div class="passport-title" style="font-size:2rem; margin-top:10px;">${copy.workflow.triggerTitle}</div>
+                      <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${copy.workflow.triggerTitle}</div>
                       <div class="button-stack" style="margin-top:18px;">
                         ${escalationTriggers
                           .map(
@@ -5705,7 +5705,7 @@
 
               <div class="panel" style="margin-top:18px;">
                 <div class="eyebrow">${copy.workflow.reviewNoteTitle}</div>
-                <div class="passport-title" data-review-note-status style="font-size:2rem; margin-top:10px;">${reviewNoteReady ? copy.workflow.reviewNoteReady : copy.workflow.reviewNoteNotReady}</div>
+                <div class="review-note-title" data-review-note-status style="font-size:2rem; margin-top:10px;">${reviewNoteReady ? copy.workflow.reviewNoteReady : copy.workflow.reviewNoteNotReady}</div>
                 <div class="tiny" style="margin-top:12px;">${copy.workflow.reviewNoteCopy}</div>
                 <div class="tiny" style="margin-top:14px;">${copy.workflow.reviewNoteChecklistIntro}</div>
                 ${renderReviewNoteChecklist(readiness, copy)}
@@ -5716,13 +5716,13 @@
                   <div class="workflow-compact-grid" style="margin-top:18px;">
                     ${field(copy.workflow.fields.claimNotes, workflowValues.claimNotes, "short", "", "claimNotes")}
                     ${field(copy.workflow.fields.evidenceNotes, workflowValues.evidenceNotes, "short", "", "evidenceNotes")}
-                    ${field(copy.workflow.fields.passportGate, workflowValues.passportGate, "short", "", "passportGate")}
+                    ${field(copy.workflow.fields.reviewNoteGate, workflowValues.reviewNoteGate, "short", "", "reviewNoteGate")}
                     ${field(copy.workflow.fields.confidence, workflowValues.confidence, "micro", "", "confidence")}
-                    ${field(copy.workflow.fields.passportSynthesis, workflowValues.mainPoint, "short", "", "passportSynthesis")}
-                    ${field(copy.workflow.fields.passportStrengths, workflowValues.whyContinue, "short", "", "passportStrengths")}
-                    ${field(copy.workflow.fields.passportWeaknesses, [workflowValues.whyStop, workflowValues.unclear].filter(Boolean).join("\n"), "short", "", "passportWeaknesses")}
-                    ${field(copy.workflow.fields.passportChecks, workflowValues.checkNext, "micro", "", "passportChecks")}
-                    ${field(copy.workflow.fields.passportDisagreement, workflowValues.unclear, "micro", "", "passportDisagreement")}
+                    ${field(copy.workflow.fields.reviewNoteSynthesis, workflowValues.mainPoint, "short", "", "reviewNoteSynthesis")}
+                    ${field(copy.workflow.fields.reviewNoteStrengths, workflowValues.whyContinue, "short", "", "reviewNoteStrengths")}
+                    ${field(copy.workflow.fields.reviewNoteWeaknesses, [workflowValues.whyStop, workflowValues.unclear].filter(Boolean).join("\n"), "short", "", "reviewNoteWeaknesses")}
+                    ${field(copy.workflow.fields.reviewNoteChecks, workflowValues.checkNext, "micro", "", "reviewNoteChecks")}
+                    ${field(copy.workflow.fields.reviewNoteDisagreement, workflowValues.unclear, "micro", "", "reviewNoteDisagreement")}
                   </div>
                 </details>
 
@@ -5730,9 +5730,9 @@
                   <button
                     class="cta primary"
                     data-review-note-action
-                    onclick="openCreatedPassport()"
+                    onclick="openCreatedReviewNote()"
                     ${reviewNoteReady ? "" : "disabled"}
-                    title="${reviewNoteReady ? "" : esc(copy.workflow.passportUnlockTitle)}"
+                    title="${reviewNoteReady ? "" : esc(copy.workflow.reviewNoteUnlockTitle)}"
                   >${copy.workflow.createReviewNote}</button>
                 </div>
               </div>
@@ -5771,7 +5771,7 @@
             <div class="notice" style="margin-top:18px;">${copy.limitations.smallPoolNote}</div>
             <div class="section-actions">
               <button class="cta primary" onclick="openText('a')">${copy.buttons.openSampleText}</button>
-              <button class="cta" onclick="openPassport('d')">${copy.buttons.seeContested}</button>
+              <button class="cta" onclick="openReviewNote('d')">${copy.buttons.seeContested}</button>
             </div>
           </div>
 
@@ -5842,7 +5842,7 @@
         renderChrome();
         renderLanding();
         renderText();
-        renderPassport();
+        renderReviewNote();
         renderWorkflow();
         renderLimitations();
         updatePage(false);
@@ -5882,11 +5882,11 @@
 
       function selectCase(id, page) {
         state.currentCase = id;
-        if (page === "passport") {
-          state.passportView = "sample";
+        if (page === "reviewNote") {
+          state.reviewNoteView = "sample";
         }
         renderText();
-        renderPassport();
+        renderReviewNote();
         state.page = page;
         updatePage();
       }
@@ -5898,11 +5898,11 @@
         updatePage();
       }
 
-      function openPassport(id) {
+      function openReviewNote(id) {
         state.currentCase = id;
-        state.passportView = "sample";
-        renderPassport();
-        state.page = "passport";
+        state.reviewNoteView = "sample";
+        renderReviewNote();
+        state.page = "reviewNote";
         updatePage();
       }
 
@@ -5918,25 +5918,25 @@
         updatePage();
       }
 
-      function openCreatedPassport() {
+      function openCreatedReviewNote() {
         const readiness = getReviewNoteReadinessFromDom();
         if (!isReviewNoteReady(readiness)) {
           updateReviewNoteChecklist();
           return;
         }
 
-        window.trustLayerCreatedPassport = buildCreatedPassportFromWorkflow();
-        state.passportView = "created";
-        renderPassport();
-        state.page = "passport";
+        window.trustLayerCreatedReviewNote = buildCreatedReviewNoteFromWorkflow();
+        state.reviewNoteView = "created";
+        renderReviewNote();
+        state.page = "reviewNote";
         updatePage();
       }
 
-      function showCreatedPassport() {
-        if (!getCreatedPassport()) return;
-        state.passportView = "created";
-        renderPassport();
-        state.page = "passport";
+      function showCreatedReviewNote() {
+        if (!getCreatedReviewNote()) return;
+        state.reviewNoteView = "created";
+        renderReviewNote();
+        state.page = "reviewNote";
         updatePage();
       }
 
@@ -5975,7 +5975,7 @@
         state.workflowTrack = id;
         safeStorage.setItem("trust-layer-workflow-track", id);
 
-        if (id === "scratch" && state.workflowRoute === "passport") {
+        if (id === "scratch" && state.workflowRoute === "reviewNote") {
           state.workflowRoute = "specialist";
           safeStorage.setItem("trust-layer-workflow-route", state.workflowRoute);
         }
@@ -6033,9 +6033,9 @@
             goToDemo();
             return;
           }
-          if (button.dataset.page === "passport") {
-            state.passportView = "sample";
-            renderPassport();
+          if (button.dataset.page === "reviewNote") {
+            state.reviewNoteView = "sample";
+            renderReviewNote();
           }
           goToPage(button.dataset.page);
         });
@@ -6051,10 +6051,10 @@
       window.goToDemo = goToDemo;
       window.focusDemoInput = focusDemoInput;
       window.openText = openText;
-      window.openPassport = openPassport;
+      window.openReviewNote = openReviewNote;
       window.openExampleWorkflow = openExampleWorkflow;
-      window.openCreatedPassport = openCreatedPassport;
-      window.showCreatedPassport = showCreatedPassport;
+      window.openCreatedReviewNote = openCreatedReviewNote;
+      window.showCreatedReviewNote = showCreatedReviewNote;
       window.selectCase = selectCase;
       window.selectWorkflowCase = selectWorkflowCase;
       window.selectWorkflowImport = selectWorkflowImport;

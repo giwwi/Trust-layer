@@ -146,8 +146,8 @@
       reviewFocus: "What to check next",
       suggestedRoute: "Suggested next step",
       routeReason: "Why this step",
-      passportWarranted: "Review note",
-      passportReason: "Review note reason",
+      reviewNoteWarranted: "Review note",
+      reviewNoteReason: "Review note reason",
       confidenceNote: "Caution",
       showDetails: "Show details",
       apiOffline:
@@ -169,7 +169,7 @@
         bounded_review: "Short review",
         escalate: "Escalate"
       },
-      passportLabels: {
+      reviewNoteLabels: {
         not_warranted: "Not warranted",
         optional: "Optional",
         warranted: "Warranted"
@@ -393,20 +393,20 @@
 
   function decisionSection(copy, result) {
     const routeLabel = copy.routeLabels[result.route_recommendation] || result.route_recommendation;
-    const passportLabel = passportLabelFor(copy, result);
+    const reviewNoteLabel = reviewNoteLabelFor(copy, result);
 
     return section(
       copy.suggestedRoute,
       `
         <p><strong>${escapeHtml(routeLabel)}</strong><br />${escapeHtml(result.route_reason)}</p>
-        <p><strong>${escapeHtml(copy.passportWarranted)}: ${escapeHtml(passportLabel)}</strong><br />${escapeHtml(result.passport_reason || "")}</p>
+        <p><strong>${escapeHtml(copy.reviewNoteWarranted)}: ${escapeHtml(reviewNoteLabel)}</strong><br />${escapeHtml(result.review_note_reason || "")}</p>
       `
     );
   }
 
-  function passportLabelFor(copy, result) {
-    const value = result.passport_recommendation || result.passport_warranted;
-    return copy.passportLabels?.[value] || value || "Review note undecided";
+  function reviewNoteLabelFor(copy, result) {
+    const value = result.review_note_recommendation || result.review_note_warranted;
+    return copy.reviewNoteLabels?.[value] || value || "Review note undecided";
   }
 
   function inferTextTypeId(result) {

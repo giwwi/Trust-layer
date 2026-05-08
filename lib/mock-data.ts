@@ -60,7 +60,7 @@ export interface WorkflowDraft {
   changeAssessment: string;
   deeperReview: string;
   contestStructuredReading: string;
-  revisePassport: string;
+  reviseReviewNote: string;
   secondary: SecondaryMetric[];
 }
 
@@ -86,7 +86,7 @@ export interface DocumentCase {
     reviewStatus: string;
     quickSignals: QuickSignal[];
   };
-  passport: {
+  reviewNote: {
     currentSynthesis: string;
     strengths: string[];
     weaknesses: string[];
@@ -280,7 +280,7 @@ export const documentCases: DocumentCase[] = [
         { label: "Review priority", value: "Specialist review warranted", tone: "promising" }
       ]
     },
-    passport: {
+    reviewNote: {
       currentSynthesis:
         "This reads as a serious theoretical manuscript with a clear central architecture: information as metafactor, verification as bottleneck, and political economy as the struggle over legitimate knowledge. The case warrants specialist review, not a final trust judgment.",
       strengths: [
@@ -375,7 +375,7 @@ export const documentCases: DocumentCase[] = [
         "Yes. Recommend deeper checking by a political economist, a growth-theory reader, and a methods reviewer for the empirical appendix.",
       contestStructuredReading:
         "Yes. I would contest any reading that treats this as empirically settled. The safer reading is: serious theoretical architecture with partial, inspectable empirical support.",
-      revisePassport:
+      reviseReviewNote:
         "Yes. Revise the review note after checking the formal appendix, empirical appendix, and adjacent literatures.",
       secondary: [
         {
@@ -521,7 +521,7 @@ export const documentCases: DocumentCase[] = [
         { label: "Review priority", value: "Worth targeted review", tone: "promising" }
       ]
     },
-    passport: {
+    reviewNote: {
       currentSynthesis:
         "This is a serious and useful policy working paper. Its core frame is clear: AI affects job quality through task design and organisational control. It deserves targeted review, especially on evidence aggregation and policy translation.",
       strengths: [
@@ -616,7 +616,7 @@ export const documentCases: DocumentCase[] = [
         "Yes. It merits short specialist review by someone with labour economics, work design, or industrial-relations expertise.",
       contestStructuredReading:
         "I would not contest the main structure, but I would keep the evidence and policy translation open for checking.",
-      revisePassport:
+      reviseReviewNote:
         "Yes. Revise the review note after checking the cited evidence base and the legal-policy section.",
       secondary: [
         {
@@ -772,7 +772,7 @@ export const documentCases: DocumentCase[] = [
         { label: "Review priority", value: "Bounded review", tone: "steady" }
       ]
     },
-    passport: {
+    reviewNote: {
       currentSynthesis:
         "This is not merely polished but shallow. It is a useful, data-rich market report with a clear survey base. Its limits are elsewhere: self-reported outcomes, consulting-frame prescriptions and an uncertain causal bridge from management practices to enterprise value.",
       strengths: [
@@ -867,7 +867,7 @@ export const documentCases: DocumentCase[] = [
         "Yes, but bounded. A specialist should review survey methodology and the evidence-to-prescription bridge, not line-edit the whole report.",
       contestStructuredReading:
         "Contest any reading that treats the report as empty consulting polish. It has real survey evidence, but its prescriptive claims need checking.",
-      revisePassport:
+      reviseReviewNote:
         "Yes. Revise the review note after checking definitions, sample composition and whether the transformation claims exceed the survey data.",
       secondary: [
         {
@@ -1019,7 +1019,7 @@ export const documentCases: DocumentCase[] = [
         { label: "Review priority", value: "Conceptual review", tone: "promising" }
       ]
     },
-    passport: {
+    reviewNote: {
       currentSynthesis:
         "No stable review state exists yet. One reading sees a strong account of art as intentional human practice; another sees a restrictive definition that underplays tools, procedure, and audience response.",
       strengths: [
@@ -1145,7 +1145,7 @@ export const documentCases: DocumentCase[] = [
         "Yes. Use conceptual review by someone familiar with aesthetics, art practice, and AI tools.",
       contestStructuredReading:
         "Yes. Keep the disagreement explicit: this is not a weak text, but an arguable conceptual position.",
-      revisePassport:
+      reviseReviewNote:
         "Yes. The review note should stay revisable after checking the original article and alternative readings.",
       secondary: [
         {

@@ -35,7 +35,7 @@ Field style:
 - uncertainty_zones: 1-3 zones; each summary maximum 18 words.
 - review_focus: 2-4 short imperative checks.
 - route_reason: maximum 25 words.
-- passport_reason: maximum 25 words.
+- review_note_reason: maximum 25 words.
 - confidence_note: one short caution.
 
 Source trace:
@@ -54,9 +54,9 @@ Source trace:
 - if no grounded fragment is available, return an empty string rather than inventing one.
 - better to return fewer but more checkable source traces than many decorative micro-links.
 
-Full passport guidance:
+Review note guidance:
 - not_warranted: most texts; short triage or bounded review is enough.
-- optional: use when a passport may help only if the case is contested, institutionally important, or used across reviewers.
+- optional: use when a review note may help only if the case is contested, institutionally important, or used across reviewers.
 - warranted: use only when the text is consequential, contested, or clearly merits a durable review artifact.
 
 Return only valid JSON matching the required schema."""
@@ -134,11 +134,11 @@ TRIAGE_JSON_SCHEMA: dict[str, Any] = {
             "enum": ["stop_here", "bounded_review", "escalate"],
         },
         "route_reason": {"type": "string"},
-        "passport_recommendation": {
+        "review_note_recommendation": {
             "type": "string",
             "enum": ["not_warranted", "optional", "warranted"],
         },
-        "passport_reason": {"type": "string"},
+        "review_note_reason": {"type": "string"},
         "confidence_note": {"type": "string"},
     },
     "required": [
@@ -150,8 +150,8 @@ TRIAGE_JSON_SCHEMA: dict[str, Any] = {
         "review_focus",
         "route_recommendation",
         "route_reason",
-        "passport_recommendation",
-        "passport_reason",
+        "review_note_recommendation",
+        "review_note_reason",
         "confidence_note",
     ],
 }
@@ -206,7 +206,7 @@ class OpenAILLMClient:
         rewrite_prompt = (
             "Rewrite this already-structured triage JSON into the required interface language.\n"
             "Preserve the same schema.\n"
-            "Preserve route_recommendation and passport_recommendation enum values exactly.\n"
+            "Preserve route_recommendation and review_note_recommendation enum values exactly.\n"
             "Preserve source_snippet fields as original source traces; do not translate them.\n"
             "Preserve source_location fields when they name a section or nearby heading.\n"
             "Keep the result compact and decision-relevant.\n"
@@ -231,7 +231,7 @@ class OpenAILLMClient:
             result.document_type,
             result.probable_central_argument,
             result.route_reason,
-            result.passport_reason,
+            result.review_note_reason,
             result.confidence_note,
             *result.review_focus,
         ]

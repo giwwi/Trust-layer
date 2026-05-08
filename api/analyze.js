@@ -26,7 +26,7 @@ Field style:
 - uncertainty_zones: 1-3 zones; each summary maximum 18 words.
 - review_focus: 2-4 short imperative checks.
 - route_reason: maximum 25 words.
-- passport_reason: maximum 25 words.
+- review_note_reason: maximum 25 words.
 - confidence_note: one short caution.
 
 Source trace:
@@ -40,9 +40,9 @@ Source trace:
 - keep source_snippet in the original wording and original language.
 - include source_location when easy; otherwise return an empty string.
 
-Full passport guidance:
+Review note guidance:
 - not_warranted: most texts; short triage or bounded review is enough.
-- optional: use when a passport may help only if the case is contested, institutionally important, or used across reviewers.
+- optional: use when a review note may help only if the case is contested, institutionally important, or used across reviewers.
 - warranted: use only when the text is consequential, contested, or clearly merits a durable review artifact.
 
 Return only valid JSON matching the required schema.`;
@@ -66,8 +66,8 @@ const triageJsonSchema = {
     review_focus: { type: "array", items: { type: "string" } },
     route_recommendation: { type: "string", enum: ["stop_here", "bounded_review", "escalate"] },
     route_reason: { type: "string" },
-    passport_recommendation: { type: "string", enum: ["not_warranted", "optional", "warranted"] },
-    passport_reason: { type: "string" },
+    review_note_recommendation: { type: "string", enum: ["not_warranted", "optional", "warranted"] },
+    review_note_reason: { type: "string" },
     confidence_note: { type: "string" }
   },
   required: [
@@ -79,8 +79,8 @@ const triageJsonSchema = {
     "review_focus",
     "route_recommendation",
     "route_reason",
-    "passport_recommendation",
-    "passport_reason",
+    "review_note_recommendation",
+    "review_note_reason",
     "confidence_note"
   ]
 };

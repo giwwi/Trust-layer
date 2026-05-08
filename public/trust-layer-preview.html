@@ -1522,6 +1522,23 @@
       window.MAX_INPUT_CHARS = PUBLIC_DEMO_CONFIG.MAX_INPUT_CHARS;
       window.GITHUB_REPO_URL = GITHUB_REPO_URL;
 
+      const safeStorage = {
+        getItem(key) {
+          try {
+            return window.localStorage?.getItem(key) || null;
+          } catch (error) {
+            return null;
+          }
+        },
+        setItem(key, value) {
+          try {
+            window.localStorage?.setItem(key, value);
+          } catch (error) {
+            // Some embedded/file browsers block localStorage. The prototype should still render.
+          }
+        }
+      };
+
       const ui = {
         en: {
           brandSub: "Prototype for first reading of analytical texts before deeper human checking.",
@@ -4318,16 +4335,16 @@
       const IMPORTED_WORKFLOW_CASE = "__imported__";
 
       const state = {
-        lang: localStorage.getItem("trust-layer-lang") || "ru",
+        lang: safeStorage.getItem("trust-layer-lang") || "ru",
         page: "landing",
         currentCase: "d",
         passportView: "sample",
         workflowCase: "d",
         workflowMode: "evidence",
-        workflowTrack: localStorage.getItem("trust-layer-workflow-track") || "scratch",
-        workflowRoute: localStorage.getItem("trust-layer-workflow-route") || "bounded",
-        workflowEscalation: localStorage.getItem("trust-layer-workflow-escalation") || "",
-        workflowAuthorNote: localStorage.getItem("trust-layer-workflow-author-note") === "true",
+        workflowTrack: safeStorage.getItem("trust-layer-workflow-track") || "scratch",
+        workflowRoute: safeStorage.getItem("trust-layer-workflow-route") || "bounded",
+        workflowEscalation: safeStorage.getItem("trust-layer-workflow-escalation") || "",
+        workflowAuthorNote: safeStorage.getItem("trust-layer-workflow-author-note") === "true",
         workflowSourceTrace: null,
         workflowOriginalOpen: false,
         workflowOriginalSearch: "",
@@ -5442,11 +5459,11 @@
 
         if (state.workflowRoute === "passport") {
           state.workflowRoute = "specialist";
-          localStorage.setItem("trust-layer-workflow-route", state.workflowRoute);
+          safeStorage.setItem("trust-layer-workflow-route", state.workflowRoute);
         }
         if (!WORKFLOW_NEXT_STEP_IDS.includes(state.workflowRoute)) {
           state.workflowRoute = "bounded";
-          localStorage.setItem("trust-layer-workflow-route", state.workflowRoute);
+          safeStorage.setItem("trust-layer-workflow-route", state.workflowRoute);
         }
 
         const route = getRoutingOption(state.workflowRoute);
@@ -5956,11 +5973,11 @@
       function setWorkflowTrack(id) {
         captureWorkflowFields();
         state.workflowTrack = id;
-        localStorage.setItem("trust-layer-workflow-track", id);
+        safeStorage.setItem("trust-layer-workflow-track", id);
 
         if (id === "scratch" && state.workflowRoute === "passport") {
           state.workflowRoute = "specialist";
-          localStorage.setItem("trust-layer-workflow-route", state.workflowRoute);
+          safeStorage.setItem("trust-layer-workflow-route", state.workflowRoute);
         }
 
         renderWorkflow();
@@ -5973,10 +5990,10 @@
 
         captureWorkflowFields();
         state.workflowRoute = id;
-        localStorage.setItem("trust-layer-workflow-route", id);
+        safeStorage.setItem("trust-layer-workflow-route", id);
         if (id !== "stop") {
           state.workflowAuthorNote = false;
-          localStorage.setItem("trust-layer-workflow-author-note", "false");
+          safeStorage.setItem("trust-layer-workflow-author-note", "false");
         }
         renderWorkflow();
       }
@@ -5984,20 +6001,20 @@
       function setWorkflowEscalation(id) {
         captureWorkflowFields();
         state.workflowEscalation = state.workflowEscalation === id ? "" : id;
-        localStorage.setItem("trust-layer-workflow-escalation", state.workflowEscalation);
+        safeStorage.setItem("trust-layer-workflow-escalation", state.workflowEscalation);
         renderWorkflow();
       }
 
       function toggleWorkflowAuthorNote() {
         captureWorkflowFields();
         state.workflowAuthorNote = !state.workflowAuthorNote;
-        localStorage.setItem("trust-layer-workflow-author-note", String(state.workflowAuthorNote));
+        safeStorage.setItem("trust-layer-workflow-author-note", String(state.workflowAuthorNote));
         renderWorkflow();
       }
 
       function setLanguage(lang) {
         state.lang = lang;
-        localStorage.setItem("trust-layer-lang", lang);
+        safeStorage.setItem("trust-layer-lang", lang);
         renderAll();
       }
 

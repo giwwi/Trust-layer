@@ -36,7 +36,7 @@ Trust Layer therefore treats text type as a provisional reading choice, not as a
 
 ### 1. Example Mode
 
-Works immediately. No API key is needed.
+Works immediately. No setup is needed.
 
 This is the safest way to explore the full workflow without sending any text to an AI provider.
 
@@ -46,13 +46,11 @@ Uses a small shared budget. Short excerpts only.
 
 The public live path has input limits, per-client rate limits, and a daily demo budget. If the live demo is unavailable or the budget is exhausted, the app should fall back to the built-in example.
 
-### 3. Own API Key Mode
+### 3. Run Locally From GitHub
 
-Optional, if enabled.
+For private, longer, or sensitive documents, run the prototype locally.
 
-Advanced users can run one request with their own OpenAI API key. The key is sent to the backend only for that request. It is not stored by the demo and is not written to logs. For public demos, use a temporary key with a low spending limit.
-
-Own API key mode does not apply the public demo character limit. Very large inputs may still fail if the AI provider or selected model cannot accept the context.
+The public demo should not ask visitors to paste provider credentials into an unfamiliar website. Local use keeps that boundary clearer: clone the repository, configure server-side environment variables, and run the demo on your own machine.
 
 Never put `OPENAI_API_KEY` in frontend code.
 

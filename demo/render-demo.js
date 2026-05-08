@@ -32,19 +32,17 @@
       uploadHint: "Supported: .txt, .md, .docx.",
       runModeLabel: "Run mode",
       runModeExample: "Example",
-      runModeExampleHint: "Works immediately. No API key needed.",
+      runModeExampleHint: "Built-in workflow. Works immediately.",
       runModePublic: "Public live demo",
-      runModePublicHint: "Uses a small shared budget. Short excerpts only.",
-      advanced: "Advanced",
-      runModeOwnKey: "Own API key",
-      runModeOwnKeyHint: "Optional. Your key is used only for this request. Use a temporary low-limit key.",
-      ownApiKeyLabel: "OpenAI API key",
-      ownApiKeyPlaceholder: "Paste a temporary low-limit key",
-      ownApiKeyWarning: "For public demos, use a temporary key with a low spending limit.",
-      ownApiKeyNoLimit: "Own API key mode: no demo character limit.",
-      ownApiKeyRequired: "Paste an API key or choose another run mode.",
-      byokFailed: "The request failed. You can still explore the workflow with an example.",
-      liveInputNote: "Live AI demo is limited. Paste a short analytical text, not confidential material.",
+      runModePublicHint: "Shared budget. Short non-confidential excerpts only.",
+      publicDemoNote: "Public demo. Short, non-confidential excerpts only.",
+      localRunTitle: "For private or longer documents",
+      localRunBody:
+        "Run Trust Layer locally from GitHub. This public demo is only for short, non-confidential excerpts.",
+      localRunButton: "Run locally on GitHub",
+      truthLimitation:
+        "This demo does not determine whether the text is true. It prepares a checkable first reading.",
+      liveInputNote: "Do not paste confidential material into the public demo.",
       privacyNote: "Text is sent to the AI provider for analysis and is not stored by this demo.",
       characterLimit: "Limit: 8,000 characters.",
       tooLong:
@@ -60,7 +58,8 @@
       useInWorkflow: "Check and edit",
       continueAsReviewer: "Check and edit",
       sourceTrace: "Where this came from",
-      sourceTraceNote: "This excerpt may explain the AI reading. Check it before accepting the result.",
+      sourceTraceNote:
+        "This excerpt may explain the AI reading. It does not prove it. Check it before accepting the result.",
       sourceTraceMissing: "No source trace returned for this item.",
       sourceLocation: "Location",
       close: "Close",
@@ -247,8 +246,10 @@
             ${demoState.fileName ? `<div class="tiny">${copy.fileReady}: ${escapeHtml(demoState.fileName)}</div>` : ""}
             <div class="eyebrow" style="margin-top:8px;">${copy.inputLabel || "Text"}</div>
             <textarea class="text-field short" data-demo-paste placeholder="${escapeHtml(copy.inputPlaceholder || "")}" ${busy ? "disabled" : ""}>${escapeHtml(demoState.pastedText)}</textarea>
+            <div class="tiny">${escapeHtml(copy.publicDemoNote || "")}</div>
             <div class="tiny">${escapeHtml(copy.liveInputNote || "")}</div>
             <div class="tiny">${escapeHtml(copy.privacyNote || "")}</div>
+            <div class="tiny">${escapeHtml(copy.truthLimitation || "")}</div>
             <div class="tiny">${escapeHtml(formatCharacterLimit(copy, sourceText))}</div>
             ${tooLong ? `<div class="notice warn" style="margin-top:12px;">${escapeHtml(copy.tooLong || "")}<div class="section-actions" style="margin-top:14px;"><button class="cta" data-demo-open-example>${escapeHtml(copy.openExample || "Open example")}</button></div></div>` : ""}
           </div>
@@ -366,7 +367,7 @@
   }
 
   function renderRunModes(copy, busy) {
-    const byokEnabled = window.PUBLIC_DEMO_CONFIG?.BYOK_ENABLED !== false;
+    const githubUrl = window.GITHUB_REPO_URL || "https://github.com/giwwi/Trust-layer";
 
     return `
       <div class="field-card" style="margin-bottom:18px;">
@@ -379,25 +380,13 @@
           <input type="radio" name="trust-layer-run-mode" value="public" data-demo-run-mode ${demoState.runMode === "public" ? "checked" : ""} ${busy ? "disabled" : ""} />
           <strong>${escapeHtml(copy.runModePublic || "Public live demo")}</strong> — ${escapeHtml(copy.runModePublicHint || "")}
         </label>
-        ${
-          byokEnabled
-            ? `
-              <details style="margin-top:12px;" ${demoState.runMode === "own_key" ? "open" : ""}>
-                <summary class="tiny"><strong>${escapeHtml(copy.advanced || "Advanced")}</strong></summary>
-                <label class="tiny" style="display:block; margin-top:10px;">
-                  <input type="radio" name="trust-layer-run-mode" value="own_key" data-demo-run-mode ${demoState.runMode === "own_key" ? "checked" : ""} ${busy ? "disabled" : ""} />
-                  <strong>${escapeHtml(copy.runModeOwnKey || "Own API key")}</strong> — ${escapeHtml(copy.runModeOwnKeyHint || "")}
-                </label>
-                <div style="margin-top:10px;">
-                  <label class="tiny" for="trust-layer-own-key">${escapeHtml(copy.ownApiKeyLabel || "OpenAI API key")}</label>
-                  <input id="trust-layer-own-key" class="text-input" type="password" data-demo-own-key placeholder="${escapeHtml(copy.ownApiKeyPlaceholder || "")}" value="${escapeHtml(demoState.ownApiKey)}" ${busy || demoState.runMode !== "own_key" ? "disabled" : ""} autocomplete="off" />
-                </div>
-                <div class="tiny" style="margin-top:8px;">${escapeHtml(copy.ownApiKeyWarning || "")}</div>
-                <div class="tiny" data-demo-own-key-required style="margin-top:8px; ${demoState.runMode === "own_key" && !demoState.ownApiKey.trim() ? "" : "display:none;"}">${escapeHtml(copy.ownApiKeyRequired || "")}</div>
-              </details>
-            `
-            : ""
-        }
+        <div class="notice" style="margin-top:16px;">
+          <strong>${escapeHtml(copy.localRunTitle || "For private or longer documents")}</strong>
+          <div style="margin-top:8px;">${escapeHtml(copy.localRunBody || "")}</div>
+          <div class="section-actions" style="margin-top:12px;">
+            <a class="cta" href="${escapeHtml(githubUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(copy.localRunButton || "Run locally on GitHub")}</a>
+          </div>
+        </div>
       </div>
     `;
   }
@@ -417,7 +406,7 @@
 
   function passportLabelFor(copy, result) {
     const value = result.passport_recommendation || result.passport_warranted;
-    return copy.passportLabels?.[value] || value || "Passport undecided";
+    return copy.passportLabels?.[value] || value || "Review note undecided";
   }
 
   function inferTextTypeId(result) {
@@ -591,7 +580,6 @@
     const fileInput = root.querySelector("[data-demo-file]");
     const pasteInput = root.querySelector("[data-demo-paste]");
     const runModeInputs = root.querySelectorAll("[data-demo-run-mode]");
-    const ownKeyInput = root.querySelector("[data-demo-own-key]");
     const textTypeInput = root.querySelector("[data-demo-text-type]");
     const analyzeButton = root.querySelector("[data-demo-analyze]");
     const clearButton = root.querySelector("[data-demo-clear]");
@@ -625,17 +613,6 @@
         render();
       });
     });
-
-    if (ownKeyInput) {
-      ownKeyInput.addEventListener("input", function (event) {
-        demoState.ownApiKey = event.target.value || "";
-        demoState.error = "";
-        const analyze = root.querySelector("[data-demo-analyze]");
-        const required = root.querySelector("[data-demo-own-key-required]");
-        if (analyze) analyze.disabled = !canRunAnalysis();
-        if (required) required.style.display = demoState.ownApiKey.trim() ? "none" : "";
-      });
-    }
 
     if (analyzeButton) {
       analyzeButton.addEventListener("click", runAnalysis);
@@ -765,11 +742,7 @@
       window.trustLayerCurrentSource = currentSourceContext(getCopy());
     } catch (error) {
       const copy = getCopy();
-      const localized = localizeError(error, copy);
-      demoState.error =
-        demoState.runMode === "own_key" && error?.code !== "invalid_input"
-          ? copy.byokFailed || localized
-          : localized;
+      demoState.error = localizeError(error, copy);
     } finally {
       demoState.phase = "idle";
       render();
@@ -822,7 +795,7 @@
     const count = String(text || "").length;
     const max = maxInputChars();
     if (max <= 0) {
-      return `${copy.ownApiKeyNoLimit || "Own API key mode: no demo character limit."} ${count.toLocaleString()} characters.`;
+      return `${count.toLocaleString()} characters.`;
     }
     return `${copy.characterLimit || ""} ${count.toLocaleString()} / ${max.toLocaleString()}`;
   }

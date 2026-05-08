@@ -1510,15 +1510,17 @@
       const PUBLIC_DEMO_CONFIG = {
         PUBLIC_DEMO_MODE: true,
         LIVE_AI_ENABLED: true,
-        BYOK_ENABLED: true,
+        BYOK_ENABLED: false,
         MAX_INPUT_CHARS: 8000
       };
+      const GITHUB_REPO_URL = "https://github.com/giwwi/Trust-layer";
 
       window.PUBLIC_DEMO_CONFIG = PUBLIC_DEMO_CONFIG;
       window.PUBLIC_DEMO_MODE = PUBLIC_DEMO_CONFIG.PUBLIC_DEMO_MODE;
       window.LIVE_AI_ENABLED = PUBLIC_DEMO_CONFIG.LIVE_AI_ENABLED;
       window.BYOK_ENABLED = PUBLIC_DEMO_CONFIG.BYOK_ENABLED;
       window.MAX_INPUT_CHARS = PUBLIC_DEMO_CONFIG.MAX_INPUT_CHARS;
+      window.GITHUB_REPO_URL = GITHUB_REPO_URL;
 
       const ui = {
         en: {
@@ -1692,21 +1694,17 @@
             uploadHint: "Supported: .txt, .md, .docx.",
             runModeLabel: "Run mode",
             runModeExample: "Example",
-            runModeExampleHint: "Works immediately. No API key needed.",
+            runModeExampleHint: "Built-in workflow. Works immediately.",
             runModePublic: "Public live demo",
-            runModePublicHint: "Uses a small shared budget. Short excerpts only.",
-            advanced: "Advanced",
-            runModeOwnKey: "Own API key",
-            runModeOwnKeyHint:
-              "Optional. Your key is used only for this request. Use a temporary low-limit key.",
-            ownApiKeyLabel: "OpenAI API key",
-            ownApiKeyPlaceholder: "Paste a temporary low-limit key",
-            ownApiKeyWarning: "For public demos, use a temporary key with a low spending limit.",
-            ownApiKeyNoLimit: "Own API key mode: no demo character limit.",
-            ownApiKeyRequired: "Paste an API key or choose another run mode.",
-            byokFailed:
-              "The request failed. You can still explore the workflow with an example.",
-            liveInputNote: "Live AI demo is limited. Paste a short analytical text, not confidential material.",
+            runModePublicHint: "Shared budget. Short non-confidential excerpts only.",
+            publicDemoNote: "Public demo. Short, non-confidential excerpts only.",
+            localRunTitle: "For private or longer documents",
+            localRunBody:
+              "Run Trust Layer locally from GitHub. This public demo is only for short, non-confidential excerpts.",
+            localRunButton: "Run locally on GitHub",
+            truthLimitation:
+              "This demo does not determine whether the text is true. It prepares a checkable first reading.",
+            liveInputNote: "Do not paste confidential material into the public demo.",
             privacyNote: "Text is sent to the AI provider for analysis and is not stored by this demo.",
             characterLimit: "Limit: 8,000 characters.",
             tooLong:
@@ -1724,7 +1722,7 @@
             continueAsReviewer: "Check and edit",
             sourceTrace: "Where this came from",
             sourceTraceNote:
-              "This excerpt may explain the AI reading. Check it before accepting the result.",
+              "This excerpt may explain the AI reading. It does not prove it. Check it before accepting the result.",
             sourceTraceMissing: "No source trace returned for this item.",
             sourceLocation: "Location",
             close: "Close",
@@ -2345,23 +2343,18 @@
             uploadHint: "Поддерживаются: .txt, .md, .docx.",
             runModeLabel: "Режим запуска",
             runModeExample: "Пример",
-            runModeExampleHint: "Работает сразу. API-ключ не нужен.",
+            runModeExampleHint: "Встроенный сценарий. Работает сразу.",
             runModePublic: "Публичное live-демо",
-            runModePublicHint: "Использует небольшой общий лимит. Только короткие фрагменты.",
-            advanced: "Дополнительно",
-            runModeOwnKey: "Свой API-ключ",
-            runModeOwnKeyHint:
-              "Необязательно. Ключ используется только для этого запроса. Лучше использовать временный ключ с низким лимитом.",
-            ownApiKeyLabel: "OpenAI API key",
-            ownApiKeyPlaceholder: "Вставьте временный ключ с низким лимитом",
-            ownApiKeyWarning:
-              "Для публичных демо используйте временный ключ с низким лимитом расходов.",
-            ownApiKeyNoLimit: "Режим своего API-ключа: лимита символов в демо нет.",
-            ownApiKeyRequired: "Вставьте API-ключ или выберите другой режим.",
-            byokFailed:
-              "Запрос не удался. Вы всё равно можете пройти сценарий на примере.",
+            runModePublicHint: "Общий лимит. Только короткие неконфиденциальные фрагменты.",
+            publicDemoNote: "Публичное демо. Только короткие и неконфиденциальные фрагменты.",
+            localRunTitle: "Для приватных или длинных документов",
+            localRunBody:
+              "Запустите Trust Layer локально из GitHub. Публичное демо предназначено только для коротких и неконфиденциальных фрагментов.",
+            localRunButton: "Запустить локально через GitHub",
+            truthLimitation:
+              "Это демо не определяет, является ли текст истинным. Оно готовит первый разбор, который нужно проверить.",
             liveInputNote:
-              "Живое AI-демо ограничено. Вставьте короткий аналитический текст и не используйте конфиденциальные материалы.",
+              "Не вставляйте конфиденциальные материалы в публичное демо.",
             privacyNote:
               "Текст отправляется AI-провайдеру для анализа и не сохраняется этим демо.",
             characterLimit: "Лимит: 8 000 символов.",
@@ -2380,7 +2373,7 @@
             continueAsReviewer: "Проверить и исправить",
             sourceTrace: "Откуда это взято",
             sourceTraceNote:
-              "Этот фрагмент может объяснять вывод ИИ. Проверьте его перед тем, как принять результат.",
+              "Этот фрагмент может объяснять вывод ИИ. Он ничего не доказывает. Проверьте его перед тем, как принять результат.",
             sourceTraceMissing: "Для этого пункта фрагмент источника не вернулся.",
             sourceLocation: "Место",
             close: "Закрыть",
@@ -6060,8 +6053,8 @@
       window.setWorkflowOriginalSearch = setWorkflowOriginalSearch;
       window.updateReviewNoteChecklist = updateReviewNoteChecklist;
     </script>
-    <script src="./demo/api-client.js?v=step13-vercel-api-20260503"></script>
-    <script src="./demo/upload.js?v=step13-vercel-api-20260503"></script>
-    <script src="./demo/render-demo.js?v=step13-vercel-api-20260503"></script>
+    <script src="./demo/api-client.js?v=public-trust-20260508"></script>
+    <script src="./demo/upload.js?v=public-trust-20260508"></script>
+    <script src="./demo/render-demo.js?v=public-trust-20260508"></script>
   </body>
 </html>

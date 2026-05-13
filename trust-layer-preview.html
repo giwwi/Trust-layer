@@ -158,6 +158,7 @@
       }
 
       .nav button,
+      .nav a,
       .lang-switch button,
       .case-button,
       .mode-button,
@@ -171,6 +172,7 @@
         border-radius: 999px;
         padding: 10px 16px;
         cursor: pointer;
+        text-decoration: none;
         transition:
           background 180ms ease,
           border-color 180ms ease,
@@ -179,6 +181,7 @@
       }
 
       .nav button:hover,
+      .nav a:hover,
       .lang-switch button:hover,
       .case-button:hover,
       .mode-button:hover,
@@ -890,7 +893,7 @@
       .landing-action-copy h1 {
         margin: 12px 0 0;
         font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-        font-size: clamp(2rem, 3.8vw, 3.35rem);
+        font-size: clamp(1.95rem, 3.2vw, 3rem);
         line-height: 1.04;
         letter-spacing: -0.04em;
       }
@@ -936,6 +939,20 @@
         margin-top: 16px;
         color: var(--muted);
         line-height: 1.65;
+      }
+
+      .landing-below-fold {
+        margin-top: 76px;
+      }
+
+      .landing-more {
+        margin-top: 24px;
+      }
+
+      .landing-more summary {
+        cursor: pointer;
+        font-weight: 800;
+        color: var(--ink);
       }
 
       .landing-demo-slot {
@@ -1121,6 +1138,12 @@
         display: grid;
         gap: 10px;
         margin-top: 16px;
+      }
+
+      .local-run-note {
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(22, 32, 43, 0.08);
       }
 
       .text-input,
@@ -1454,8 +1477,8 @@
         <div class="topbar-actions">
           <nav class="nav">
             <button class="nav-link" data-page="demo"></button>
-            <button class="nav-link" data-page="text"></button>
             <button class="nav-link" data-page="limitations"></button>
+            <a class="nav-github" href="https://github.com/giwwi/Trust-layer" target="_blank" rel="noopener noreferrer">GitHub</a>
           </nav>
           <div class="lang-switch">
             <button class="lang-link" data-lang="ru">RU</button>
@@ -1566,14 +1589,14 @@
             eyebrow: "Working prototype",
             actionEyebrow: "Start here",
             actionTitle: "Paste an analytical text. Get a first reading you can check and edit.",
-            actionSubtitle: "Trust Layer helps identify the main claims, what needs attention, and the next review step.",
-            actionPrimary: "Try example",
+            actionSubtitle: "Trust Layer helps route review attention before deeper human checking.",
+            actionPrimary: "Use example",
             actionSecondary: "Try with your own text",
             bookLead: "Based on the book",
             bookTitle: "After Labor and Capital",
             bookSubtitle: "The Political Economy of the Transitional Period",
             readBook: "Open OSF manuscript",
-            actionNote: "AI draft. Human check required.",
+            actionNote: "Not a truth engine. Not an AI detector. Human review required.",
             heroTitle: "Why this exists",
             subtitle: "AI made analytical writing easier to produce. Human checking is still slow. Trust Layer helps with the first reading before deeper review.",
             heroBody: "",
@@ -1717,6 +1740,7 @@
             localRunBody:
               "Run Trust Layer locally from GitHub. This public demo is only for short, non-confidential excerpts.",
             localRunButton: "Run locally on GitHub",
+            useExample: "Use example",
             truthLimitation:
               "This demo does not determine whether the text is true. It prepares a checkable first reading.",
             liveInputNote: "Do not paste confidential material into the public demo.",
@@ -2198,14 +2222,14 @@
             eyebrow: "Рабочий прототип",
             actionEyebrow: "Начните здесь",
             actionTitle: "Вставьте аналитический текст. Получите первый разбор, который можно проверить и исправить.",
-            actionSubtitle: "Trust Layer помогает увидеть главные тезисы, что требует внимания, и следующий шаг проверки.",
-            actionPrimary: "Попробовать пример",
+            actionSubtitle: "Trust Layer помогает направлять внимание проверяющего до глубокой проверки.",
+            actionPrimary: "Использовать пример",
             actionSecondary: "Попробовать свой текст",
             bookLead: "На основе книги",
             bookTitle: "After Labor and Capital",
             bookSubtitle: "The Political Economy of the Transitional Period",
             readBook: "Открыть рукопись на OSF",
-            actionNote: "AI-черновик. Нужна проверка человеком.",
+            actionNote: "Не truth engine. Не AI-детектор. Нужна проверка человеком.",
             heroTitle: "Зачем это нужно",
             subtitle: "ИИ упростил создание аналитических текстов. Но человеческая проверка всё еще медленная. Trust Layer помогает сделать первый разбор перед более глубокой проверкой.",
             heroBody: "",
@@ -2349,6 +2373,7 @@
             localRunBody:
               "Запустите Trust Layer локально из GitHub. Публичное демо предназначено только для коротких и неконфиденциальных фрагментов.",
             localRunButton: "Запустить локально через GitHub",
+            useExample: "Использовать пример",
             truthLimitation:
               "Это демо не определяет, является ли текст истинным. Оно готовит первый разбор, который нужно проверить.",
             liveInputNote:
@@ -4781,21 +4806,10 @@
         const actionMarkup = `
           <div class="landing-action-first panel-strong">
             <div class="landing-action-copy">
-              ${renderFlowIndicator(1)}
               <div class="eyebrow">${copy.landing.actionEyebrow}</div>
               <h1>${copy.landing.actionTitle}</h1>
-              <div class="book-connection">
-                <div class="book-connection-lead">${copy.landing.bookLead}</div>
-                <div class="book-connection-title">${copy.landing.bookTitle}</div>
-                <div class="book-connection-subtitle">${copy.landing.bookSubtitle}</div>
-              </div>
               <div class="landing-action-subtitle">${copy.landing.actionSubtitle}</div>
               <div class="landing-action-note">${copy.landing.actionNote}</div>
-              <div class="hero-actions">
-                <button class="cta primary" onclick="openExampleWorkflow('a')">${copy.landing.actionPrimary}</button>
-                <a class="cta primary" href="https://osf.io/preprints/socarxiv/2xkdh_v1" target="_blank" rel="noreferrer">${copy.landing.readBook}</a>
-                <button class="cta" onclick="focusDemoInput()">${copy.landing.actionSecondary}</button>
-              </div>
             </div>
             <div id="live-demo-root" class="landing-demo-slot">
               <div class="panel demo-panel">
@@ -4812,10 +4826,17 @@
           </div>
         `;
 
-        const conceptMarkup = `
-          <div class="panel" style="padding:28px;">
-            <div class="eyebrow">${copy.landing.heroTitle}</div>
-            <div class="section-copy" style="margin-top:12px;">${copy.landing.subtitle}</div>
+        const originMarkup = `
+          <div class="panel origin-block">
+            <div class="eyebrow">${copy.landing.originEyebrow}</div>
+            <div class="book-connection" style="margin-top:12px;">
+              <div class="book-connection-lead">${copy.landing.bookLead}</div>
+              <div class="book-connection-title">${copy.landing.bookTitle}</div>
+              <div class="book-connection-subtitle">${copy.landing.bookSubtitle}</div>
+            </div>
+            <div class="origin-copy">
+              ${copy.landing.originCopy} <a href="https://osf.io/preprints/socarxiv/2xkdh_v1" target="_blank" rel="noreferrer">${copy.landing.originBookLabel}</a>
+            </div>
           </div>
         `;
 
@@ -4859,57 +4880,57 @@
         document.getElementById("landing").innerHTML = `
           ${actionMarkup}
 
-          <div class="section">
-            ${conceptMarkup}
-          </div>
+          <div class="landing-below-fold">
+            ${originMarkup}
 
-          <div class="section">
-            <div class="eyebrow">${copy.landing.howEyebrow}</div>
-            <div class="section-title">${copy.landing.howTitle}</div>
-            <div class="grid-4" style="margin-top:18px;">
-              ${copy.landing.howSteps
-                .map(
-                  (step, index) => `
-                    <div class="card">
-                      <div class="eyebrow">0${index + 1}</div>
-                      <h3 style="font-size:1.65rem; margin-top:10px;">${step.title}</h3>
-                      <p style="margin-top:12px; color:#5f6c79;">${step.body}</p>
-                    </div>
-                  `
-                )
-                .join("")}
-            </div>
-          </div>
+            <details class="landing-more panel">
+              <summary>${copy.landing.heroTitle}</summary>
+              <div class="section-copy" style="margin-top:14px;">${copy.landing.subtitle}</div>
 
-          <div class="section">
-            <div class="eyebrow">${copy.landing.ladderEyebrow}</div>
-            <div class="section-title">${copy.landing.ladderTitle}</div>
-            <div class="small" style="margin-top:12px;">${copy.landing.ladderNote}</div>
-            <div class="review-ladder-grid" style="margin-top:18px;">
-              ${ladderMarkup}
-            </div>
-          </div>
-
-          <div class="section">
-            <div class="eyebrow">${copy.landing.casesEyebrow}</div>
-            <div class="section-title">${copy.landing.casesTitle}</div>
-            <div class="cases-grid-compact">
-              ${casesMarkup}
-            </div>
-          </div>
-
-          <div class="section">
-            <div class="panel" style="padding:28px;">
-              <div class="eyebrow">${copy.landing.notEyebrow}</div>
-              <div class="section-title" style="font-size:2rem;">${copy.landing.notTitle}</div>
-              <div class="section-copy">${copy.landing.notCopy}</div>
-              <div class="helper-strip">
-                ${copy.landing.notItems.map((item) => `<span class="helper-pill">${item}</span>`).join("")}
+              <div class="section">
+                <div class="eyebrow">${copy.landing.howEyebrow}</div>
+                <div class="section-title">${copy.landing.howTitle}</div>
+                <div class="grid-4" style="margin-top:18px;">
+                  ${copy.landing.howSteps
+                    .map(
+                      (step, index) => `
+                        <div class="card">
+                          <div class="eyebrow">0${index + 1}</div>
+                          <h3 style="font-size:1.65rem; margin-top:10px;">${step.title}</h3>
+                          <p style="margin-top:12px; color:#5f6c79;">${step.body}</p>
+                        </div>
+                      `
+                    )
+                    .join("")}
+                </div>
               </div>
-              <div class="tiny" style="margin-top:18px;">
-                ${copy.landing.originCopy} <a href="https://osf.io/preprints/socarxiv/2xkdh_v1" target="_blank" rel="noreferrer">${copy.landing.originBookLabel}</a>
+
+              <div class="section">
+                <div class="eyebrow">${copy.landing.ladderEyebrow}</div>
+                <div class="section-title">${copy.landing.ladderTitle}</div>
+                <div class="small" style="margin-top:12px;">${copy.landing.ladderNote}</div>
+                <div class="review-ladder-grid" style="margin-top:18px;">
+                  ${ladderMarkup}
+                </div>
               </div>
-            </div>
+
+              <div class="section">
+                <div class="eyebrow">${copy.landing.casesEyebrow}</div>
+                <div class="section-title">${copy.landing.casesTitle}</div>
+                <div class="cases-grid-compact">
+                  ${casesMarkup}
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="eyebrow">${copy.landing.notEyebrow}</div>
+                <div class="section-title" style="font-size:2rem;">${copy.landing.notTitle}</div>
+                <div class="section-copy">${copy.landing.notCopy}</div>
+                <div class="helper-strip">
+                  ${copy.landing.notItems.map((item) => `<span class="helper-pill">${item}</span>`).join("")}
+                </div>
+              </div>
+            </details>
           </div>
 
         `;
@@ -5959,8 +5980,8 @@
       window.setWorkflowOriginalSearch = setWorkflowOriginalSearch;
       window.updateReviewNoteChecklist = updateReviewNoteChecklist;
     </script>
-    <script src="./demo/api-client.js?v=public-trust-20260508"></script>
-    <script src="./demo/upload.js?v=public-trust-20260508"></script>
-    <script src="./demo/render-demo.js?v=public-trust-20260508"></script>
+    <script src="./demo/api-client.js?v=public-trust-20260513"></script>
+    <script src="./demo/upload.js?v=public-trust-20260513"></script>
+    <script src="./demo/render-demo.js?v=public-trust-20260513"></script>
   </body>
 </html>

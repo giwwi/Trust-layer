@@ -7,7 +7,7 @@
     error: "",
     result: null,
     trace: null,
-    runMode: "example",
+    runMode: "public",
     ownApiKey: "",
     textTypeOverride: ""
   };
@@ -47,13 +47,14 @@
       characterLimit: "Limit: 8,000 characters.",
       tooLong:
         "This demo accepts short excerpts only. Please shorten the text or use the example.",
-      analyze: "Run AI draft",
+      useExample: "Use example",
+      analyze: "Run first reading",
       clear: "Clear",
       loadingExtract: "Reading file...",
-      loadingAnalyze: "Running AI draft...",
-      emptyState: "Upload a file, then run an AI draft.",
-      readyState: "Text extracted. Run AI draft.",
-      resultEyebrow: "AI draft",
+      loadingAnalyze: "Running first reading...",
+      emptyState: "Upload or paste text, then run a first reading.",
+      readyState: "Text ready. Run first reading.",
+      resultEyebrow: "First reading",
       provisionalNote: "This is a first reading, not expert review. Please check and edit it.",
       useInWorkflow: "Check and edit",
       continueAsReviewer: "Check and edit",
@@ -238,7 +239,13 @@
       }
       <div class="demo-grid">
         <div class="panel-strong demo-panel">
-          ${renderRunModes(copy, busy)}
+          <div class="field-card" style="margin-bottom:18px;">
+            <strong>${escapeHtml(copy.textTypeLabel || "What kind of text is this?")}</strong>
+            <select class="text-input" style="margin-top:10px;" data-demo-text-type ${busy ? "disabled" : ""}>
+              ${renderTextTypeOptions(copy, demoState.textTypeOverride || "not_sure")}
+            </select>
+            <div class="tiny" style="margin-top:8px;">${escapeHtml(copy.textTypeHelper || "")}</div>
+          </div>
           <div class="eyebrow">${copy.uploadLabel}</div>
           <div class="demo-upload-row">
             <input class="file-field" type="file" data-demo-file accept="${window.TrustLayerUpload.ACCEPT}" ${busy ? "disabled" : ""} />
@@ -254,9 +261,11 @@
             ${tooLong ? `<div class="notice warn" style="margin-top:12px;">${escapeHtml(copy.tooLong || "")}<div class="section-actions" style="margin-top:14px;"><button class="cta" data-demo-open-example>${escapeHtml(copy.openExample || "Open example")}</button></div></div>` : ""}
           </div>
           <div class="section-actions">
-            <button class="cta primary" data-demo-analyze ${canAnalyze ? "" : "disabled"}>${demoState.runMode === "example" ? escapeHtml(copy.openExample || "Open example") : escapeHtml(copy.analyze)}</button>
+            <button class="cta primary" data-demo-analyze ${canAnalyze ? "" : "disabled"}>${escapeHtml(copy.analyze)}</button>
+            <button class="cta" data-demo-open-example ${busy ? "disabled" : ""}>${escapeHtml(copy.useExample || copy.openExample || "Use example")}</button>
             <button class="cta" data-demo-clear ${busy ? "disabled" : ""}>${copy.clear}</button>
           </div>
+          ${renderRunModes(copy, busy)}
           ${
             demoState.error
               ? `
@@ -370,22 +379,11 @@
     const githubUrl = window.GITHUB_REPO_URL || "https://github.com/giwwi/Trust-layer";
 
     return `
-      <div class="field-card" style="margin-bottom:18px;">
-        <div class="eyebrow">${escapeHtml(copy.runModeLabel || "Run mode")}</div>
-        <label class="tiny" style="display:block; margin-top:10px;">
-          <input type="radio" name="trust-layer-run-mode" value="example" data-demo-run-mode ${demoState.runMode === "example" ? "checked" : ""} ${busy ? "disabled" : ""} />
-          <strong>${escapeHtml(copy.runModeExample || "Example")}</strong> — ${escapeHtml(copy.runModeExampleHint || "")}
-        </label>
-        <label class="tiny" style="display:block; margin-top:10px;">
-          <input type="radio" name="trust-layer-run-mode" value="public" data-demo-run-mode ${demoState.runMode === "public" ? "checked" : ""} ${busy ? "disabled" : ""} />
-          <strong>${escapeHtml(copy.runModePublic || "Public live demo")}</strong> — ${escapeHtml(copy.runModePublicHint || "")}
-        </label>
-        <div class="notice" style="margin-top:16px;">
-          <strong>${escapeHtml(copy.localRunTitle || "For private or longer documents")}</strong>
-          <div style="margin-top:8px;">${escapeHtml(copy.localRunBody || "")}</div>
-          <div class="section-actions" style="margin-top:12px;">
-            <a class="cta" href="${escapeHtml(githubUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(copy.localRunButton || "Run locally on GitHub")}</a>
-          </div>
+      <div class="local-run-note tiny">
+        <strong>${escapeHtml(copy.localRunTitle || "For private or longer documents")}</strong>
+        <div style="margin-top:6px;">${escapeHtml(copy.localRunBody || "")}</div>
+        <div style="margin-top:10px;">
+          <a href="${escapeHtml(githubUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(copy.localRunButton || "Run locally on GitHub")}</a>
         </div>
       </div>
     `;
@@ -584,7 +582,7 @@
     const analyzeButton = root.querySelector("[data-demo-analyze]");
     const clearButton = root.querySelector("[data-demo-clear]");
     const useWorkflowButton = root.querySelector("[data-demo-use-workflow]");
-    const openExampleButton = root.querySelector("[data-demo-open-example]");
+    const openExampleButtons = root.querySelectorAll("[data-demo-open-example]");
     const traceButtons = root.querySelectorAll("[data-demo-trace-group]");
     const closeTraceButtons = root.querySelectorAll("[data-demo-close-trace]");
 
@@ -601,7 +599,6 @@
         demoState.error = "";
         demoState.result = null;
         demoState.trace = null;
-        demoState.textTypeOverride = "";
         render();
       });
     }
@@ -635,7 +632,7 @@
         demoState.error = "";
         demoState.result = null;
         demoState.trace = null;
-        demoState.runMode = "example";
+        demoState.runMode = "public";
         demoState.ownApiKey = "";
         demoState.textTypeOverride = "";
         window.trustLayerCurrentFirstPass = null;
@@ -644,11 +641,11 @@
       });
     }
 
-    if (openExampleButton) {
-      openExampleButton.addEventListener("click", function () {
+    openExampleButtons.forEach((button) => {
+      button.addEventListener("click", function () {
         openBuiltInExample();
       });
-    }
+    });
 
     traceButtons.forEach((button) => {
       button.addEventListener("click", function () {
@@ -682,7 +679,6 @@
     demoState.error = "";
     demoState.result = null;
     demoState.trace = null;
-    demoState.textTypeOverride = "";
     demoState.phase = "extracting";
     render();
 
@@ -730,7 +726,6 @@
     demoState.error = "";
     demoState.result = null;
     demoState.trace = null;
-    demoState.textTypeOverride = "";
     demoState.phase = "analyzing";
     render();
 
@@ -762,9 +757,6 @@
   }
 
   function maxInputChars() {
-    if (demoState.runMode === "own_key") {
-      return 0;
-    }
     return Number(window.PUBLIC_DEMO_CONFIG?.MAX_INPUT_CHARS || window.MAX_INPUT_CHARS || 8000);
   }
 
@@ -777,12 +769,10 @@
     const sourceText = getSourceText();
     const busy = demoState.phase !== "idle";
     const needsText = demoState.runMode !== "example";
-    const needsOwnKey = demoState.runMode === "own_key";
     return (
       !busy &&
       !isInputTooLong(sourceText) &&
-      (!needsText || Boolean(sourceText)) &&
-      (!needsOwnKey || Boolean(demoState.ownApiKey.trim()))
+      (!needsText || Boolean(sourceText))
     );
   }
 

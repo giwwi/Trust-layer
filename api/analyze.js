@@ -113,7 +113,7 @@ module.exports = async function handler(req, res) {
   const suppliedApiKey = String(payload.api_key || "").trim();
   const language = payload.language === "ru" ? "ru" : "en";
   const minChars = numberEnv("TRUST_LAYER_MIN_INPUT_CHARS", 150);
-  const publicMaxChars = numberEnv("MAX_INPUT_CHARS", 20000);
+  const publicMaxChars = Math.max(numberEnv("MAX_INPUT_CHARS", 20000), 20000);
 
   if (!text) {
     json(res, 400, {

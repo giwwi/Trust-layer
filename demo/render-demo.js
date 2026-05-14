@@ -9,7 +9,10 @@
     trace: null,
     runMode: "public",
     ownApiKey: "",
-    textTypeOverride: ""
+    textTypeOverride: "",
+    exampleLoaded: false,
+    exampleCaseId: "a",
+    exampleSource: null
   };
 
   const conceptualTypeIds = new Set(["conceptual", "theoretical", "book"]);
@@ -27,7 +30,7 @@
     return window.TrustLayerRuntime?.getUI?.()?.demo || {
       eyebrow: "Demo",
       title: "Upload or paste text",
-      copy: "Upload .txt, .md, or .docx. Then run an AI draft.",
+      copy: "Upload .txt, .md, or .docx. Then run a first reading.",
       uploadLabel: "Upload file",
       uploadHint: "Supported: .txt, .md, .docx.",
       runModeLabel: "Run mode",
@@ -41,13 +44,18 @@
         "Run Trust Layer locally from GitHub. This public demo is only for short, non-confidential excerpts.",
       localRunButton: "Run locally on GitHub",
       truthLimitation:
-        "This demo does not determine whether the text is true. It prepares a checkable first reading.",
+        "This demo prepares a checkable first reading, not a final judgment.",
       liveInputNote: "Do not paste confidential material into the public demo.",
       privacyNote: "Text is sent to the AI provider for analysis and is not stored by this demo.",
-      characterLimit: "Limit: 8,000 characters.",
+      characterLimit: "Limit: 20,000 characters.",
       tooLong:
         "This demo accepts short excerpts only. Please shorten the text or use the example.",
       useExample: "Use example",
+      exampleLoaded: "Example loaded. This is a prepared first reading for demonstration.",
+      exampleSelectorLabel: "Example",
+      examplePreparedNote: "Use it to try the workflow without live AI.",
+      changeReadingFrame: "Change reading frame",
+      useAnotherText: "Use another text",
       analyze: "Run first reading",
       clear: "Clear",
       loadingExtract: "Reading file...",
@@ -55,19 +63,21 @@
       emptyState: "Upload or paste text, then run a first reading.",
       readyState: "Text ready. Run first reading.",
       resultEyebrow: "First reading",
-      provisionalNote: "This is a first reading, not expert review. Please check and edit it.",
+      provisionalNote: "Not a truth engine. Not an AI detector. Human review required.",
       useInWorkflow: "Check and edit",
       continueAsReviewer: "Check and edit",
-      sourceTrace: "Where this came from",
+      sourceTrace: "Check source",
+      sourceTraceTitle: "Source trace",
+      sourceTraceIntro: "Use Check source before accepting the AI draft.",
       sourceTraceNote:
-        "This excerpt may explain the AI reading. It does not prove it. Check it before accepting the result.",
+        "This source trace may explain the AI reading. It does not prove it.",
       sourceTraceMissing: "No source trace returned for this item.",
       sourceLocation: "Location",
       close: "Close",
       fileReady: "Selected file",
       documentType: "Document type",
       textTypeLabel: "What kind of text is this?",
-      textTypeHelper: "This affects which questions the first reading asks.",
+      textTypeHelper: "Different texts need different first readings. A policy memo is not reviewed like a conceptual essay.",
       textTypeResult: "Suggested text type",
       textTypeGuessHelper: "The system guessed this. Change it if the text is being read in the wrong mode.",
       typeCaution: "This reading depends on the text type. If the type is wrong, the result may be misleading.",
@@ -226,6 +236,8 @@
     const sourceText = getSourceText();
     const tooLong = isInputTooLong(sourceText);
     const canAnalyze = canRunAnalysis();
+    const hasSourceText = Boolean(sourceText);
+    const showResultPanel = busy || Boolean(demoState.result);
 
     root.innerHTML = `
       ${
@@ -237,7 +249,7 @@
             <div class="small" style="margin-top:12px;">${copy.copy}</div>
           `
       }
-      <div class="demo-grid">
+      <div class="demo-grid ${showResultPanel ? "" : "demo-grid-single"}">
         <div class="panel-strong demo-panel">
           <div class="field-card" style="margin-bottom:18px;">
             <strong>${escapeHtml(copy.textTypeLabel || "What kind of text is this?")}</strong>
@@ -258,6 +270,7 @@
             <div class="tiny">${escapeHtml(copy.privacyNote || "")}</div>
             <div class="tiny">${escapeHtml(copy.truthLimitation || "")}</div>
             <div class="tiny">${escapeHtml(formatCharacterLimit(copy, sourceText))}</div>
+            ${hasSourceText && !busy && !demoState.result ? `<div class="notice" style="margin-top:12px;">${escapeHtml(copy.readyState || "")}</div>` : ""}
             ${tooLong ? `<div class="notice warn" style="margin-top:12px;">${escapeHtml(copy.tooLong || "")}<div class="section-actions" style="margin-top:14px;"><button class="cta" data-demo-open-example>${escapeHtml(copy.openExample || "Open example")}</button></div></div>` : ""}
           </div>
           <div class="section-actions">
@@ -265,6 +278,7 @@
             <button class="cta" data-demo-open-example ${busy ? "disabled" : ""}>${escapeHtml(copy.useExample || copy.openExample || "Use example")}</button>
             <button class="cta" data-demo-clear ${busy ? "disabled" : ""}>${copy.clear}</button>
           </div>
+          ${demoState.exampleLoaded ? renderExampleSelector(copy, busy) : ""}
           ${renderRunModes(copy, busy)}
           ${
             demoState.error
@@ -278,10 +292,16 @@
           }
         </div>
 
-        <div class="panel demo-panel">
-          <div class="eyebrow">${copy.resultEyebrow}</div>
-          ${renderResult(copy)}
-        </div>
+        ${
+          showResultPanel
+            ? `
+              <div class="panel demo-panel">
+                <div class="eyebrow">${copy.resultEyebrow}</div>
+                ${renderResult(copy)}
+              </div>
+            `
+            : ""
+        }
       </div>
       ${renderTracePopup(copy)}
     `;
@@ -312,20 +332,16 @@
     const showUnusualNotice = conceptualTypeIds.has(textTypeId);
 
     return `
+      ${
+        demoState.exampleLoaded
+          ? `<div class="notice" style="margin-top:14px;">${escapeHtml(copy.exampleLoaded || "")}<br /><span class="tiny">${escapeHtml(copy.examplePreparedNote || "")}</span></div>`
+          : ""
+      }
       <div class="tiny" style="margin-top:14px;">${copy.provisionalNote}</div>
       <div class="helper-strip" style="margin-top:14px;">
         <span class="pill">${escapeHtml(copy.textTypeResult || copy.documentType)}: ${escapeHtml(textTypeLabelFor(copy, suggestedTextTypeId))}</span>
-        ${result.document_type ? `<span class="pill">${escapeHtml(copy.documentType)}: ${escapeHtml(result.document_type)}</span>` : ""}
       </div>
-      <div class="tiny" style="margin-top:12px;">${escapeHtml(copy.textTypeGuessHelper || copy.typeCaution || "")}</div>
-      <div class="field-card" style="margin-top:14px;">
-        <strong>${escapeHtml(copy.textTypeLabel || "What kind of text is this?")}</strong>
-        <select class="text-input" style="margin-top:10px;" data-demo-text-type>
-          ${renderTextTypeOptions(copy, textTypeId)}
-        </select>
-        <div class="tiny" style="margin-top:8px;">${escapeHtml(copy.textTypeHelper || "")}</div>
-      </div>
-      <div class="tiny" style="margin-top:12px;">${escapeHtml(copy.typeCaution || "")}</div>
+      ${hasAnySourceTrace(result) ? `<div class="tiny" style="margin-top:10px;">${escapeHtml(copy.sourceTraceIntro || "")}</div>` : ""}
       ${
         showUnusualNotice
           ? `<div class="notice" style="margin-top:14px;"><strong>${escapeHtml(copy.unusualIdeaTitle || "")}</strong><br />${escapeHtml(copy.unusualIdeaCopy || "")}</div>`
@@ -335,21 +351,20 @@
         ${summarySection(labels.central, `<p>${escapeHtml(result.probable_central_argument)}</p>`)}
         ${summaryZoneSection(labels.claims, result.claim_zones, "claim_zones", copy)}
         ${summaryRowsSection(labels.attention, weakRows(result), copy)}
-        ${summaryListSection(labels.check, result.review_focus)}
         ${summarySection(labels.next, nextStepBody(copy, result))}
+        ${summarySection(copy.confidenceNote, `<p>${escapeHtml(result.confidence_note || copy.provisionalNote || "")}</p>`)}
         <div class="section-actions" style="margin-top:2px;">
           <button class="cta primary" data-demo-use-workflow>${copy.useInWorkflow || copy.continueAsReviewer}</button>
+          <button class="cta" data-demo-use-another>${escapeHtml(copy.useAnotherText || "Use another text")}</button>
         </div>
         <details class="demo-details">
-          <summary>${escapeHtml(copy.showDetails || "Show details")}</summary>
-          <div class="demo-section-list">
-            ${section(copy.documentType, `<p>${escapeHtml(result.document_type)}</p>`)}
-            ${zoneSection(labels.claims, result.claim_zones, "claim_zones", copy)}
-            ${zoneSection(labels.evidence, result.evidence_areas, "evidence_areas", copy)}
-            ${zoneSection(labels.uncertainty, result.uncertainty_zones, "uncertainty_zones", copy)}
-            ${listSection(labels.check, result.review_focus)}
-            ${decisionSection(copy, result)}
-            ${section(copy.confidenceNote, `<p>${escapeHtml(result.confidence_note)}</p>`)}
+          <summary>${escapeHtml(copy.changeReadingFrame || "Change reading frame")}</summary>
+          <div class="field-card" style="margin-top:14px;">
+            <strong>${escapeHtml(copy.textTypeLabel || "What kind of text is this?")}</strong>
+            <select class="text-input" style="margin-top:10px;" data-demo-text-type>
+              ${renderTextTypeOptions(copy, textTypeId)}
+            </select>
+            <div class="tiny" style="margin-top:8px;">${escapeHtml(copy.textTypeGuessHelper || copy.typeCaution || "")}</div>
           </div>
         </details>
       </div>
@@ -361,9 +376,9 @@
 
     return `
       <div class="source-trace-backdrop" data-demo-close-trace>
-        <div class="source-trace-card" role="dialog" aria-modal="true" aria-label="${escapeHtml(copy.sourceTrace)}" onclick="event.stopPropagation()">
-          <div class="eyebrow">${escapeHtml(copy.sourceTrace)}</div>
-          <h3>${escapeHtml(demoState.trace.title || copy.sourceTrace)}</h3>
+        <div class="source-trace-card" role="dialog" aria-modal="true" aria-label="${escapeHtml(copy.sourceTraceTitle || copy.sourceTrace)}" onclick="event.stopPropagation()">
+          <div class="eyebrow">${escapeHtml(copy.sourceTraceTitle || copy.sourceTrace)}</div>
+          <h3>${escapeHtml(demoState.trace.title || copy.sourceTraceTitle || copy.sourceTrace)}</h3>
           <p class="tiny">${escapeHtml(copy.sourceTraceNote)}</p>
           ${demoState.trace.location ? `<div class="tiny" style="margin-top:12px;"><strong>${escapeHtml(copy.sourceLocation)}:</strong> ${escapeHtml(demoState.trace.location)}</div>` : ""}
           <blockquote>${escapeHtml(demoState.trace.snippet || copy.sourceTraceMissing)}</blockquote>
@@ -385,6 +400,27 @@
         <div style="margin-top:10px;">
           <a href="${escapeHtml(githubUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(copy.localRunButton || "Run locally on GitHub")}</a>
         </div>
+      </div>
+    `;
+  }
+
+  function renderExampleSelector(copy, busy) {
+    const options = window.TrustLayerRuntime?.getExampleOptions?.() || [
+      { id: "a", label: "Conceptual manuscript excerpt" }
+    ];
+
+    return `
+      <div class="field-card" style="margin-top:14px;">
+        <strong>${escapeHtml(copy.exampleSelectorLabel || "Example")}</strong>
+        <select class="text-input" style="margin-top:10px;" data-demo-example ${busy ? "disabled" : ""}>
+          ${options
+            .map(
+              (option) =>
+                `<option value="${escapeHtml(option.id)}" ${option.id === demoState.exampleCaseId ? "selected" : ""}>${escapeHtml(option.label)}</option>`
+            )
+            .join("")}
+        </select>
+        <div class="tiny" style="margin-top:8px;">${escapeHtml(copy.exampleLoaded || "")}</div>
       </div>
     `;
   }
@@ -462,6 +498,15 @@
   function currentSourceContext(copy = getCopy()) {
     const result = demoState.result;
     const textType = result ? selectedTextTypeId(result) : "";
+    if (demoState.exampleLoaded && demoState.exampleSource) {
+      return {
+        ...demoState.exampleSource,
+        documentType: result?.document_type || demoState.exampleSource.documentType || "",
+        textType,
+        textTypeLabel: textType ? textTypeLabelFor(copy, textType) : demoState.exampleSource.textTypeLabel || "",
+        unusualIdea: textType ? conceptualTypeIds.has(textType) : Boolean(demoState.exampleSource.unusualIdea)
+      };
+    }
     return {
       filename: demoState.fileName,
       extractedText: demoState.extractedText,
@@ -486,7 +531,7 @@
     return `<p><strong>${escapeHtml(routeLabel)}</strong><br />${escapeHtml(result.route_reason || "")}</p>`;
   }
 
-  function summaryZoneSection(title, items, group, copy) {
+  function summaryZoneSection(title, items, group, copy, showTrace = true) {
     const rows = Array.isArray(items) ? items : [];
     const body = rows
       .slice(0, 3)
@@ -497,7 +542,7 @@
             <strong>${escapeHtml(item.heading || "")}</strong>${item.heading ? "<br />" : ""}
             ${escapeHtml(item.summary || "")}
             ${
-              hasTrace
+              hasTrace && showTrace
                 ? `<br /><button class="trace-button" data-demo-trace-group="${group}" data-demo-trace-index="${index}">${escapeHtml(copy.sourceTrace)}</button>`
                 : ""
             }
@@ -520,7 +565,13 @@
     return [...uncertaintyRows, ...weakEvidenceRows];
   }
 
-  function summaryRowsSection(title, rows, copy) {
+  function hasAnySourceTrace(result) {
+    return ["claim_zones", "evidence_areas", "uncertainty_zones"].some((key) =>
+      Array.isArray(result?.[key]) && result[key].some((item) => Boolean(item?.source_snippet))
+    );
+  }
+
+  function summaryRowsSection(title, rows, copy, showTrace = true) {
     const body = rows
       .slice(0, 3)
       .map(({ item, group, index }) => {
@@ -530,7 +581,7 @@
             <strong>${escapeHtml(item.heading || "")}</strong>${item.heading ? "<br />" : ""}
             ${escapeHtml(item.summary || "")}
             ${
-              hasTrace
+              hasTrace && showTrace
                 ? `<br /><button class="trace-button" data-demo-trace-group="${group}" data-demo-trace-index="${index}">${escapeHtml(copy.sourceTrace)}</button>`
                 : ""
             }
@@ -579,8 +630,10 @@
     const pasteInput = root.querySelector("[data-demo-paste]");
     const runModeInputs = root.querySelectorAll("[data-demo-run-mode]");
     const textTypeInput = root.querySelector("[data-demo-text-type]");
+    const exampleInput = root.querySelector("[data-demo-example]");
     const analyzeButton = root.querySelector("[data-demo-analyze]");
     const clearButton = root.querySelector("[data-demo-clear]");
+    const useAnotherButton = root.querySelector("[data-demo-use-another]");
     const useWorkflowButton = root.querySelector("[data-demo-use-workflow]");
     const openExampleButtons = root.querySelectorAll("[data-demo-open-example]");
     const traceButtons = root.querySelectorAll("[data-demo-trace-group]");
@@ -599,6 +652,8 @@
         demoState.error = "";
         demoState.result = null;
         demoState.trace = null;
+        demoState.exampleLoaded = false;
+        demoState.exampleSource = null;
         render();
       });
     }
@@ -623,27 +678,29 @@
       });
     }
 
+    if (exampleInput) {
+      exampleInput.addEventListener("change", function (event) {
+        openBuiltInExample(event.target.value || "a");
+      });
+    }
+
     if (clearButton) {
       clearButton.addEventListener("click", function () {
-        demoState.fileName = "";
-        demoState.extractedText = "";
-        demoState.pastedText = "";
-        demoState.phase = "idle";
-        demoState.error = "";
-        demoState.result = null;
-        demoState.trace = null;
-        demoState.runMode = "public";
-        demoState.ownApiKey = "";
-        demoState.textTypeOverride = "";
-        window.trustLayerCurrentFirstPass = null;
-        window.trustLayerCurrentSource = null;
+        clearDemoState();
+        render();
+      });
+    }
+
+    if (useAnotherButton) {
+      useAnotherButton.addEventListener("click", function () {
+        clearDemoState();
         render();
       });
     }
 
     openExampleButtons.forEach((button) => {
       button.addEventListener("click", function () {
-        openBuiltInExample();
+        openBuiltInExample(demoState.exampleCaseId || "a");
       });
     });
 
@@ -679,6 +736,8 @@
     demoState.error = "";
     demoState.result = null;
     demoState.trace = null;
+    demoState.exampleLoaded = false;
+    demoState.exampleSource = null;
     demoState.phase = "extracting";
     render();
 
@@ -726,6 +785,8 @@
     demoState.error = "";
     demoState.result = null;
     demoState.trace = null;
+    demoState.exampleLoaded = false;
+    demoState.exampleSource = null;
     demoState.phase = "analyzing";
     render();
 
@@ -744,12 +805,46 @@
     }
   }
 
-  function openBuiltInExample() {
-    if (window.openExampleWorkflow) {
-      window.openExampleWorkflow("a");
+  function openBuiltInExample(id = "a") {
+    const prepared = window.TrustLayerRuntime?.buildExampleFirstReading?.(id);
+    if (!prepared) {
+      window.openText?.(id || "a");
       return;
     }
-    window.openText?.("a");
+
+    demoState.fileName = prepared.label || "";
+    demoState.extractedText = prepared.source?.extractedText || "";
+    demoState.pastedText = "";
+    demoState.phase = "idle";
+    demoState.error = "";
+    demoState.result = prepared.result;
+    demoState.trace = null;
+    demoState.runMode = "public";
+    demoState.textTypeOverride = prepared.source?.textType || "";
+    demoState.exampleLoaded = true;
+    demoState.exampleCaseId = prepared.id || id || "a";
+    demoState.exampleSource = prepared.source || null;
+    window.trustLayerCurrentFirstPass = prepared.result;
+    window.trustLayerCurrentSource = prepared.source || null;
+    render();
+  }
+
+  function clearDemoState() {
+    demoState.fileName = "";
+    demoState.extractedText = "";
+    demoState.pastedText = "";
+    demoState.phase = "idle";
+    demoState.error = "";
+    demoState.result = null;
+    demoState.trace = null;
+    demoState.runMode = "public";
+    demoState.ownApiKey = "";
+    demoState.textTypeOverride = "";
+    demoState.exampleLoaded = false;
+    demoState.exampleCaseId = "a";
+    demoState.exampleSource = null;
+    window.trustLayerCurrentFirstPass = null;
+    window.trustLayerCurrentSource = null;
   }
 
   function getSourceText() {
@@ -757,7 +852,7 @@
   }
 
   function maxInputChars() {
-    return Number(window.PUBLIC_DEMO_CONFIG?.MAX_INPUT_CHARS || window.MAX_INPUT_CHARS || 8000);
+    return Number(window.PUBLIC_DEMO_CONFIG?.MAX_INPUT_CHARS || window.MAX_INPUT_CHARS || 20000);
   }
 
   function isInputTooLong(text) {

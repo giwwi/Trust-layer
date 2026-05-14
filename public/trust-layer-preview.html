@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1125,6 +1125,10 @@
         margin-top: 18px;
       }
 
+      .demo-grid.demo-grid-single {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
       .demo-stack {
         display: grid;
         gap: 16px;
@@ -1501,24 +1505,21 @@
         <div class="eyebrow">Trust Layer</div>
         <h1>Paste an analytical text. Get a first reading you can check and edit.</h1>
         <p>
-          Trust Layer is a bounded prototype for first reading and review triage of analytical
-          texts. The demo is meant to stand on its own.
+          Trust Layer is a small prototype for first reading and review triage of analytical texts.
         </p>
         <p>
-          Trust Layer is a bounded prototype for analytical texts: research drafts, policy memos,
-          white papers, analytical essays, and book proposals. It helps identify main claims,
-          what needs attention, and the next review step before deeper human checking.
+          Paste or upload a text, get a checkable first reading, then decide the next step.
         </p>
         <ul>
-          <li>Upload or paste an analytical text.</li>
-          <li>Get a provisional AI first reading.</li>
-          <li>Check source traces and original text.</li>
-          <li>Edit the result as a human reviewer.</li>
-          <li>Stop, continue, or escalate.</li>
+          <li>Paste or upload text.</li>
+          <li>Get a first reading.</li>
+          <li>Check source and original text.</li>
+          <li>Edit as a human reviewer.</li>
+          <li>Stop, short review, or escalate.</li>
         </ul>
         <div class="static-fallback-note">
-          This is not a truth engine, not an AI detector, and not expert review. Open this page in a
-          browser with JavaScript enabled to use the live demo. For a non-JavaScript map of the product,
+          Not a truth engine. Not an AI detector. Human review required. Open this page in a
+          browser with JavaScript enabled to use the live demo. For a non-JavaScript map,
           open <a href="/overview.html">the static overview</a>.
         </div>
       </div>
@@ -1533,7 +1534,7 @@
         PUBLIC_DEMO_MODE: true,
         LIVE_AI_ENABLED: true,
         BYOK_ENABLED: false,
-        MAX_INPUT_CHARS: 8000
+        MAX_INPUT_CHARS: 20000
       };
       const GITHUB_REPO_URL = "https://github.com/giwwi/Trust-layer";
 
@@ -1604,8 +1605,8 @@
             heroSupport: [
               "Upload a text",
               "Get a first reading",
-              "Check source traces",
-              "Edit the review note",
+              "Check source",
+              "Edit as reviewer",
               "Choose the next step"
             ],
             heroPrimary: "See the demo",
@@ -1619,7 +1620,7 @@
             cautionTitle: "Core caution",
             cautionBody: "Use the lightest useful review. Stop early when appropriate.",
             howEyebrow: "How it works",
-            howTitle: "From first pass to deeper review",
+            howTitle: "From first reading to review",
             howSteps: [
               {
                 title: "Upload text",
@@ -1627,7 +1628,7 @@
               },
               {
                 title: "First reading",
-                body: "A draft maps claims, evidence, uncertainty, and checks."
+                body: "A draft points to main claims, what needs attention, and checks."
               },
               {
                 title: "Human check",
@@ -1635,7 +1636,7 @@
               },
               {
                 title: "Review note",
-                body: "Use only when a selected case needs a durable record."
+                body: "Create only when a useful record is needed."
               }
             ],
             ladderEyebrow: "Review levels",
@@ -1736,16 +1737,21 @@
             runModePublic: "Public live demo",
             runModePublicHint: "Shared budget. Short non-confidential excerpts only.",
             publicDemoNote: "Public demo. Short, non-confidential excerpts only.",
+            exampleLoaded: "Example loaded. This is a prepared first reading for demonstration.",
+            exampleSelectorLabel: "Example",
+            examplePreparedNote: "Use it to try the workflow without live AI.",
+            changeReadingFrame: "Change reading frame",
+            useAnotherText: "Use another text",
             localRunTitle: "For private or longer documents",
             localRunBody:
               "Run Trust Layer locally from GitHub. This public demo is only for short, non-confidential excerpts.",
             localRunButton: "Run locally on GitHub",
             useExample: "Use example",
             truthLimitation:
-              "This demo does not determine whether the text is true. It prepares a checkable first reading.",
+              "This demo prepares a checkable first reading, not a final judgment.",
             liveInputNote: "Do not paste confidential material into the public demo.",
             privacyNote: "Text is sent to the AI provider for analysis and is not stored by this demo.",
-            characterLimit: "Limit: 8,000 characters.",
+            characterLimit: "Limit: 20,000 characters.",
             tooLong:
               "This demo accepts short excerpts only. Please shorten the text or use the example.",
             analyze: "Run first reading",
@@ -1756,19 +1762,21 @@
             readyState: "Text ready. Run first reading.",
             resultEyebrow: "First reading",
             resultTitle: "First reading",
-            provisionalNote: "This is a first reading, not expert review. Please check and edit it.",
+            provisionalNote: "Not a truth engine. Not an AI detector. Human review required.",
             useInWorkflow: "Check and edit",
             continueAsReviewer: "Check and edit",
-            sourceTrace: "Where this came from",
+            sourceTrace: "Check source",
+            sourceTraceTitle: "Source trace",
+            sourceTraceIntro: "Use Check source before accepting the AI draft.",
             sourceTraceNote:
-              "This excerpt may explain the AI reading. It does not prove it. Check it before accepting the result.",
+              "This source trace may explain the AI reading. It does not prove it.",
             sourceTraceMissing: "No source trace returned for this item.",
             sourceLocation: "Location",
             close: "Close",
             editHint: "You can revise every field below.",
             fileReady: "Selected file",
             textTypeLabel: "What kind of text is this?",
-            textTypeHelper: "This affects which questions the first reading asks.",
+            textTypeHelper: "Different texts need different first readings. A policy memo is not reviewed like a conceptual essay.",
             textTypeResult: "Suggested text type",
             textTypeGuessHelper:
               "The system guessed this. Change it if the text is being read in the wrong mode.",
@@ -1942,7 +1950,7 @@
             exceptional: "Review note only if needed.",
             mostTexts: "Most texts do not need one.",
             createdEyebrow: "Created review note",
-            createdNotice: "Review note preview from the current reviewer record. Not expert review.",
+            createdNotice: "Review note from the current reviewer record. Not a verdict.",
             createdMeta: "Source",
             createdRoute: "Next step",
             createdReviewNote: "Reviewer note",
@@ -1976,6 +1984,7 @@
             routingEyebrow: "Next step",
             routingTitle: "Next step",
             routingCopy: "Pick the next step.",
+            confirmNextStep: "Choose a next step to reveal the relevant controls.",
             timeQuick: "30–90 sec",
             timeBounded: "3–5 min",
             timeReviewNote: "Review note if needed",
@@ -1987,7 +1996,7 @@
             correctionsTitle: "Your corrections",
             nextStepTitle: "Next step",
             reviewNoteTitle: "Review note",
-            reviewNoteCopy: "Most texts should not need a review note. Create one only when the decision needs a durable record.",
+            reviewNoteCopy: "A review note is not a verdict. It records what was checked, what remains uncertain, and what should happen next.",
             reviewNoteNotReady: "Review note not ready yet.",
             reviewNoteReady: "Review note ready.",
             reviewNoteChecklistIntro: "To create it, complete:",
@@ -2036,10 +2045,11 @@
             importedDocumentType: "Document type",
             importedMainPoint: "Main point",
             importedTextFallback: "Imported text",
-            aiDraftReminder: "AI draft. Human review required.",
-            sourceTraces: "Source traces",
-            sourceTracesHelper: "Source traces help check the AI reading. They do not prove it.",
-            noSourceTraces: "No source traces returned for this AI draft.",
+            aiDraftReminder: "Human review required.",
+            sourceTraces: "Check source",
+            sourceTracesHelper: "Open a fragment when you want to check a specific part of the AI draft.",
+            checkSource: "Check source",
+            noSourceTraces: "No source excerpts returned for this AI draft.",
             originalText: "Original text",
             originalTextHelper: "Use the original to check the AI draft.",
             originalTextFile: "Original text extracted from",
@@ -2049,6 +2059,8 @@
             noOriginalText: "No extracted source text is available for this imported result.",
             escalationTitle: "Escalation",
             escalationCopy: "Pick a reason if you escalate.",
+            shortReviewTitle: "Short review",
+            shortReviewCopy: "Add a short reviewer note. No durable review note by default.",
             recordTitle: "Record",
             recordCopy: "Use only if needed.",
             viewReviewNote: "View review note",
@@ -2096,8 +2108,8 @@
             useTitle: "Why build it anyway?",
             useCopy:
               "Because even limited tools can help route scarce reviewer attention, stop early when a text does not justify more attention, and justify escalation more carefully.",
-            governanceEyebrow: "Reviewer governance",
-            governanceTitle: "Reviewer pattern review",
+            governanceEyebrow: "Advanced",
+            governanceTitle: "Institutional use: reviewer-pattern review",
             governanceCopy:
               "As next-step decisions become central, reviewer patterns also become visible. This layer is for interpreting judgment, not enforcing uniform behavior.",
             governanceRowsTitle: "Visible decision patterns",
@@ -2128,9 +2140,9 @@
                 note: "Decision patterns are prompts for review of judgment, not automatic conclusions."
               }
             ],
-            governanceWarningTitle: "Anti-discipline warning",
+            governanceWarningTitle: "Reviewer-pattern caution",
             governanceWarnings: [
-              "Pattern visibility is not a verdict on reviewer quality.",
+              "These patterns are prompts for interpretation, not automatic judgments about reviewer quality.",
               "Outlier behavior may reflect judgment, scope, or intake differences.",
               "Managerial action should not follow from routing metrics alone."
             ],
@@ -2162,35 +2174,35 @@
             items: [
               {
                 title: "Cannot determine truth",
-                body: "A structured overlay can help readers locate claims, evidence, and uncertainty, but it cannot settle whether a text is true."
+                body: "It can structure a first reading, but it cannot settle whether a text is true."
               },
               {
                 title: "Cannot remove interpretive disagreement",
-                body: "Reasonable reviewers can still diverge on what a text is doing, what it implies, and how much weight its evidence should carry."
+                body: "Reviewers may still disagree about meaning, implications, and evidentiary weight."
               },
               {
                 title: "Cannot replace domain expertise",
-                body: "Serious review of analytical texts still requires people who understand the field, methods, and stakes in question."
+                body: "Serious checking still needs people who understand the field, methods, and stakes."
               },
               {
                 title: "Cannot guarantee fair allocation of reviewer attention",
-                body: "Interfaces can help route attention, but they cannot ensure that scarce human review is distributed justly or wisely."
+                body: "A tool can help route attention, but it cannot guarantee fair allocation."
               },
               {
                 title: "Cannot fully prevent strategic adaptation by authors",
-                body: "Once authors know what a review layer rewards, some will learn to perform legibility without increasing substance."
+                body: "Authors may learn to look legible without adding substance."
               },
               {
-                title: "Cannot reliably decompose every kind of text",
-                body: "Some analytical texts are unstable, hybrid, or ambiguous in ways that resist neat segmentation into claims, evidence, and uncertainty zones."
+                title: "Cannot decompose every text",
+                body: "Some texts are hybrid or ambiguous enough to resist neat segmentation."
               },
               {
                 title: "Cannot solve legitimacy by interface design alone",
-                body: "Legitimacy depends on institutions, norms, accountability, and expertise. A cleaner screen does not resolve those deeper conditions."
+                body: "Legitimacy depends on institutions, norms, accountability, and expertise."
               },
               {
-                title: "Cannot eliminate reviewer bias or epistemic bubbles",
-                body: "Review overlays can still reproduce the assumptions, blind spots, and social filters of the people and institutions using them."
+                title: "Cannot remove reviewer bias",
+                body: "Review layers can reproduce blind spots in the people and institutions using them."
               }
             ]
           }
@@ -2237,8 +2249,8 @@
             heroSupport: [
               "Загрузить текст",
               "Получить первый разбор",
-              "Проверить фрагменты источника",
-              "Исправить заметку проверки",
+              "Проверить источник",
+              "Исправить как проверяющий",
               "Выбрать следующий шаг"
             ],
             heroPrimary: "Смотреть демо",
@@ -2252,7 +2264,7 @@
             cautionTitle: "Главная оговорка",
             cautionBody: "Используйте самую лёгкую полезную проверку. Останавливайтесь рано, когда это уместно.",
             howEyebrow: "Как это работает",
-            howTitle: "От первого разбора к более глубокой проверке",
+            howTitle: "От первого разбора к проверке",
             howSteps: [
               {
                 title: "Загрузить текст",
@@ -2260,7 +2272,7 @@
               },
               {
                 title: "Первый разбор",
-                body: "Черновик показывает тезисы, опору, что требует внимания и следующие проверки."
+                body: "Черновик показывает тезисы, что требует внимания и следующие проверки."
               },
               {
                 title: "Проверка человеком",
@@ -2268,7 +2280,7 @@
               },
               {
                 title: "Заметка проверки",
-                body: "Используется только если кейсу нужна устойчивая запись."
+                body: "Создается только если нужна полезная запись."
               }
             ],
             ladderEyebrow: "Уровни проверки",
@@ -2369,18 +2381,23 @@
             runModePublic: "Публичное live-демо",
             runModePublicHint: "Общий лимит. Только короткие неконфиденциальные фрагменты.",
             publicDemoNote: "Публичное демо. Только короткие и неконфиденциальные фрагменты.",
+            exampleLoaded: "Пример загружен. Это подготовленный первый разбор для демонстрации.",
+            exampleSelectorLabel: "Пример",
+            examplePreparedNote: "Используйте его, чтобы пройти сценарий без live AI.",
+            changeReadingFrame: "Изменить рамку чтения",
+            useAnotherText: "Использовать другой текст",
             localRunTitle: "Для приватных или длинных документов",
             localRunBody:
               "Запустите Trust Layer локально из GitHub. Публичное демо предназначено только для коротких и неконфиденциальных фрагментов.",
             localRunButton: "Запустить локально через GitHub",
             useExample: "Использовать пример",
             truthLimitation:
-              "Это демо не определяет, является ли текст истинным. Оно готовит первый разбор, который нужно проверить.",
+              "Это демо готовит первый разбор, который нужно проверить. Это не финальное суждение.",
             liveInputNote:
               "Не вставляйте конфиденциальные материалы в публичное демо.",
             privacyNote:
               "Текст отправляется AI-провайдеру для анализа и не сохраняется этим демо.",
-            characterLimit: "Лимит: 8 000 символов.",
+            characterLimit: "Лимит: 20 000 символов.",
             tooLong:
               "Это демо принимает только короткие фрагменты. Сократите текст или используйте пример.",
             analyze: "Запустить первый разбор",
@@ -2391,19 +2408,21 @@
             readyState: "Текст готов. Запустите первый разбор.",
             resultEyebrow: "Первый разбор",
             resultTitle: "Первый разбор",
-            provisionalNote: "Это первый разбор, а не экспертная проверка. Проверьте и исправьте его.",
+            provisionalNote: "Не truth engine. Не AI-детектор. Нужна проверка человеком.",
             useInWorkflow: "Проверить и исправить",
             continueAsReviewer: "Проверить и исправить",
-            sourceTrace: "Откуда это взято",
+            sourceTrace: "Проверить источник",
+            sourceTraceTitle: "Фрагмент источника",
+            sourceTraceIntro: "Используйте «Проверить источник» перед принятием AI-черновика.",
             sourceTraceNote:
-              "Этот фрагмент может объяснять вывод ИИ. Он ничего не доказывает. Проверьте его перед тем, как принять результат.",
+              "Этот фрагмент может объяснять вывод ИИ. Он ничего не доказывает.",
             sourceTraceMissing: "Для этого пункта фрагмент источника не вернулся.",
             sourceLocation: "Место",
             close: "Закрыть",
             editHint: "Любое поле ниже можно исправить вручную.",
             fileReady: "Выбран файл",
             textTypeLabel: "Что это за текст?",
-            textTypeHelper: "Это влияет на то, какие вопросы задает первый разбор.",
+            textTypeHelper: "Разные тексты требуют разного первого чтения. Policy memo нельзя проверять так же, как концептуальное эссе.",
             textTypeResult: "Предполагаемый тип текста",
             textTypeGuessHelper:
               "Система предположила тип. Измените его, если текст читается в неправильном режиме.",
@@ -2577,7 +2596,7 @@
             exceptional: "Заметка проверки только если нужна.",
             mostTexts: "Большинству текстов она не нужна.",
             createdEyebrow: "Созданная заметка проверки",
-            createdNotice: "Предпросмотр заметки из текущей записи проверки. Это не экспертная проверка.",
+            createdNotice: "Заметка из текущей записи проверки. Это не вердикт.",
             createdMeta: "Источник",
             createdRoute: "Следующий шаг",
             createdReviewNote: "Заметка проверяющего",
@@ -2611,6 +2630,7 @@
             routingEyebrow: "Следующий шаг",
             routingTitle: "Следующий шаг",
             routingCopy: "Выберите следующий шаг.",
+            confirmNextStep: "Выберите следующий шаг, чтобы открыть нужные поля.",
             timeQuick: "30–90 сек",
             timeBounded: "3–5 мин",
             timeReviewNote: "Заметка если нужна",
@@ -2622,7 +2642,7 @@
             correctionsTitle: "Ваши исправления",
             nextStepTitle: "Следующий шаг",
             reviewNoteTitle: "Заметка проверки",
-            reviewNoteCopy: "Большинству текстов заметка проверки не нужна. Создавайте ее только если решению нужна устойчивая запись.",
+            reviewNoteCopy: "Заметка проверки — не вердикт. Она фиксирует, что проверено, что осталось неясным и какой следующий шаг нужен.",
             reviewNoteNotReady: "Заметка пока не готова.",
             reviewNoteReady: "Заметка готова.",
             reviewNoteChecklistIntro: "Чтобы создать ее, завершите:",
@@ -2671,9 +2691,10 @@
             importedDocumentType: "Тип документа",
             importedMainPoint: "Главная мысль",
             importedTextFallback: "Импортированный текст",
-            aiDraftReminder: "AI-черновик. Нужна проверка человеком.",
-            sourceTraces: "Фрагменты источника",
-            sourceTracesHelper: "Фрагменты помогают проверить разбор ИИ. Они ничего не доказывают.",
+            aiDraftReminder: "Нужна проверка человеком.",
+            sourceTraces: "Проверка источника",
+            sourceTracesHelper: "Откройте фрагмент, когда нужно проверить конкретную часть AI-черновика.",
+            checkSource: "Проверить источник",
             noSourceTraces: "Для этого AI-черновика фрагменты источника не вернулись.",
             originalText: "Оригинальный текст",
             originalTextHelper: "Используйте оригинал, чтобы проверить AI-черновик.",
@@ -2684,6 +2705,8 @@
             noOriginalText: "Для этого импортированного результата нет извлеченного исходного текста.",
             escalationTitle: "Эскалация",
             escalationCopy: "Если эскалируете, выберите причину.",
+            shortReviewTitle: "Краткая проверка",
+            shortReviewCopy: "Добавьте короткую заметку проверяющего. Устойчивая заметка проверки по умолчанию не создается.",
             recordTitle: "Запись",
             recordCopy: "Используйте только если нужно.",
             viewReviewNote: "Посмотреть заметку",
@@ -2731,8 +2754,8 @@
             useTitle: "Зачем тогда это строить?",
             useCopy:
               "Потому что даже ограниченные инструменты могут помочь лучше распределять дефицитное внимание проверяющих, раньше останавливаться там, где текст не оправдывает больше внимания, и аккуратнее обосновывать эскалации.",
-            governanceEyebrow: "Паттерны рецензирования",
-            governanceTitle: "Паттерны решений проверяющего",
+            governanceEyebrow: "Дополнительно",
+            governanceTitle: "Институциональное использование: паттерны проверяющих",
             governanceCopy:
               "Когда следующий шаг становится центральным, видимыми становятся и паттерны решений самих проверяющих. Этот слой нужен для интерпретации суждений, а не для навязывания единообразного поведения.",
             governanceRowsTitle: "Видимые паттерны решений",
@@ -2763,9 +2786,9 @@
                 note: "Распределение решений должно вести к разбору суждения, а не к автоматическим выводам."
               }
             ],
-            governanceWarningTitle: "Предупреждение",
+            governanceWarningTitle: "Оговорка о паттернах",
             governanceWarnings: [
-              "Видимость паттернов не является вердиктом о качестве проверяющего.",
+              "Эти паттерны — повод для интерпретации, а не автоматическое суждение о качестве проверяющего.",
               "Нетипичное поведение может отражать суждение, рамку задачи или различия входящего потока.",
               "Управленческие действия не должны следовать только из метрик следующего шага."
             ],
@@ -2797,35 +2820,35 @@
             items: [
               {
                 title: "Не может определить истину",
-                body: "Структурированный слой может помочь увидеть утверждения, данные и зоны неопределенности, но не может установить, истинен ли текст."
+                body: "Он может структурировать первый разбор, но не устанавливает истину текста."
               },
               {
                 title: "Не может убрать интерпретативные разногласия",
-                body: "Разумные проверяющие все равно могут расходиться в том, что делает текст, что он подразумевает и какой вес несут его основания."
+                body: "Проверяющие всё равно могут расходиться в смысле, последствиях и весе опоры."
               },
               {
                 title: "Не может заменить доменную экспертизу",
-                body: "Серьезная проверка аналитических текстов по-прежнему требует людей, которые понимают поле, методы и ставки."
+                body: "Серьезная проверка требует людей, понимающих область, методы и ставки."
               },
               {
                 title: "Не может гарантировать справедливое распределение внимания",
-                body: "Интерфейс может помогать распределять внимание, но не может обеспечить, что дефицитная человеческая проверка будет распределена мудро и справедливо."
+                body: "Инструмент может направлять внимание, но не гарантирует справедливое распределение."
               },
               {
                 title: "Не может полностью остановить стратегическую адаптацию авторов",
-                body: "Когда авторы понимают, что именно поощряет слой проверки, часть из них учится имитировать ясность без роста содержания."
+                body: "Авторы могут научиться выглядеть яснее без роста содержания."
               },
               {
-                title: "Не может надежно декомпозировать любой текст",
-                body: "Некоторые аналитические тексты слишком гибридны, нестабильны или неоднозначны и плохо раскладываются на зоны утверждений, данных и неопределенности."
+                title: "Не может разложить любой текст",
+                body: "Некоторые тексты гибридны или двусмысленны и плохо делятся на аккуратные блоки."
               },
               {
                 title: "Не может решить легитимность одним интерфейсом",
-                body: "Легитимность зависит от институтов, норм, подотчетности и экспертизы. Более чистый экран не заменяет эти более глубокие условия."
+                body: "Легитимность зависит от институтов, норм, ответственности и экспертизы."
               },
               {
-                title: "Не может устранить смещения проверяющих и эпистемические пузыри",
-                body: "Слои проверки все равно воспроизводят предпосылки, слепые зоны и социальные фильтры людей и институтов, которые ими пользуются."
+                title: "Не может убрать смещения проверяющих",
+                body: "Слой проверки может воспроизводить слепые зоны людей и институтов, которые им пользуются."
               }
             ]
           }
@@ -4287,6 +4310,7 @@
         workflowMode: "evidence",
         workflowTrack: safeStorage.getItem("trust-layer-workflow-track") || "scratch",
         workflowRoute: safeStorage.getItem("trust-layer-workflow-route") || "bounded",
+        workflowRouteTouched: false,
         workflowEscalation: safeStorage.getItem("trust-layer-workflow-escalation") || "",
         workflowAuthorNote: safeStorage.getItem("trust-layer-workflow-author-note") === "true",
         workflowSourceTrace: null,
@@ -4426,7 +4450,7 @@
       const WORKFLOW_NEXT_STEP_IDS = ["stop", "bounded", "specialist"];
 
       function isWorkflowNextStepSelected() {
-        return WORKFLOW_NEXT_STEP_IDS.includes(state.workflowRoute);
+        return Boolean(state.workflowRouteTouched) && WORKFLOW_NEXT_STEP_IDS.includes(state.workflowRoute);
       }
 
       function getReviewNoteReadinessFromDom() {
@@ -4621,6 +4645,7 @@
 
         state.workflowCase = IMPORTED_WORKFLOW_CASE;
         state.workflowRoute = routeFromFirstPass(result?.route_recommendation);
+        state.workflowRouteTouched = false;
         state.workflowTrack = "scratch";
         state.workflowEscalation = "";
         state.workflowAuthorNote = false;
@@ -4677,8 +4702,8 @@
       function renderWorkflowSourceTraces(result, copy) {
         const rows = sourceTraceRows(result);
         return `
-          <div class="panel" style="margin-top:18px;">
-            <div class="eyebrow">${copy.workflow.sourceTraces}</div>
+          <details class="panel demo-details source-traces-panel" style="margin-top:18px;">
+            <summary>${copy.workflow.checkSource}</summary>
             <div class="tiny" style="margin-top:12px;">${copy.workflow.sourceTracesHelper}</div>
             ${
               rows.length
@@ -4692,7 +4717,7 @@
                               <div class="eyebrow">${esc(row.groupLabel)}</div>
                               <strong>${esc(row.heading)}</strong>
                             </div>
-                            <button class="trace-button" onclick="openWorkflowSourceTrace('${row.group}', ${row.index})">${copy.demo.sourceTrace}</button>
+                            <button class="trace-button" onclick="openWorkflowSourceTrace('${row.group}', ${row.index})">${copy.workflow.checkSource}</button>
                           </div>
                         `
                       )
@@ -4701,7 +4726,7 @@
                 `
                 : `<div class="demo-empty" style="margin-top:16px;">${copy.workflow.noSourceTraces}</div>`
             }
-          </div>
+          </details>
         `;
       }
 
@@ -4709,9 +4734,9 @@
         if (!state.workflowSourceTrace) return "";
         return `
           <div class="source-trace-backdrop" onclick="closeWorkflowSourceTrace()">
-            <div class="source-trace-card" role="dialog" aria-modal="true" aria-label="${esc(copy.demo.sourceTrace)}" onclick="event.stopPropagation()">
-              <div class="eyebrow">${copy.demo.sourceTrace}</div>
-              <h3>${esc(state.workflowSourceTrace.title || copy.demo.sourceTrace)}</h3>
+            <div class="source-trace-card" role="dialog" aria-modal="true" aria-label="${esc(copy.demo.sourceTraceTitle || copy.demo.sourceTrace)}" onclick="event.stopPropagation()">
+              <div class="eyebrow">${copy.demo.sourceTraceTitle || copy.demo.sourceTrace}</div>
+              <h3>${esc(state.workflowSourceTrace.title || copy.demo.sourceTraceTitle || copy.demo.sourceTrace)}</h3>
               <p class="tiny">${copy.demo.sourceTraceNote}</p>
               ${state.workflowSourceTrace.location ? `<div class="tiny" style="margin-top:12px;"><strong>${copy.demo.sourceLocation}:</strong> ${esc(state.workflowSourceTrace.location)}</div>` : ""}
               <blockquote>${esc(state.workflowSourceTrace.snippet || copy.demo.sourceTraceMissing)}</blockquote>
@@ -4793,6 +4818,82 @@
               .join("")}
           </div>
         `;
+      }
+
+      const exampleLabels = {
+        a: B("Conceptual manuscript excerpt", "Концептуальный фрагмент рукописи"),
+        b: B("Policy working paper", "Рабочий аналитический доклад"),
+        c: B("AI market report", "Отчет о рынке ИИ"),
+        d: B("Conceptual essay", "Концептуальное эссе")
+      };
+
+      function getExampleOptions() {
+        return cases.map((item) => ({
+          id: item.id,
+          label: tx(exampleLabels[item.id] || item.shortTitle)
+        }));
+      }
+
+      function mapOverlayRows(rows = []) {
+        return rows.map((entry) => ({
+          heading: tx(entry.label || entry.heading || ""),
+          summary: tx(entry.summary || ""),
+          source_snippet: tx(entry.sourceSnippet || ""),
+          source_location: tx(entry.sourceLocation || "")
+        }));
+      }
+
+      function buildExampleFirstReading(id = "a") {
+        const item = getCase(id) || getCase("a");
+        const routeByCase = {
+          a: "bounded_review",
+          b: "bounded_review",
+          c: "bounded_review",
+          d: "escalate"
+        };
+        const noteByCase = {
+          a: "optional",
+          b: "optional",
+          c: "not_warranted",
+          d: "optional"
+        };
+        const result = {
+          document_type: tx(item.type),
+          text_type: tx(exampleLabels[item.id] || item.type),
+          probable_central_argument: tx(item.centralArgument),
+          claim_zones: mapOverlayRows(item.overlay?.claimZones || []),
+          evidence_areas: mapOverlayRows(item.overlay?.evidenceAreas || []),
+          uncertainty_zones: mapOverlayRows(item.overlay?.uncertainty || []),
+          review_focus: (item.overlay?.reviewFocus || item.reviewNote?.verification || []).map((entry) => tx(entry)),
+          route_recommendation: routeByCase[item.id] || "bounded_review",
+          route_reason: tx(item.landingStance || item.status),
+          review_note_recommendation: noteByCase[item.id] || "optional",
+          review_note_reason: tx(item.status || ui[state.lang].workflow.reviewNoteExceptional),
+          confidence_note: tx(item.status || ui[state.lang].reviewNote.notExpert)
+        };
+        const originalExcerpts = (item.original?.excerpts || [])
+          .map((entry) => [tx(entry.label), tx(entry.sourceRef), tx(entry.excerpt)].filter(Boolean).join("\n"))
+          .join("\n\n");
+        const sectionText = (item.textSections || [])
+          .map((section) => [tx(section.heading), tx(section.summary), ...(section.paragraphs || []).map((p) => tx(p))].filter(Boolean).join("\n"))
+          .join("\n\n");
+        const source = {
+          filename: tx(exampleLabels[item.id] || item.shortTitle),
+          extractedText: originalExcerpts || sectionText || tx(item.deck || item.centralArgument),
+          pastedText: "",
+          documentType: result.document_type,
+          textType: inferWorkflowTextTypeId(result),
+          textTypeLabel: tx(exampleLabels[item.id] || item.shortTitle),
+          unusualIdea: ["a", "d"].includes(item.id),
+          originalUrl: item.original?.url || "",
+          originalLabel: item.original?.linkLabel ? tx(item.original.linkLabel) : ""
+        };
+        return {
+          id: item.id,
+          label: tx(exampleLabels[item.id] || item.shortTitle),
+          result,
+          source
+        };
       }
 
       function setLandingFlowStep(activeStep = 1) {
@@ -5385,8 +5486,10 @@
         }
 
         const route = getRoutingOption(state.workflowRoute);
-        const stopSelected = route.id === "stop";
-        const showEscalation = route.id === "specialist";
+        const routeSelected = isWorkflowNextStepSelected();
+        const stopSelected = routeSelected && route.id === "stop";
+        const showShortReview = routeSelected && route.id === "bounded";
+        const showEscalation = routeSelected && route.id === "specialist";
         const workflowTitle = importedDraft
           ? importedTargetTitle || importedDraft.documentType || copy.workflow.importedTextFallback
           : tx(item.shortTitle);
@@ -5423,9 +5526,9 @@
           firstReading: Boolean(importedDraft || item),
           humanNote: Boolean(state.workflowEdits.reviewerNote || state.workflowEdits.recordNote),
           nextStep: isWorkflowNextStepSelected(),
-          escalation: state.workflowRoute !== "specialist" || Boolean(state.workflowEscalation)
+          escalation: !showEscalation || Boolean(state.workflowEscalation)
         };
-        const reviewNoteReady = isReviewNoteReady(readiness);
+        const reviewNoteReady = showEscalation && isReviewNoteReady(readiness);
 
         function field(label, value, size = "short", helper = "", key = "") {
           const fieldValue = key && Object.prototype.hasOwnProperty.call(state.workflowEdits, key) ? state.workflowEdits[key] : tx(value);
@@ -5449,7 +5552,7 @@
                 .map(
                   (entry) => `
                       <button
-                        class="route-card ${entry.id === route.id ? "active" : ""} ${entry.tone === "fast-stop" ? "fast-stop" : ""} ${entry.id === "stop" && unusualContext ? "subdued" : ""}"
+                        class="route-card ${routeSelected && entry.id === route.id ? "active" : ""} ${entry.tone === "fast-stop" ? "fast-stop" : ""} ${entry.id === "stop" && unusualContext ? "subdued" : ""}"
                         onclick="setWorkflowRoute('${entry.id}')"
                       >
                         <strong>${tx(entry.label)}</strong>
@@ -5460,6 +5563,7 @@
                 )
                 .join("")}
             </div>
+            ${routeSelected ? "" : `<div class="tiny" style="margin-top:14px;">${copy.workflow.confirmNextStep}</div>`}
           </div>
         `;
 
@@ -5477,7 +5581,6 @@
                 }
                 ${cases.map((entry) => `<button class="case-button ${!importedActive && entry.id === item.id ? "active" : ""}" onclick="selectWorkflowCase('${entry.id}')">${tx(entry.shortTitle)}</button>`).join("")}
               </div>
-              <div class="tiny" style="margin-top:16px;">${copy.workflow.reviewNoteExceptional}</div>
             </aside>
 
             <div class="workflow-main">
@@ -5487,7 +5590,7 @@
                 <div class="section-copy" style="margin-top:12px;">${copy.workflow.copy}</div>
                 <div class="helper-strip">
                   <span class="pill">${esc(workflowType)}</span>
-                  <span class="pill">${tx(route.label)}</span>
+                  <span class="pill">${routeSelected ? tx(route.label) : copy.workflow.confirmNextStep}</span>
                 </div>
                 ${importedDraft ? `<div class="notice" style="margin-top:18px;">${copy.workflow.importNotice}</div>` : ""}
               </div>
@@ -5499,10 +5602,6 @@
                   <div class="import-cell">
                     <div class="eyebrow">${copy.workflow.importedRoute}</div>
                     <p>${importedDraft ? esc(importedDraft.routeLabel) : tx(route.label)}</p>
-                  </div>
-                  <div class="import-cell">
-                    <div class="eyebrow">${copy.workflow.importedReviewNote}</div>
-                    <p>${importedDraft ? esc(importedDraft.reviewNoteLabel) : copy.workflow.reviewNoteExceptional}</p>
                   </div>
                   ${
                     importedDraft
@@ -5534,9 +5633,6 @@
                           ? `<div class="notice" style="margin-top:18px;"><strong>${copy.workflow.unusualIdeaTitle}</strong><br />${copy.demo.unusualIdeaCopy}</div>`
                           : ""
                       }
-                      <div class="section-actions">
-                        <button class="cta" onclick="toggleWorkflowOriginalText()">${state.workflowOriginalOpen ? copy.workflow.hideOriginalText : copy.workflow.showOriginalText}</button>
-                      </div>
                     `
                     : ""
                 }
@@ -5556,11 +5652,25 @@
                   ${field(copy.workflow.fields.weakest, workflowValues.whyStop, "micro", "", "whyStop")}
                   ${field(copy.workflow.fields.uncertain, workflowValues.unclear, "short", "", "unclear")}
                   ${field(copy.workflow.fields.deeper, workflowValues.checkNext, "short", "", "checkNext")}
-                  ${field(copy.workflow.fields.reviewerNote, workflowValues.reviewerNote, "short", "", "reviewerNote")}
                 </div>
               </div>
 
               ${routePanel}
+
+              ${
+                showShortReview
+                  ? `
+                    <div class="panel" style="margin-top:18px;">
+                      <div class="eyebrow">${copy.workflow.shortReviewTitle}</div>
+                      <div class="review-note-title" style="font-size:2rem; margin-top:10px;">${tx(route.label)}</div>
+                      <div class="tiny" style="margin-top:12px;">${copy.workflow.shortReviewCopy}</div>
+                      <div class="workflow-compact-grid" style="margin-top:18px;">
+                        ${field(copy.workflow.fields.reviewerNote, workflowValues.reviewerNote, "short", "", "reviewerNote")}
+                      </div>
+                    </div>
+                  `
+                  : ""
+              }
 
               ${
                 stopSelected
@@ -5615,12 +5725,18 @@
                           )
                           .join("")}
                       </div>
+                      <div class="workflow-compact-grid" style="margin-top:18px;">
+                        ${field(copy.workflow.fields.reviewerNote, workflowValues.reviewerNote, "short", "", "reviewerNote")}
+                      </div>
                       <div class="tiny" style="margin-top:14px;">${copy.workflow.gateNote}</div>
                     </div>
                   `
                   : ""
               }
 
+              ${
+                showEscalation
+                  ? `
               <div class="panel" style="margin-top:18px;">
                 <div class="eyebrow">${copy.workflow.reviewNoteTitle}</div>
                 <div class="review-note-title" data-review-note-status style="font-size:2rem; margin-top:10px;">${reviewNoteReady ? copy.workflow.reviewNoteReady : copy.workflow.reviewNoteNotReady}</div>
@@ -5654,6 +5770,9 @@
                   >${copy.workflow.createReviewNote}</button>
                 </div>
               </div>
+                  `
+                  : ""
+              }
             </div>
           </div>
           ${renderWorkflowSourceTraceModal(copy)}
@@ -5671,7 +5790,7 @@
           </div>
 
           <div class="section limitations-grid">
-            ${copy.limitations.items.map((item) => `<div class="card"><h3 style="font-size:2rem;">${item.title}</h3><p style="margin-top:14px; color:#5f6c79;">${item.body}</p></div>`).join("")}
+            ${copy.limitations.items.map((item) => `<div class="card"><h3 style="font-size:1.55rem;">${item.title}</h3><p style="margin-top:12px; color:#5f6c79;">${item.body}</p></div>`).join("")}
           </div>
 
           <div class="section panel" style="padding:28px;">
@@ -5685,10 +5804,14 @@
             </div>
           </div>
 
-          <div class="section panel-strong" style="padding:30px;">
-            <div class="eyebrow">${copy.limitations.governanceEyebrow}</div>
-            <div class="section-title">${copy.limitations.governanceTitle}</div>
-            <div class="section-copy">${copy.limitations.governanceCopy}</div>
+          <details class="section panel-strong demo-details" style="padding:30px;">
+            <summary>${copy.limitations.governanceTitle}</summary>
+            <div class="eyebrow" style="margin-top:18px;">${copy.limitations.governanceEyebrow}</div>
+            <div class="section-copy" style="margin-top:12px;">${copy.limitations.governanceCopy}</div>
+            <div class="notice warn" style="margin-top:18px;">
+              <strong>${copy.limitations.governanceWarningTitle}</strong><br />
+              ${copy.limitations.governanceWarnings.join("<br />")}
+            </div>
             <div class="grid-2" style="margin-top:18px;">
               <div class="panel" style="padding:24px;">
                 <div class="eyebrow">${copy.limitations.governanceRowsTitle}</div>
@@ -5707,38 +5830,34 @@
                     )
                     .join("")}
                 </div>
-                <div class="notice warn" style="margin-top:18px;">
-                  <strong>${copy.limitations.governanceWarningTitle}</strong><br /><br />
-                  ${copy.limitations.governanceWarnings.join("<br />")}
-                </div>
               </div>
 
               <div class="panel" style="padding:24px;">
-                <div class="eyebrow">${copy.limitations.governanceCompareTitle}</div>
-                <div class="dual-views" style="margin-top:16px;">
-                  ${copy.limitations.governanceComparisons
-                    .map(
-                      (entry) => `
-                        <div class="entry-card">
-                          <div class="eyebrow">${entry.reviewer}</div>
-                          <div style="margin-top:10px;">
-                            ${entry.bullets.map((bullet) => `<div class="mini-card" style="margin-top:10px;">${bullet}</div>`).join("")}
-                          </div>
-                          <div class="tiny" style="margin-top:14px;">${entry.note}</div>
-                        </div>
-                      `
-                    )
-                    .join("")}
-                </div>
-                <div class="metric-card" style="margin-top:16px;">
-                  <div class="eyebrow">${copy.limitations.governanceQuestionsTitle}</div>
-                  <ul>
-                    ${copy.limitations.governanceQuestions.map((question) => `<li>${question}</li>`).join("")}
-                  </ul>
-                </div>
+                <div class="eyebrow">${copy.limitations.governanceQuestionsTitle}</div>
+                <ul>
+                  ${copy.limitations.governanceQuestions.map((question) => `<li>${question}</li>`).join("")}
+                </ul>
               </div>
             </div>
-          </div>
+            <details class="demo-details" style="margin-top:18px;">
+              <summary>${copy.limitations.governanceCompareTitle}</summary>
+              <div class="dual-views" style="margin-top:16px;">
+                ${copy.limitations.governanceComparisons
+                  .map(
+                    (entry) => `
+                      <div class="entry-card">
+                        <div class="eyebrow">${entry.reviewer}</div>
+                        <div style="margin-top:10px;">
+                          ${entry.bullets.map((bullet) => `<div class="mini-card" style="margin-top:10px;">${bullet}</div>`).join("")}
+                        </div>
+                        <div class="tiny" style="margin-top:14px;">${entry.note}</div>
+                      </div>
+                    `
+                  )
+                  .join("")}
+              </div>
+            </details>
+          </details>
 
           <div class="section panel" style="padding:28px;">
             <div class="eyebrow">${copy.limitations.eyebrow}</div>
@@ -5820,6 +5939,7 @@
         state.workflowCase = id;
         state.workflowEdits = {};
         state.workflowRoute = "bounded";
+        state.workflowRouteTouched = false;
         state.workflowTrack = "scratch";
         state.workflowEscalation = "";
         state.workflowAuthorNote = false;
@@ -5853,6 +5973,7 @@
       function selectWorkflowCase(id) {
         state.workflowCase = id;
         state.workflowEdits = {};
+        state.workflowRouteTouched = false;
         renderWorkflow();
       }
 
@@ -5860,6 +5981,7 @@
         if (!getWorkflowImport()) return;
         state.workflowCase = IMPORTED_WORKFLOW_CASE;
         state.workflowEdits = {};
+        state.workflowRouteTouched = false;
         renderWorkflow();
       }
 
@@ -5900,6 +6022,7 @@
 
         captureWorkflowFields();
         state.workflowRoute = id;
+        state.workflowRouteTouched = true;
         safeStorage.setItem("trust-layer-workflow-route", id);
         if (id !== "stop") {
           state.workflowAuthorNote = false;
@@ -5934,7 +6057,9 @@
         getPage: () => state.page,
         setFlowStep: setLandingFlowStep,
         goToDemo,
-        useFirstPassInWorkflow
+        useFirstPassInWorkflow,
+        getExampleOptions,
+        buildExampleFirstReading
       };
 
       document.querySelectorAll(".nav-link").forEach((button) => {
